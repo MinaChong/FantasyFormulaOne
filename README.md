@@ -25,3 +25,14 @@ As a relatively new fan of Formula 1, this project will allow me to connect with
 weekend races and engaging in a fun contest that spans the F1 season. Moreover, running any Fantasy league is 
 a multi-faceted process and provides many opportunities for me to demonstrate my knowledge of software construction. 
 
+## User Stories
+
+- As a user, I want to be able to create a new Fantasy team and add it to a list of teams
+- As a user, I want to be able to create a new list of teams and add it to a list of leagues
+- As a user, I want to be able to select a team and add a new driver to the team
+- As a user, I want to be able to select a team and remove a driver from the team
+- As a user, I want to be able to select a team and swap one driver on the team for another driver
+- As a user, I want to be able to select a team and view a list of drivers on that team
+- As a user, I want to be able to select a driver and change a given statistic, such as the number of points scored or 
+number of wins
+
