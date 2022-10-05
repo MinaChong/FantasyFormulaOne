@@ -89,6 +89,33 @@ public class FantasyApp {
     private void initialize() {
         league = new League("My League");
 
+        initializeDrivers();
+
+        initializeGrid();
+
+        teamKimi = new Team("Kimi's Team");
+        teamKimi.addDriver(vbottas);
+        teamKimi.addDriver(falonso);
+        teamKimi.addDriver(lstroll);
+
+        teamMichael = new Team("Michael's Team");
+        teamMichael.addDriver(mschumacher);
+        teamMichael.addDriver(lhamilton);
+        teamMichael.addDriver(svettel);
+
+        falonso.addPoints(10);
+        lhamilton.addPoints(15);
+        falonso.addWin();
+
+        league.addTeam(teamKimi);
+        league.addTeam(teamMichael);
+
+        input = new Scanner(System.in);
+        input.useDelimiter("\n");
+    }
+
+    // EFFECTS: creates current grid of 20 drivers
+    private void initializeDrivers() {
         sperez = new Driver("Sergio Perez", 11);
         cleclerc = new Driver("Charles Leclerc", 16);
         csainz = new Driver("Carlos Sainz", 55);
@@ -109,7 +136,10 @@ public class FantasyApp {
         falonso = new Driver("Fernando Alonso", 14);
         nlatifi = new Driver("Nicholas Latifi", 6);
         gzhou = new Driver("Guanyu Zhou", 24);
+    }
 
+    // EFFECTS: creates list of current grid of 20 drivers
+    private void initializeGrid() {
         allDrivers = new ArrayList<>();
         allDrivers.add(sperez);
         allDrivers.add(cleclerc);
@@ -131,25 +161,6 @@ public class FantasyApp {
         allDrivers.add(falonso);
         allDrivers.add(nlatifi);
         allDrivers.add(gzhou);
-
-        teamKimi = new Team("Kimi's Team");
-        teamKimi.addDriver(vbottas);
-        teamKimi.addDriver(falonso);
-        teamKimi.addDriver(lstroll);
-
-        teamMichael = new Team("Michael's Team");
-        teamMichael.addDriver(mschumacher);
-        teamMichael.addDriver(lhamilton);
-        teamMichael.addDriver(svettel);
-
-        falonso.addPoints(10);
-        lhamilton.addPoints(15);
-
-        league.addTeam(teamKimi);
-        league.addTeam(teamMichael);
-
-        input = new Scanner(System.in);
-        input.useDelimiter("\n");
     }
 
     // EFFECTS: displays main menu to user
@@ -167,7 +178,8 @@ public class FantasyApp {
         List<Team> currentTeams = league.getTeams();
 
         for (Team team : currentTeams) {
-            System.out.println(team.getName() + " has " + team.getPoints() + " points.");
+            System.out.println(team.getName() + " has " + team.getPoints() + " point(s) & "
+                    + team.getWins() + " win(s)");
         }
     }
 
@@ -231,6 +243,7 @@ public class FantasyApp {
             i = i + 1;
         }
         System.out.println("You have " + team.getPoints() + " point(s)!");
+        System.out.println("You have " + team.getWins() + " win(s)!");
 
         boolean isSelecting = true;
         String command = null;
