@@ -2,6 +2,7 @@ package ui;
 
 import model.Driver;
 import model.League;
+import model.Race;
 import model.Team;
 
 import java.util.ArrayList;
@@ -191,7 +192,7 @@ public class FantasyApp {
     private void displayTeamMenu() {
         System.out.println("\nChoose team to view:");
         List<Team> currentTeams = league.getTeams();
-        int i = 0;
+        int i = 1;
 
         for (Team team : currentTeams) {
             System.out.println("Select " + i + " for " + team.getName());
@@ -205,15 +206,15 @@ public class FantasyApp {
     private void processTeamCommand(String command) {
         List<Team> currentTeams = league.getTeams();
 
-        if (command.equals("0")) {
+        if (command.equals("1")) {
             showTeam(currentTeams.get(0));
-        } else if (command.equals("1")) {
-            showTeam(currentTeams.get(1));
         } else if (command.equals("2")) {
-            showTeam(currentTeams.get(2));
+            showTeam(currentTeams.get(1));
         } else if (command.equals("3")) {
-            showTeam(currentTeams.get(3));
+            showTeam(currentTeams.get(2));
         } else if (command.equals("4")) {
+            showTeam(currentTeams.get(3));
+        } else if (command.equals("5")) {
             showTeam(currentTeams.get(4));
         } else {
             System.out.println("Input not recognized. Please try again.");
@@ -229,6 +230,7 @@ public class FantasyApp {
             System.out.println(i + ". " + driver.getName());
             i = i + 1;
         }
+        System.out.println("You have " + team.getPoints() + " point(s)!");
 
         boolean isSelecting = true;
         String command = null;
@@ -282,7 +284,7 @@ public class FantasyApp {
     private void addDriver(Team team) {
         List<Driver> currentDrivers = allDrivers;
         List<Driver> availableDrivers = new ArrayList<>();
-        int i = 0;
+        int i = 1;
 
         for (Driver driver : currentDrivers) {
             if (!team.getDrivers().contains(driver)) {
@@ -294,6 +296,7 @@ public class FantasyApp {
         System.out.print("Select a driver to add: ");
 
         int num = input.nextInt();
+        num = num - 1;
         team.addDriver(availableDrivers.get(num));
 
         System.out.println(availableDrivers.get(num).getName() + " has been added to " + team.getName());
@@ -302,17 +305,19 @@ public class FantasyApp {
     // MODIFIES: this
     // EFFECTS: shows current drives that can be removed from a team
     private void removeDriver(Team team) {
-        List<Driver> teamDrivers = team.getDrivers();
-        int i = 0;
+        List<Driver> teamDrivers = new ArrayList<>();
+        int i = 1;
 
-        for (Driver driver : teamDrivers) {
+        for (Driver driver : team.getDrivers()) {
             System.out.println(i + ". " + driver.getName());
             i = i + 1;
+            teamDrivers.add(driver);
         }
 
         System.out.print("Select a driver to remove: ");
 
         int num = input.nextInt();
+        num = num - 1;
         team.removeDriver(teamDrivers.get(num));
 
         System.out.println(teamDrivers.get(num).getName() + " has been removed from " + team.getName());
@@ -321,7 +326,29 @@ public class FantasyApp {
     // MODIFIES: this
     // EFFECTS: allows user to input results of a race
     private void recordRace() {
-        // TODO record a race result... how to input a list into java? maybe show driver options and input those?
+        System.out.print("Enter name of race: ");
+        String name = input.next();
+        Race newRace = new Race(name);
+
+        int i = 1;
+        for (Driver driver : allDrivers) {
+            System.out.println(i + ". " + driver.getName());
+            i = i + 1;
+        }
+
+        List<Driver> places = new ArrayList<>();
+        for (int j = 1; j <= 10; j++) {
+            System.out.print("Select driver in " + j + " place: ");
+            int num = input.nextInt();
+            num = num - 1;
+            Driver driver = allDrivers.get(num);
+            places.add(driver);
+        }
+
+        newRace.setPlaces(places);
+        newRace.updateDriverPoints();
+
+
     }
 
 
