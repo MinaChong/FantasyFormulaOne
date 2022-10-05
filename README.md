@@ -6,7 +6,7 @@ Looking to start a Fantasy F1 Championship amongst family, friends, or coworkers
 
 Try Fantasy Formula 1:
 
-- Choose *3 drivers each*, staying under a fixed budget cap
+- Choose *3 drivers each* to drive for your team
 - Follow along for **weekly races**, from Silverstone to Monza
 - Compete for the ultimate prize, the ***Fantasy Constructor's Championship!***
 
@@ -27,12 +27,11 @@ a multi-faceted process and provides many opportunities for me to demonstrate my
 
 ## User Stories
 
-- As a user, I want to be able to create a new Fantasy team and add it to a list of teams
-- As a user, I want to be able to create a new list of teams and add it to a list of leagues
+- As a user, I want to be able to create a new Fantasy team and add it to my league
+- As a user, I want to be able to select a team and view a list of drivers on that team
+- As a user, I want to be able to select a team and view its total points and wins
 - As a user, I want to be able to select a team and add a new driver to the team
 - As a user, I want to be able to select a team and remove a driver from the team
-- As a user, I want to be able to select a team and swap one driver on the team for another driver
-- As a user, I want to be able to select a team and view a list of drivers on that team
-- As a user, I want to be able to select a driver and change a given statistic, such as the number of points scored or 
-number of wins
+- As a user, I want to be able to input a race result by entering in drivers' final placements and have every team's
+points and wins be updated accordingly
 

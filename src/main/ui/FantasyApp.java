@@ -47,7 +47,7 @@ public class FantasyApp {
     }
 
     // MODIFIES: this
-    // EFFECTS: processes user input
+    // EFFECTS: processes user input for Fantasy F1 application
     private void runFantasy() {
         boolean keepRunning = true;
         String command = null;
@@ -55,33 +55,17 @@ public class FantasyApp {
         initialize();
 
         while (keepRunning) {
-            displayMenu();
+            displayMainMenu();
             command = input.next();
 
             if (command.equals("Q")) {
                 keepRunning = false;
             } else {
-                processCommand(command);
+                processMainMenuCommand(command);
             }
         }
 
         System.out.println("\nSee you later!");
-    }
-
-    // MODIFIES: this
-    // EFFECTS: processes user command
-    private void processCommand(String command) {
-        if (command.equals("1")) {
-            showScoreboard();
-        } else if (command.equals("2")) {
-            selectTeam();
-        } else if (command.equals("3")) {
-            addTeam();
-        } else if (command.equals("4")) {
-            recordRace();
-        } else {
-            System.out.println("Input not recognized. Please try again.");
-        }
     }
 
     // MODIFIES: this
@@ -90,7 +74,6 @@ public class FantasyApp {
         league = new League("My League");
 
         initializeDrivers();
-
         initializeGrid();
 
         teamKimi = new Team("Kimi's Team");
@@ -114,7 +97,8 @@ public class FantasyApp {
         input.useDelimiter("\n");
     }
 
-    // EFFECTS: creates current grid of 20 drivers
+    // MODIFIES: this
+    // EFFECTS: initializes current 20 drivers in F1
     private void initializeDrivers() {
         sperez = new Driver("Sergio Perez", 11);
         cleclerc = new Driver("Charles Leclerc", 16);
@@ -138,7 +122,8 @@ public class FantasyApp {
         gzhou = new Driver("Guanyu Zhou", 24);
     }
 
-    // EFFECTS: creates list of current grid of 20 drivers
+    // MODIFIES: this
+    // EFFECTS: initializes current grid of 20 drivers
     private void initializeGrid() {
         allDrivers = new ArrayList<>();
         allDrivers.add(sperez);
@@ -164,7 +149,7 @@ public class FantasyApp {
     }
 
     // EFFECTS: displays main menu to user
-    private void displayMenu() {
+    private void displayMainMenu() {
         System.out.println("\nWhat would you like to do?");
         System.out.println("\t1 -> Show Scoreboard");
         System.out.println("\t2 -> Select Existing Team");
@@ -173,95 +158,182 @@ public class FantasyApp {
         System.out.println("\tQ -> Quit");
     }
 
-    // EFFECTS: outputs a list of each team and their total points
-    private void showScoreboard() {
-        List<Team> currentTeams = league.getTeams();
-
-        for (Team team : currentTeams) {
-            System.out.println(team.getName() + " has " + team.getPoints() + " point(s) & "
-                    + team.getWins() + " win(s)");
-        }
-    }
-
-    // EFFECTS: displays a list of teams for the user to select from
-    private void selectTeam() {
-        boolean isSelecting = true;
-        String command = null;
-
-        while (isSelecting) {
-            displayTeamMenu();
-            command = input.next();
-
-            if (command.equals("R")) {
-                isSelecting = false;
-            } else {
-                processTeamCommand(command);
-            }
-        }
-    }
-
-    // EFFECTS: displays team menu for a user
-    private void displayTeamMenu() {
-        System.out.println("\nChoose team to view:");
-        List<Team> currentTeams = league.getTeams();
-        int i = 1;
-
-        for (Team team : currentTeams) {
-            System.out.println("Select " + i + " for " + team.getName());
-            i = i + 1;
-        }
-
-        System.out.println("\nR -> Return to main menu");
-    }
-
-    // EFFECTS: processes user command for team menu
-    private void processTeamCommand(String command) {
-        List<Team> currentTeams = league.getTeams();
-
+    // MODIFIES: this
+    // EFFECTS: processes user command for main menu
+    private void processMainMenuCommand(String command) {
         if (command.equals("1")) {
-            showTeam(currentTeams.get(0));
+            displayScoreboard();
         } else if (command.equals("2")) {
-            showTeam(currentTeams.get(1));
+            selectTeam();
         } else if (command.equals("3")) {
-            showTeam(currentTeams.get(2));
+            addTeam();
         } else if (command.equals("4")) {
-            showTeam(currentTeams.get(3));
-        } else if (command.equals("5")) {
-            showTeam(currentTeams.get(4));
+            recordRace();
         } else {
             System.out.println("Input not recognized. Please try again.");
         }
     }
 
-    // EFFECTS: shows user options for selecting a driver, adding a driver, or removing a driver from their team
-    private void showTeam(Team team) {
+    // EFFECTS: displays a list of each team and their total points and wins
+    private void displayScoreboard() {
+        List<Team> currentTeams = league.getTeams();
+
+        System.out.println("SCOREBOARD: ");
+
+        if (currentTeams.size() > 0) {
+            for (Team team : currentTeams) {
+                System.out.println("\t" + team.getName() + " has " + team.getPoints() + " point(s) & "
+                        + team.getWins() + " win(s)");
+            }
+        } else {
+            System.out.println("There are no teams currently in " + league.getName() + ".");
+        }
+    }
+
+    // EFFECTS: allows user to select a team from the existing teams
+    private void selectTeam() {
+        displayLeagueMenu();
+        processLeagueMenuCommand();
+    }
+
+    // EFFECTS: displays list of teams that user can select
+    private void displayLeagueMenu() {
+        System.out.println("\n" + league.getName().toUpperCase() + " TEAMS: ");
+        List<Team> currentTeams = league.getTeams();
+        int i = 1;
+
+        for (Team team : currentTeams) {
+            System.out.println("\t" + i + " -> " + team.getName());
+            i = i + 1;
+        }
+    }
+
+    // EFFECTS: processes user command for league menu
+    private void processLeagueMenuCommand() {
+        System.out.print("Select team: ");
+        List<Team> currentTeams = league.getTeams();
+        int n = input.nextInt();
+
+        if (n <= currentTeams.size()) {
+            n = n - 1;
+            showTeamReport(currentTeams.get(n));
+        } else {
+            System.out.println("Input not recognized. Please try again.");
+        }
+    }
+
+    // EFFECTS: displays team report for given team and allows user to choose options to manage their team
+    private void showTeamReport(Team team) {
         List<Driver> currentDrivers = team.getDrivers();
         int i = 1;
-        System.out.println("Your drivers are:");
+        if (currentDrivers.size() == 0) {
+            System.out.println("You have no drivers on your team currently.");
+        } else {
+            System.out.println("Your drivers are:");
+        }
         for (Driver driver : currentDrivers) {
-            System.out.println(i + ". " + driver.getName());
+            System.out.println("\t" + i + ". " + driver.getName());
             i = i + 1;
         }
         System.out.println("You have " + team.getPoints() + " point(s)!");
         System.out.println("You have " + team.getWins() + " win(s)!");
 
-        boolean isSelecting = true;
-        String command = null;
+        displayTeamMenu();
+        processTeamMenuCommand(team);
+    }
 
-        while (isSelecting) {
-            displayDriverMenu();
-            command = input.next();
+    // EFFECTS: displays driver menu to user
+    private void displayTeamMenu() {
+        System.out.println("\nChoose option to modify team:");
+        System.out.println("\t1 -> Add driver");
+        System.out.println("\t2 -> Remove driver");
+        System.out.println("\t3 -> Delete team");
+        System.out.println("\tS -> Select a different team");
+        System.out.println("\tQ -> Return to main menu");
+    }
 
-            if (command.equals("S")) {
-                isSelecting = false;
-            } else {
-                processDriverCommand(command, team);
-            }
+    // EFFECTS: processes user command for driver menu
+    private void processTeamMenuCommand(Team team) {
+        String command = input.next();
+        if (command.equals("1")) {
+            addDriver(team);
+        } else if (command.equals("2")) {
+            removeDriver(team);
+        } else if (command.equals("3")) {
+            deleteTeam(team);
+        } else if (command.equals("S")) {
+            selectTeam();
+        } else if (command.equals("Q")) {
+            System.out.println("Team changes saved.");
+        } else {
+            System.out.println("Input not recognized. Please try again.");
         }
     }
 
     // MODIFIES: this
-    // EFFECTS: adds new team to league
+    // EFFECTS: allows user to add a driver to given team
+    private void addDriver(Team team) {
+        List<Driver> currentDrivers = allDrivers;
+        if (team.getDrivers().size() < 3) {
+            List<Driver> availableDrivers = new ArrayList<>();
+            int i = 1;
+            System.out.println("Available Drivers:");
+            for (Driver driver : currentDrivers) {
+                if (!team.getDrivers().contains(driver)) {
+                    System.out.println("\t" + i + ". " + driver.getName());
+                    availableDrivers.add(driver);
+                    i = i + 1;
+                }
+            }
+            System.out.print("Select a driver to add: ");
+
+            int num = input.nextInt();
+            num = num - 1;
+            team.addDriver(availableDrivers.get(num));
+
+            System.out.println(availableDrivers.get(num).getName() + " has been added to " + team.getName());
+        } else if (currentDrivers.size() >= 3) {
+            System.out.println("You have already added the maximum number of drivers to your team (3).");
+        }
+        showTeamReport(team);
+    }
+
+    // MODIFIES: this
+    // EFFECTS: allows user to remove a driver from given team
+    private void removeDriver(Team team) {
+        List<Driver> teamDrivers = new ArrayList<>();
+        if (team.getDrivers().size() > 0) {
+            int i = 1;
+            System.out.println("Current Drivers:");
+            for (Driver driver : team.getDrivers()) {
+                System.out.println("\t" + i + ". " + driver.getName());
+                i = i + 1;
+                teamDrivers.add(driver);
+            }
+
+            System.out.print("Select a driver to remove: ");
+
+            int num = input.nextInt();
+            num = num - 1;
+            team.removeDriver(teamDrivers.get(num));
+
+            System.out.println(teamDrivers.get(num).getName() + " has been removed from " + team.getName());
+        } else if (teamDrivers.size() == 0) {
+            System.out.println("There are no drivers to remove.");
+        }
+        showTeamReport(team);
+    }
+
+    // MODIFIES: this
+    // EFFECTS: removes given team from league
+    private void deleteTeam(Team team) {
+        league.removeTeam(team);
+        System.out.println(team.getName() + " has been removed from " + league.getName());
+        // selectTeam();
+    }
+
+    // MODIFIES: this
+    // EFFECTS: allows user to add a new team to league
     private void addTeam() {
         System.out.print("Enter name of new team: ");
 
@@ -269,83 +341,21 @@ public class FantasyApp {
         Team newTeam = new Team(name);
         league.addTeam(newTeam);
 
-        System.out.println(newTeam.getName() + " has been added to " + league.getName());
-    }
+        System.out.println(newTeam.getName() + " has been added to " + league.getName() + ".");
 
-    // EFFECTS: displays driver menu to user
-    private void displayDriverMenu() {
-        System.out.println("\nChoose option to modify team:");
-        System.out.println("\n1 -> Add driver");
-        System.out.println("\n2 -> Remove driver");
-        System.out.println("\nS -> Return to teams menu");
-    }
-
-    // EFFECTS: processes user command for driver menu
-    private void processDriverCommand(String command, Team team) {
-
-        if (command.equals("1")) {
-            addDriver(team);
-        } else if (command.equals("2")) {
-            removeDriver(team);
-        } else {
-            System.out.println("Input not recognized. Please try again.");
-        }
+        showTeamReport(newTeam);
     }
 
     // MODIFIES: this
-    // EFFECTS: shows available drivers that can be added to a team
-    private void addDriver(Team team) {
-        List<Driver> currentDrivers = allDrivers;
-        List<Driver> availableDrivers = new ArrayList<>();
-        int i = 1;
-
-        for (Driver driver : currentDrivers) {
-            if (!team.getDrivers().contains(driver)) {
-                System.out.println(i + ". " + driver.getName());
-                availableDrivers.add(driver);
-                i = i + 1;
-            }
-        }
-        System.out.print("Select a driver to add: ");
-
-        int num = input.nextInt();
-        num = num - 1;
-        team.addDriver(availableDrivers.get(num));
-
-        System.out.println(availableDrivers.get(num).getName() + " has been added to " + team.getName());
-    }
-
-    // MODIFIES: this
-    // EFFECTS: shows current drives that can be removed from a team
-    private void removeDriver(Team team) {
-        List<Driver> teamDrivers = new ArrayList<>();
-        int i = 1;
-
-        for (Driver driver : team.getDrivers()) {
-            System.out.println(i + ". " + driver.getName());
-            i = i + 1;
-            teamDrivers.add(driver);
-        }
-
-        System.out.print("Select a driver to remove: ");
-
-        int num = input.nextInt();
-        num = num - 1;
-        team.removeDriver(teamDrivers.get(num));
-
-        System.out.println(teamDrivers.get(num).getName() + " has been removed from " + team.getName());
-    }
-
-    // MODIFIES: this
-    // EFFECTS: allows user to input results of a race
+    // EFFECTS: allows user to input results of a race to update all teams' points and wins
     private void recordRace() {
         System.out.print("Enter name of race: ");
         String name = input.next();
         Race newRace = new Race(name);
-
+        System.out.println("Current Drivers:");
         int i = 1;
         for (Driver driver : allDrivers) {
-            System.out.println(i + ". " + driver.getName());
+            System.out.println("\t" + i + ". " + driver.getName());
             i = i + 1;
         }
 
@@ -361,8 +371,7 @@ public class FantasyApp {
         newRace.setPlaces(places);
         newRace.updateDriverPoints();
 
-
+        System.out.println(newRace.getName() + " results have been recorded!");
+        displayScoreboard();
     }
-
-
 }
