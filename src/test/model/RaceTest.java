@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RaceTest {
     private Race testRace;
+    private Race anotherTestRace;
 
     private Driver aalbon;
     private Driver cleclerc;
@@ -71,6 +72,7 @@ public class RaceTest {
         drivers.add(pgasly);
 
         testRace = new Race("Singapore Grand Prix", "02/10/22", drivers, sperez);
+        anotherTestRace = new Race("another race", "00/00/00", drivers, grussell);
     }
 
     @Test
@@ -150,7 +152,7 @@ public class RaceTest {
     }
 
     @Test
-    public void updateFastestLapTest() {
+    public void updateFastestLapInTopTenTest() {
         testRace.updateFastestLap();
 
         assertEquals(1, sperez.getPoints());
@@ -188,6 +190,53 @@ public class RaceTest {
         assertEquals(0, kmagnussen.getFastestLaps());
         assertEquals(0, mschumacher.getFastestLaps());
         assertEquals(0, grussell.getFastestLaps());
+        assertEquals(0, ytsunoda.getFastestLaps());
+        assertEquals(0, eocon.getFastestLaps());
+        assertEquals(0, aalbon.getFastestLaps());
+        assertEquals(0, falonso.getFastestLaps());
+        assertEquals(0, nlatifi.getFastestLaps());
+        assertEquals(0, gzhou.getFastestLaps());
+    }
+
+    @Test
+    public void updateFastestLapNotInTopTenTest() {
+        anotherTestRace.updateFastestLap();
+
+        assertEquals(0, sperez.getPoints());
+        assertEquals(0, cleclerc.getPoints());
+        assertEquals(0, csainz.getPoints());
+        assertEquals(0, lnorris.getPoints());
+        assertEquals(0, dricciardo.getPoints());
+        assertEquals(0, lstroll.getPoints());
+        assertEquals(0, mverstappen.getPoints());
+        assertEquals(0, svettel.getPoints());
+        assertEquals(0, lhamilton.getPoints());
+        assertEquals(0, pgasly.getPoints());
+        assertEquals(0, vbottas.getPoints());
+        assertEquals(0, kmagnussen.getPoints());
+        assertEquals(0, mschumacher.getPoints());
+        assertEquals(0, grussell.getPoints());
+        assertEquals(0, ytsunoda.getPoints());
+        assertEquals(0, eocon.getPoints());
+        assertEquals(0, aalbon.getPoints());
+        assertEquals(0, falonso.getPoints());
+        assertEquals(0, nlatifi.getPoints());
+        assertEquals(0, gzhou.getPoints());
+
+        assertEquals(0, sperez.getFastestLaps());
+        assertEquals(0, cleclerc.getFastestLaps());
+        assertEquals(0, csainz.getFastestLaps());
+        assertEquals(0, lnorris.getFastestLaps());
+        assertEquals(0, dricciardo.getFastestLaps());
+        assertEquals(0, lstroll.getFastestLaps());
+        assertEquals(0, mverstappen.getFastestLaps());
+        assertEquals(0, svettel.getFastestLaps());
+        assertEquals(0, lhamilton.getFastestLaps());
+        assertEquals(0, pgasly.getFastestLaps());
+        assertEquals(0, vbottas.getFastestLaps());
+        assertEquals(0, kmagnussen.getFastestLaps());
+        assertEquals(0, mschumacher.getFastestLaps());
+        assertEquals(1, grussell.getFastestLaps());
         assertEquals(0, ytsunoda.getFastestLaps());
         assertEquals(0, eocon.getFastestLaps());
         assertEquals(0, aalbon.getFastestLaps());
