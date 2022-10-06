@@ -3,20 +3,22 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-// Represents a team having a name, list of drivers, total number of points, and total number of wins
+// Represents a team having a name, list of drivers, points total, wins total, and fastest laps total
 public class Team {
     private String name;                // the team's name
     private List<Driver> drivers;       // drivers on the team
     private int points;                 // the team's total number of points
     private int wins;                   // the team's total number of wins
+    private int fastestLaps;            // the team's total number of fastest laps
 
     // REQUIRES: name of team has non-zero length
-    // EFFECTS: team is created with given name, no drivers, 0 points, and 0 wins
+    // EFFECTS: team is created with given name, no drivers, 0 points, 0 wins, and 0 fastest laps
     public Team(String name) {
         this.name = name;
         this.drivers = new ArrayList<Driver>();
         this.points = 0;
         this.wins = 0;
+        this.fastestLaps = 0;
     }
 
     // MODIFIES: this
@@ -39,6 +41,7 @@ public class Team {
         return drivers;
     }
 
+    // EFFECTS: returns total number of points that a team has
     public int getPoints() {
         int total = 0;
 
@@ -49,6 +52,7 @@ public class Team {
         return points;
     }
 
+    // EFFECTS: returns total number of wins that a team has
     public int getWins() {
         int total = 0;
         for (Driver driver : drivers) {
@@ -56,5 +60,15 @@ public class Team {
         }
         wins = total;
         return wins;
+    }
+
+    // EFFECTS: returns total number of fastest laps that a team has
+    public int getFastestLaps() {
+        int total = 0;
+        for (Driver driver : drivers) {
+            total = total + driver.getFastestLaps();
+        }
+        fastestLaps = total;
+        return fastestLaps;
     }
 }

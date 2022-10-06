@@ -23,6 +23,7 @@ public class TeamTest {
         assertEquals(0, testTeam.getDrivers().size());
         assertEquals(0, testTeam.getPoints());
         assertEquals(0, testTeam.getWins());
+        assertEquals(0, testTeam.getFastestLaps());
     }
 
     @Test
@@ -106,5 +107,23 @@ public class TeamTest {
         testTeam.addDriver(anotherTestDriver);
         anotherTestDriver.addWin();
         assertEquals(2, testTeam.getWins());
+    }
+
+    @Test
+    public void getFastestLapsTest() {
+        testTeam.addDriver(testDriver);
+        testDriver.addFastestLap();
+        assertEquals(1, testTeam.getFastestLaps());
+    }
+
+    @Test
+    public void getFastestLapsMultipleTimesTest() {
+        testTeam.addDriver(testDriver);
+        testDriver.addFastestLap();
+        assertEquals(1, testTeam.getFastestLaps());
+
+        testTeam.addDriver(anotherTestDriver);
+        anotherTestDriver.addFastestLap();
+        assertEquals(2, testTeam.getFastestLaps());
     }
 }

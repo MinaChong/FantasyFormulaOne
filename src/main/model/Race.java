@@ -3,27 +3,27 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-// Represents a race with a name and a list of drivers in the order that they finished
+// Represents a race with a name, date, list of drivers in the order that they finished, and driver with the fastest lap
 public class Race {
     private String name;            // the name of the race
+    private String date;            // the date of the race as DD/MM/YY
     private List<Driver> places;    // the list of drivers in order that they finished
+    private Driver fastestLap;      // the driver with the fastest lap of the race
 
     // REQUIRES: name of race is of non-zero length
-    // EFFECTS: creates a race of given name
-    public Race(String name) {
+    // EFFECTS: creates a race with given name, date, list of drivers in order that they finished,
+    // and driver with the fastest lap of the race
+    public Race(String name, String date, List<Driver> places, Driver fastestLap) {
         this.name = name;
-        this.places = new ArrayList<>();
-    }
-
-    // REQUIRES: list of drivers must be exactly 20 drivers long
-    // MODIFIES: this
-    // EFFECTS: sets the placements of drivers for a given race
-    public void setPlaces(List<Driver> places) {
+        this.date = date;
         this.places = places;
+        this.fastestLap = fastestLap;
     }
 
     // EFFECTS: adds points and wins to drivers according to their race placements
     public void updateDriverPoints() {
+        updateFastestLap();
+
         Driver first = places.get(0);
         first.addPoints(25);
         first.addWin();
@@ -46,8 +46,8 @@ public class Race {
         Driver seventh = places.get(6);
         seventh.addPoints(6);
 
-        Driver eigth = places.get(7);
-        eigth.addPoints(4);
+        Driver eighth = places.get(7);
+        eighth.addPoints(4);
 
         Driver ninth = places.get(8);
         ninth.addPoints(2);
@@ -56,11 +56,26 @@ public class Race {
         tenth.addPoints(1);
     }
 
+    public void updateFastestLap() {
+        fastestLap.addFastestLap();
+        if (places.contains(fastestLap)) {
+            fastestLap.addPoints(1);
+        }
+    }
+
     public String getName() {
         return name;
     }
 
+    public String getDate() {
+        return date;
+    }
+
     public List<Driver> getPlaces() {
         return places;
+    }
+
+    public Driver getFastestLap() {
+        return fastestLap;
     }
 }
