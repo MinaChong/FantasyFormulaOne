@@ -70,7 +70,7 @@ public class RaceTest {
         drivers.add(lhamilton);
         drivers.add(pgasly);
 
-        testRace = new Race("Singapore Grand Prix", "02/10/22", drivers, grussell);
+        testRace = new Race("Singapore Grand Prix", "02/10/22", drivers, sperez);
     }
 
     @Test
@@ -78,14 +78,14 @@ public class RaceTest {
         assertEquals("Singapore Grand Prix", testRace.getName());
         assertEquals("02/10/22", testRace.getDate());
         assertEquals(10, testRace.getPlaces().size());
-        assertEquals(grussell, testRace.getFastestLap());
+        assertEquals(sperez, testRace.getFastestLap());
     }
 
     @Test
     public void updateDriverPointsTest() {
         testRace.updateDriverPoints();
 
-        assertEquals(25, sperez.getPoints());
+        assertEquals(26, sperez.getPoints());
         assertEquals(18, cleclerc.getPoints());
         assertEquals(15, csainz.getPoints());
         assertEquals(12, lnorris.getPoints());
@@ -127,7 +127,7 @@ public class RaceTest {
         assertEquals(0, nlatifi.getWins());
         assertEquals(0, gzhou.getWins());
 
-        assertEquals(0, sperez.getFastestLaps());
+        assertEquals(1, sperez.getFastestLaps());
         assertEquals(0, cleclerc.getFastestLaps());
         assertEquals(0, csainz.getFastestLaps());
         assertEquals(0, lnorris.getFastestLaps());
@@ -140,7 +140,7 @@ public class RaceTest {
         assertEquals(0, vbottas.getFastestLaps());
         assertEquals(0, kmagnussen.getFastestLaps());
         assertEquals(0, mschumacher.getFastestLaps());
-        assertEquals(1, grussell.getFastestLaps());
+        assertEquals(0, grussell.getFastestLaps());
         assertEquals(0, ytsunoda.getFastestLaps());
         assertEquals(0, eocon.getFastestLaps());
         assertEquals(0, aalbon.getFastestLaps());
@@ -153,7 +153,7 @@ public class RaceTest {
     public void updateFastestLapTest() {
         testRace.updateFastestLap();
 
-        assertEquals(0, sperez.getPoints());
+        assertEquals(1, sperez.getPoints());
         assertEquals(0, cleclerc.getPoints());
         assertEquals(0, csainz.getPoints());
         assertEquals(0, lnorris.getPoints());
@@ -174,7 +174,7 @@ public class RaceTest {
         assertEquals(0, nlatifi.getPoints());
         assertEquals(0, gzhou.getPoints());
 
-        assertEquals(0, sperez.getFastestLaps());
+        assertEquals(1, sperez.getFastestLaps());
         assertEquals(0, cleclerc.getFastestLaps());
         assertEquals(0, csainz.getFastestLaps());
         assertEquals(0, lnorris.getFastestLaps());
@@ -187,7 +187,7 @@ public class RaceTest {
         assertEquals(0, vbottas.getFastestLaps());
         assertEquals(0, kmagnussen.getFastestLaps());
         assertEquals(0, mschumacher.getFastestLaps());
-        assertEquals(1, grussell.getFastestLaps());
+        assertEquals(0, grussell.getFastestLaps());
         assertEquals(0, ytsunoda.getFastestLaps());
         assertEquals(0, eocon.getFastestLaps());
         assertEquals(0, aalbon.getFastestLaps());
