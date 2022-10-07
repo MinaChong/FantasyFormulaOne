@@ -67,11 +67,11 @@ public class FantasyApp {
     // MODIFIES: this
     // EFFECTS: initializes league
     private void initialize() {
-        league = new League("My League");
+        league = new League("My Fantasy F1 League");
 
-        initializeRaces();
         initializeDrivers();
         initializeGrid();
+        initializeRaces();
 
         Team teamKimi = new Team("Kimi's Team");
         teamKimi.addDriver(mverstappen);
@@ -554,12 +554,10 @@ public class FantasyApp {
 
     // EFFECTS: displays a scoreboard showing each team and their total points and wins
     private void displayScoreboard() {
-        List<Team> currentTeams = league.getTeams();
-
         System.out.println("SCOREBOARD:");
 
-        if (currentTeams.size() > 0) {
-            for (Team team : currentTeams) {
+        if (league.getTeams().size() > 0) {
+            for (Team team : league.getTeams()) {
                 System.out.println("\t" + team.getName() + " has " + team.getPoints() + " point(s), "
                         + team.getWins() + " win(s).");
             }
@@ -571,46 +569,45 @@ public class FantasyApp {
     // EFFECTS: allows user to select a race from the previous races, or add a new race
     private void selectRace() {
         displayRaceMenu();
-        processRaceMenuCommand();
+        processRaceMenuCommand(); // TODO
     }
 
     // EFFECTS: displays race menu
     private void displayRaceMenu() {
-        System.out.println("F1 RACES:");
-        int i = 1;
-        for (Race race : allRaces) {
-            System.out.println("\t" + i + ". " + race.getName());
-            i = i + 1;
-        }
+        System.out.println("\nF1 RACES:");
+        if (allRaces.size() > 0) {
+            int i = 1;
 
+            for (Race race : allRaces) {
+                System.out.println("\t" + i + " -> " + race.getName());
+                i = i + 1;
+            }
+        } else {
+            System.out.println("\tNo races have been recorded in " + league.getName() + " yet!");
+        }
         System.out.println("\tA -> Add New Race");
     }
 
     // EFFECTS: processes user command for race menu
     private void processRaceMenuCommand() {
-        if (allRaces.size() > 0) {
-            String h = input.next();
-            if (h.equals("A")) {
-                recordRace();
-            } else {
-                int k = Integer.parseInt(h);
-                k = k - 1;
-
-                if (k <= allRaces.size()) {
-                    Race race = allRaces.get(k);
-                    showRace(race);
-                } else {
-                    System.out.println("Input not recognized. Please try again.");
-                    selectRace();
-                }
-            }
+        System.out.print("Select option: ");
+        String i = input.next();
+        if (i.equals("A")) {
+            addRace();
         } else {
-            System.out.println("No races have been recorded in " + league.getName() + " yet!");
+            int n = Integer.parseInt(i);
+            if (n <= allRaces.size()) {
+                n = n - 1;
+                showRaceReport(allRaces.get(n));
+            } else {
+                System.out.println("\tInput not recognized. Please try again.");
+                selectRace();
+            }
         }
     }
 
     // EFFECTS: displays results of given race
-    private void showRace(Race race) {
+    private void showRaceReport(Race race) {
         System.out.println(race.getName().toUpperCase() + " RESULTS:");
         int j = 1;
         for (Driver driver : race.getPlaces()) {
@@ -621,7 +618,7 @@ public class FantasyApp {
 
     // MODIFIES: this
     // EFFECTS: allows user to input results of a race to update all teams' points, wins, and fastest laps
-    private void recordRace() {
+    private void addRace() {
         System.out.print("Enter name of race: ");
         String name = input.next();
         System.out.print("Enter date of race as DD/MM/YY: ");
@@ -672,7 +669,7 @@ public class FantasyApp {
     // EFFECTS: displays league menu to user
     private void displayLeagueMenu() {
         List<Team> currentTeams = league.getTeams();
-        System.out.println("\n" + league.getName().toUpperCase() + " TEAMS: ");
+        System.out.println("\n" + league.getName().toUpperCase() + " TEAMS:");
         if (currentTeams.size() > 0) {
             int i = 1;
 
@@ -688,23 +685,18 @@ public class FantasyApp {
 
     // EFFECTS: processes user command for league menu
     private void processLeagueMenuCommand() {
-        List<Team> currentTeams = league.getTeams();
-
-        if (currentTeams.size() == 0) {
-            System.out.println();
+        System.out.print("Select option: ");
+        String i = input.next();
+        if (i.equals("A")) {
+            addTeam();
         } else {
-            String i = input.next();
-            if (i.equals("A")) {
-                addTeam();
+            int n = Integer.parseInt(i);
+            if (n <= league.getTeams().size()) {
+                n = n - 1;
+                showTeamReport(league.getTeams().get(n));
             } else {
-                int n = Integer.parseInt(i);
-                if (n <= currentTeams.size()) {
-                    n = n - 1;
-                    showTeamReport(currentTeams.get(n));
-                } else {
-                    System.out.println("Input not recognized. Please try again.");
-                    selectTeam();
-                }
+                System.out.println("\tInput not recognized. Please try again.");
+                selectTeam();
             }
         }
     }
@@ -750,7 +742,8 @@ public class FantasyApp {
         } else if (command.equals("Q")) {
             System.out.println();
         } else {
-            System.out.println("Input not recognized. Please try again.");
+            System.out.println("\tInput not recognized. Please try again.");
+            displayTeamMenu();
             processTeamMenuCommand(team);
         }
     }
@@ -758,14 +751,14 @@ public class FantasyApp {
     // MODIFIES: this
     // EFFECTS: allows user to add a driver to given team
     private void addDriver(Team team) {
+        System.out.println("Available Drivers:");
         if (team.getDrivers().size() < 3) {
             List<Driver> availableDrivers = new ArrayList<>();
             int i = 1;
-            System.out.println("Available Drivers:");
 
             for (Driver driver : allDrivers) {
                 if (!team.getDrivers().contains(driver)) {
-                    System.out.println("\t" + i + ". " + driver.getName());
+                    System.out.println("\t" + i + " -> " + driver.getName());
                     availableDrivers.add(driver);
                     i = i + 1;
                 }
@@ -791,16 +784,16 @@ public class FantasyApp {
             System.out.println("Current Drivers:");
 
             for (Driver driver : team.getDrivers()) {
-                System.out.println("\t" + i + ". " + driver.getName());
+                System.out.println("\t" + i + " -> " + driver.getName());
                 i = i + 1;
                 teamDrivers.add(driver);
             }
 
             System.out.print("Select a driver to remove: ");
-            int num = input.nextInt();
-            num = num - 1;
-            team.removeDriver(teamDrivers.get(num));
-            System.out.println(teamDrivers.get(num).getName() + " has been removed from " + team.getName() + ".");
+            int n = input.nextInt();
+            n = n - 1;
+            team.removeDriver(teamDrivers.get(n));
+            System.out.println(teamDrivers.get(n).getName() + " has been removed from " + team.getName() + ".");
         } else {
             System.out.println("There are no drivers to remove.");
         }
@@ -830,7 +823,7 @@ public class FantasyApp {
         System.out.println("CURRENT F1 DRIVERS:");
         int i = 1;
         for (Driver driver : allDrivers) {
-            System.out.println("\t" + i + ". " + driver.getName());
+            System.out.println("\t" + i + " -> " + driver.getName());
             i = i + 1;
         }
 
@@ -844,8 +837,8 @@ public class FantasyApp {
 
     // EFFECTS: displays given driver's total number of points, wins, and fastest laps
     private void showDriverReport(Driver driver) {
-        System.out.println(driver.getName() + " (" + driver.getNum() + ") has " + driver.getPoints() + " point(s), "
-                + driver.getWins() + " win(s), and " + driver.getFastestLaps() + " fastest lap(s)!");
+        System.out.println(driver.getName() + " (" + driver.getNum() + ") has " + driver.getPoints()
+                + " point(s), " + driver.getWins() + " win(s), and " + driver.getFastestLaps() + " fastest lap(s)!");
 
         displayDriverMenu();
         processDriverMenuCommand(driver);
@@ -878,7 +871,7 @@ public class FantasyApp {
         } else if (command.equals("Q")) {
             System.out.println();
         } else {
-            System.out.println("Input not recognized. Please try again.");
+            System.out.println("\tInput not recognized. Please try again.");
             processDriverMenuCommand(driver);
         }
     }
@@ -887,9 +880,9 @@ public class FantasyApp {
     // EFFECTS: allows user to add points to given driver
     private void addPoints(Driver driver) {
         System.out.print("Input number of points to add to " + driver.getName() + ": ");
-        int points = input.nextInt();
-        driver.addPoints(points);
-        System.out.println(points + " point(s) have been added to " + driver.getName() + ".");
+        int n = input.nextInt();
+        driver.addPoints(n);
+        System.out.println(n + " point(s) have been added to " + driver.getName() + ".");
         showDriverReport(driver);
     }
 
@@ -897,9 +890,9 @@ public class FantasyApp {
     // EFFECTS: allows user to remove points from given driver
     private void removePoints(Driver driver) {
         System.out.print("Input number of points to remove from " + driver.getName() + ": ");
-        int points = input.nextInt();
-        driver.addPoints(points);
-        System.out.println(points + " point(s) have been removed from " + driver.getName() + ".");
+        int n = input.nextInt();
+        driver.removePoints(n);
+        System.out.println(n + " point(s) have been removed from " + driver.getName() + ".");
         showDriverReport(driver);
     }
 
@@ -923,23 +916,22 @@ public class FantasyApp {
     // EFFECTS: allows user to change driver number of given driver
     private void changeDriverNumber(Driver driver) {
         System.out.print("Input new driver number for " + driver.getName() + ": ");
-        int num = input.nextInt();
-        driver.changeDriverNum(num);
-        System.out.println(driver.getName() + "'s driver number has been changed to " + num + ".");
+        int n = input.nextInt();
+        driver.changeDriverNum(n);
+        System.out.println(driver.getName() + "'s driver number has been changed to " + n + ".");
         showDriverReport(driver);
     }
 
     // EFFECTS: allows user to declare winner of fantasy league
     private void declareWinner() {
-        List<Team> teams = league.getTeams();
-        if (teams.size() > 0) {
-            Team winner = decideWinner(teams);
+        if (league.getTeams().size() > 0) {
+            Team winner = decideWinner(league.getTeams());
             System.out.println(winner.getName() + " has won the " + league.getName() + " Fantasy F1 Championship!");
             displayScoreboard();
         } else {
             System.out.println("No teams are currently in " + league.getName() + ".");
         }
-        // TODO displayDriverScoreboard();
+        displayDriverScoreboard(); // TODO here to check for myself
     }
 
     // EFFECTS: returns winner based on team with most points, then most wins, then greatest number of fastest laps
@@ -968,10 +960,10 @@ public class FantasyApp {
     }
 
     // TODO DELETE JUST METHOD TO CHECK FOR MY OWN USE
-    /*private void displayDriverScoreboard() {
+    private void displayDriverScoreboard() {
         for (Driver driver : allDrivers) {
             System.out.println(driver.getName() + " (" + driver.getNum() + ") has " + driver.getPoints() + " point(s), "
                     + driver.getWins() + " win(s), and " + driver.getFastestLaps() + " fastest lap(s)!");
         }
-    }*/
+    }
 }

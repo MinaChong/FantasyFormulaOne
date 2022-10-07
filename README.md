@@ -29,14 +29,19 @@ a multi-faceted process and provides many opportunities for me to demonstrate my
 
 - As a user, I want to be able to view a scoreboard summarizing all the teams in my league and their respective points
 and wins
-- As a user, I want to be able to create a new Fantasy team and add it to my league
+- As a user, I want to be able to select a previous race and view its results
+- As a user, I want to be able to add a race with the top ten drivers' final placements and have every team's
+  points, wins, and fastest laps be updated accordingly
 - As a user, I want to be able to select a team and view a list of drivers on that team and its total points and wins
 - As a user, I want to be able to select a team and add a new driver to the team
 - As a user, I want to be able to select a team and remove a driver from the team
 - As a user, I want to be able to select a team and remove it from my league
-- As a user, I want to be able to input a race result by entering in drivers' final placements and have every team's 
-points and wins be updated accordingly
-- As a user, I want to be able to select a driver and view their name, number, total points, and total wins
-- As a user, I want to be able to select a previous race and view its results
+- As a user, I want to be able to create a team and add it to my league
+- As a user, I want to be able to select a driver and view their name, number, points, wins, and fastest laps
+- As a user, I want to be able to select a driver and add to their points total
+- As a user, I want to be able to select a driver and subtract from their points total
+- As a user, I want to be able to select a driver and add a win
+- As a user, I want to be able to select a driver and add a fastest lap
+- As a user, I want to be able to select a driver and change their driver number
 - As a user, I want to be able to declare the league winner with the most points, or the most wins if there is a tie,
 or the greater number of fastest laps if there is another tie
