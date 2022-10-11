@@ -44,6 +44,7 @@ public class FantasyApp {
 
     // MODIFIES: this
     // EFFECTS: processes user input for Fantasy F1 application
+    // NOTE: lends structure from TellerApp
     private void runFantasy() {
         boolean keepRunning = true;
         String command;
@@ -80,8 +81,8 @@ public class FantasyApp {
 
         Team teamMichael = new Team("Michael's Team");
         teamMichael.addDriver(cleclerc);
+        teamMichael.addDriver(lhamilton);
         teamMichael.addDriver(lnorris);
-        teamMichael.addDriver(ytsunoda);
 
         league.addTeam(teamKimi);
         league.addTeam(teamMichael);
@@ -558,7 +559,7 @@ public class FantasyApp {
 
         if (league.getTeams().size() > 0) {
             for (Team team : league.getTeams()) {
-                System.out.println("\t" + team.getName() + " has " + team.getPoints() + " point(s), "
+                System.out.println("\t" + team.getName() + " has " + team.getPoints() + " point(s) and "
                         + team.getWins() + " win(s).");
             }
         } else {
@@ -569,7 +570,7 @@ public class FantasyApp {
     // EFFECTS: allows user to select a race from the previous races, or add a new race
     private void selectRace() {
         displayRaceMenu();
-        processRaceMenuCommand(); // TODO
+        processRaceMenuCommand();
     }
 
     // EFFECTS: displays race menu
@@ -617,19 +618,36 @@ public class FantasyApp {
     }
 
     // MODIFIES: this
-    // EFFECTS: allows user to input results of a race to update all teams' points, wins, and fastest laps
+    // EFFECTS: allows user to choose to add a sprint race or grand prix
     private void addRace() {
-        System.out.print("Enter name of race: ");
+        System.out.println("\tS -> Add New Sprint Race");
+        System.out.println("\tA -> Add New Grand Prix");
+        System.out.print("Select type: ");
+        String select = input.next();
+        if (select.equals("S")) {
+            addSprintRace();
+        } else if (select.equals("A")) {
+            addGrandPrix();
+        } else {
+            System.out.println("\tInput not recognized. Please try again.");
+            addRace();
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: allows user to input results of a race to update all teams' points, wins, and fastest laps
+    private void addGrandPrix() {
+        System.out.print("Enter name of grand prix: ");
         String name = input.next();
-        System.out.print("Enter date of race as DD/MM/YY: ");
+        System.out.print("Enter date of grand prix as DD/MM/YY: ");
         String date = input.next();
-        System.out.println("Set race results:");
+        System.out.println("Set grand prix results:");
         int i = 1;
         for (Driver driver : allDrivers) {
-            System.out.println("\t" + i + ". " + driver.getName());
+            System.out.println("\t" + i + " -> " + driver.getName());
             i = i + 1;
         }
-        List<Driver> places = setPlaces();
+        List<Driver> places = setPlaces(10);
         Driver fastestLap = setFastestLap();
 
         Race newRace = new Race(name, date, places, fastestLap);
@@ -639,11 +657,32 @@ public class FantasyApp {
         displayScoreboard();
     }
 
+    // MODIFIES: this
+    // EFFECTS: allows user to input results of a race to update all teams' points, wins, and fastest laps
+    private void addSprintRace() {
+        System.out.print("Enter name of sprint race: ");
+        String name = input.next();
+        System.out.print("Enter date of sprint race as DD/MM/YY: ");
+        String date = input.next();
+        System.out.println("Set sprint race results:");
+        int i = 1;
+        for (Driver driver : allDrivers) {
+            System.out.println("\t" + i + " -> " + driver.getName());
+            i = i + 1;
+        }
+        List<Driver> places = setPlaces(8);
+
+        Sprint newSprint = new Sprint(name, date, places);
+        newSprint.updateDriverPoints();
+        System.out.println(newSprint.getName() + " results have been recorded!");
+        displayScoreboard();
+    }
+
     // EFFECTS: returns list of drivers in order of their finishing position that user selects
-    private List<Driver> setPlaces() {
+    private List<Driver> setPlaces(int num) {
         List<Driver> places = new ArrayList<>();
-        for (int j = 1; j <= 10; j++) {
-            System.out.print("Select driver in " + j + " place: ");
+        for (int i = 1; i <= num; i++) {
+            System.out.print("Select driver in " + i + " place: ");
             int n = input.nextInt();
             n = n - 1;
             Driver driver = allDrivers.get(n);
@@ -931,7 +970,6 @@ public class FantasyApp {
         } else {
             System.out.println("No teams are currently in " + league.getName() + ".");
         }
-        displayDriverScoreboard(); // TODO here to check for myself
     }
 
     // EFFECTS: returns winner based on team with most points, then most wins, then greatest number of fastest laps
@@ -957,13 +995,5 @@ public class FantasyApp {
             }
         }
         return winner;
-    }
-
-    // TODO DELETE JUST METHOD TO CHECK FOR MY OWN USE
-    private void displayDriverScoreboard() {
-        for (Driver driver : allDrivers) {
-            System.out.println(driver.getName() + " (" + driver.getNum() + ") has " + driver.getPoints() + " point(s), "
-                    + driver.getWins() + " win(s), and " + driver.getFastestLaps() + " fastest lap(s)!");
-        }
     }
 }
