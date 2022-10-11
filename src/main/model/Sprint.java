@@ -3,7 +3,7 @@ package model;
 import java.util.List;
 
 // Represents a sprint race with a name and a list of drivers in the order that they finished
-public class Sprint {
+public class Sprint implements Race {
     private String name;            // the name of the sprint race
     private String date;            // the date of the sprint race as DD/MM/YY
     private List<Driver> places;    // the list of drivers in order that they finished
@@ -17,6 +17,7 @@ public class Sprint {
     }
 
     // EFFECTS: adds points and wins to drivers according to their race placements
+    @Override
     public void updateDriverPoints() {
         Driver first = places.get(0);
         first.addPoints(8);
@@ -43,14 +44,17 @@ public class Sprint {
         eigth.addPoints(1);
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public String getDate() {
         return date;
     }
 
+    @Override
     public List<Driver> getPlaces() {
         return places;
     }

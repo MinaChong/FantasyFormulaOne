@@ -8,9 +8,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class RaceTest {
-    private Race testRace;
-    private Race anotherTestRace;
+public class GrandPrixTest {
+    private GrandPrix testGrandPrix;
+    private GrandPrix anotherTestGrandPrix;
 
     private Driver aalbon;
     private Driver cleclerc;
@@ -71,21 +71,21 @@ public class RaceTest {
         drivers.add(lhamilton);
         drivers.add(pgasly);
 
-        testRace = new Race("Singapore Grand Prix", "02/10/22", drivers, sperez);
-        anotherTestRace = new Race("another race", "00/00/00", drivers, grussell);
+        testGrandPrix = new GrandPrix("Singapore Grand Prix", "02/10/22", drivers, sperez);
+        anotherTestGrandPrix = new GrandPrix("another race", "00/00/00", drivers, grussell);
     }
 
     @Test
     public void raceTest() {
-        assertEquals("Singapore Grand Prix", testRace.getName());
-        assertEquals("02/10/22", testRace.getDate());
-        assertEquals(10, testRace.getPlaces().size());
-        assertEquals(sperez, testRace.getFastestLap());
+        assertEquals("Singapore Grand Prix", testGrandPrix.getName());
+        assertEquals("02/10/22", testGrandPrix.getDate());
+        assertEquals(10, testGrandPrix.getPlaces().size());
+        assertEquals(sperez, testGrandPrix.getFastestLap());
     }
 
     @Test
     public void updateDriverPointsTest() {
-        testRace.updateDriverPoints();
+        testGrandPrix.updateDriverPoints();
 
         assertEquals(26, sperez.getPoints());
         assertEquals(18, cleclerc.getPoints());
@@ -153,7 +153,7 @@ public class RaceTest {
 
     @Test
     public void updateFastestLapInTopTenTest() {
-        testRace.updateFastestLap();
+        testGrandPrix.updateFastestLap();
 
         assertEquals(1, sperez.getPoints());
         assertEquals(0, cleclerc.getPoints());
@@ -200,7 +200,7 @@ public class RaceTest {
 
     @Test
     public void updateFastestLapNotInTopTenTest() {
-        anotherTestRace.updateFastestLap();
+        anotherTestGrandPrix.updateFastestLap();
 
         assertEquals(0, sperez.getPoints());
         assertEquals(0, cleclerc.getPoints());

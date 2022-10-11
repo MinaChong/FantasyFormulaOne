@@ -183,7 +183,7 @@ public class FantasyApp {
         drivers.add(ytsunoda);
         drivers.add(falonso);
         drivers.add(gzhou);
-        Race bahrain = new Race("Bahrain Grand Prix", "20/03/22", drivers, cleclerc);
+        GrandPrix bahrain = new GrandPrix("Bahrain Grand Prix", "20/03/22", drivers, cleclerc);
         bahrain.updateDriverPoints();
         allRaces.add(bahrain);
     }
@@ -202,7 +202,7 @@ public class FantasyApp {
         drivers.add(pgasly);
         drivers.add(kmagnussen);
         drivers.add(lhamilton);
-        Race saudiArabia = new Race("Saudi Arabian Grand Prix", "27/03/22", drivers, cleclerc);
+        GrandPrix saudiArabia = new GrandPrix("Saudi Arabian Grand Prix", "27/03/22", drivers, cleclerc);
         saudiArabia.updateDriverPoints();
         allRaces.add(saudiArabia);
     }
@@ -221,7 +221,7 @@ public class FantasyApp {
         drivers.add(vbottas);
         drivers.add(pgasly);
         drivers.add(aalbon);
-        Race australia = new Race("Australian Grand Prix", "10/04/22", drivers, cleclerc);
+        GrandPrix australia = new GrandPrix("Australian Grand Prix", "10/04/22", drivers, cleclerc);
         australia.updateDriverPoints();
         allRaces.add(australia);
     }
@@ -240,6 +240,7 @@ public class FantasyApp {
         drivers.add(kmagnussen);
         Sprint emiliaRomagnaSprint = new Sprint("Emilia Romagna Sprint Race", "23/04/22", drivers);
         emiliaRomagnaSprint.updateDriverPoints();
+        allRaces.add(emiliaRomagnaSprint);
     }
 
     // MODIFIES: this
@@ -256,7 +257,7 @@ public class FantasyApp {
         drivers.add(svettel);
         drivers.add(kmagnussen);
         drivers.add(lstroll);
-        Race emiliaRomagna = new Race("Emilia Romagna Grand Prix", "24/04/22", drivers, mverstappen);
+        GrandPrix emiliaRomagna = new GrandPrix("Emilia Romagna Grand Prix", "24/04/22", drivers, mverstappen);
         emiliaRomagna.updateDriverPoints();
         allRaces.add(emiliaRomagna);
     }
@@ -275,7 +276,7 @@ public class FantasyApp {
         drivers.add(eocon);
         drivers.add(aalbon);
         drivers.add(lstroll);
-        Race miami = new Race("Miami Grand Prix", "08/05/22", drivers, mverstappen);
+        GrandPrix miami = new GrandPrix("Miami Grand Prix", "08/05/22", drivers, mverstappen);
         miami.updateDriverPoints();
         allRaces.add(miami);
     }
@@ -294,7 +295,7 @@ public class FantasyApp {
         drivers.add(lnorris);
         drivers.add(falonso);
         drivers.add(ytsunoda);
-        Race spain = new Race("Spanish Grand Prix", "22/05/22", drivers, sperez);
+        GrandPrix spain = new GrandPrix("Spanish Grand Prix", "22/05/22", drivers, sperez);
         spain.updateDriverPoints();
         allRaces.add(spain);
     }
@@ -313,7 +314,7 @@ public class FantasyApp {
         drivers.add(lhamilton);
         drivers.add(vbottas);
         drivers.add(svettel);
-        Race monaco = new Race("Monaco Grand Prix", "29/05/22", drivers, lnorris);
+        GrandPrix monaco = new GrandPrix("Monaco Grand Prix", "29/05/22", drivers, lnorris);
         monaco.updateDriverPoints();
         allRaces.add(monaco);
     }
@@ -332,7 +333,7 @@ public class FantasyApp {
         drivers.add(dricciardo);
         drivers.add(lnorris);
         drivers.add(eocon);
-        Race azerbaijan = new Race("Azerbaijan Grand Prix", "12/06/22", drivers, sperez);
+        GrandPrix azerbaijan = new GrandPrix("Azerbaijan Grand Prix", "12/06/22", drivers, sperez);
         azerbaijan.updateDriverPoints();
         allRaces.add(azerbaijan);
     }
@@ -351,7 +352,7 @@ public class FantasyApp {
         drivers.add(gzhou);
         drivers.add(falonso);
         drivers.add(lstroll);
-        Race canada = new Race("Canadian Grand Prix", "19/06/22", drivers, csainz);
+        GrandPrix canada = new GrandPrix("Canadian Grand Prix", "19/06/22", drivers, csainz);
         canada.updateDriverPoints();
         allRaces.add(canada);
     }
@@ -370,7 +371,7 @@ public class FantasyApp {
         drivers.add(mschumacher);
         drivers.add(svettel);
         drivers.add(kmagnussen);
-        Race greatBritain = new Race("British Grand Prix", "03/07/22", drivers, lhamilton);
+        GrandPrix greatBritain = new GrandPrix("British Grand Prix", "03/07/22", drivers, lhamilton);
         greatBritain.updateDriverPoints();
         allRaces.add(greatBritain);
     }
@@ -389,6 +390,7 @@ public class FantasyApp {
         drivers.add(lhamilton);
         Sprint austriaSprint = new Sprint("Austrian Sprint Race", "10/06/22", drivers);
         austriaSprint.updateDriverPoints();
+        allRaces.add(austriaSprint);
     }
 
     // MODIFIES: this
@@ -405,7 +407,7 @@ public class FantasyApp {
         drivers.add(kmagnussen);
         drivers.add(dricciardo);
         drivers.add(falonso);
-        Race austria = new Race("Austrian Grand Prix", "10/07/22", drivers, mverstappen);
+        GrandPrix austria = new GrandPrix("Austrian Grand Prix", "10/07/22", drivers, mverstappen);
         austria.updateDriverPoints();
         allRaces.add(austria);
     }
@@ -424,7 +426,7 @@ public class FantasyApp {
         drivers.add(eocon);
         drivers.add(dricciardo);
         drivers.add(lstroll);
-        Race france = new Race("French Grand Prix", "24/07/22", drivers, csainz);
+        GrandPrix france = new GrandPrix("French Grand Prix", "24/07/22", drivers, csainz);
         france.updateDriverPoints();
         allRaces.add(france);
     }
@@ -443,7 +445,7 @@ public class FantasyApp {
         drivers.add(falonso);
         drivers.add(eocon);
         drivers.add(svettel);
-        Race hungary = new Race("Hungarian Grand Prix", "31/07/22", drivers, lhamilton);
+        GrandPrix hungary = new GrandPrix("Hungarian Grand Prix", "31/07/22", drivers, lhamilton);
         hungary.updateDriverPoints();
         allRaces.add(hungary);
     }
@@ -462,7 +464,7 @@ public class FantasyApp {
         drivers.add(svettel);
         drivers.add(pgasly);
         drivers.add(aalbon);
-        Race belgium = new Race("Belgian Grand Prix", "28/08/22", drivers, mverstappen);
+        GrandPrix belgium = new GrandPrix("Belgian Grand Prix", "28/08/22", drivers, mverstappen);
         belgium.updateDriverPoints();
         allRaces.add(belgium);
     }
@@ -481,7 +483,7 @@ public class FantasyApp {
         drivers.add(csainz);
         drivers.add(eocon);
         drivers.add(lstroll);
-        Race netherlands = new Race("Dutch Grand Prix", "04/09/22", drivers, mverstappen);
+        GrandPrix netherlands = new GrandPrix("Dutch Grand Prix", "04/09/22", drivers, mverstappen);
         netherlands.updateDriverPoints();
         allRaces.add(netherlands);
     }
@@ -500,7 +502,7 @@ public class FantasyApp {
         drivers.add(pgasly);
         drivers.add(ndevries);
         drivers.add(gzhou);
-        Race italy = new Race("Italian Grand Prix", "11/09/22", drivers, sperez);
+        GrandPrix italy = new GrandPrix("Italian Grand Prix", "11/09/22", drivers, sperez);
         italy.updateDriverPoints();
         allRaces.add(italy);
     }
@@ -519,7 +521,7 @@ public class FantasyApp {
         drivers.add(svettel);
         drivers.add(lhamilton);
         drivers.add(pgasly);
-        Race singapore = new Race("Singapore Grand Prix", "02/10/22", drivers, grussell);
+        GrandPrix singapore = new GrandPrix("Singapore Grand Prix", "02/10/22", drivers, grussell);
         singapore.updateDriverPoints();
         allRaces.add(singapore);
     }
@@ -626,12 +628,34 @@ public class FantasyApp {
         String select = input.next();
         if (select.equals("S")) {
             addSprintRace();
-        } else if (select.equals("A")) {
+        } else if (select.equals("G")) {
             addGrandPrix();
         } else {
             System.out.println("\tInput not recognized. Please try again.");
             addRace();
         }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: allows user to input results of a sprint race to update all teams' points
+    private void addSprintRace() {
+        System.out.print("Enter name of sprint race: ");
+        String name = input.next();
+        System.out.print("Enter date of sprint race as DD/MM/YY: ");
+        String date = input.next();
+        System.out.println("Set sprint race results:");
+        int i = 1;
+        for (Driver driver : allDrivers) {
+            System.out.println("\t" + i + " -> " + driver.getName());
+            i = i + 1;
+        }
+        List<Driver> places = setPlaces(8);
+
+        Sprint newSprint = new Sprint(name, date, places);
+        newSprint.updateDriverPoints();
+        allRaces.add(newSprint);
+        System.out.println(newSprint.getName() + " results have been recorded!");
+        displayScoreboard();
     }
 
     // MODIFIES: this
@@ -650,31 +674,10 @@ public class FantasyApp {
         List<Driver> places = setPlaces(10);
         Driver fastestLap = setFastestLap();
 
-        Race newRace = new Race(name, date, places, fastestLap);
-        newRace.updateDriverPoints();
-        allRaces.add(newRace);
-        System.out.println(newRace.getName() + " results have been recorded!");
-        displayScoreboard();
-    }
-
-    // MODIFIES: this
-    // EFFECTS: allows user to input results of a race to update all teams' points, wins, and fastest laps
-    private void addSprintRace() {
-        System.out.print("Enter name of sprint race: ");
-        String name = input.next();
-        System.out.print("Enter date of sprint race as DD/MM/YY: ");
-        String date = input.next();
-        System.out.println("Set sprint race results:");
-        int i = 1;
-        for (Driver driver : allDrivers) {
-            System.out.println("\t" + i + " -> " + driver.getName());
-            i = i + 1;
-        }
-        List<Driver> places = setPlaces(8);
-
-        Sprint newSprint = new Sprint(name, date, places);
-        newSprint.updateDriverPoints();
-        System.out.println(newSprint.getName() + " results have been recorded!");
+        GrandPrix newGrandPrix = new GrandPrix(name, date, places, fastestLap);
+        newGrandPrix.updateDriverPoints();
+        allRaces.add(newGrandPrix);
+        System.out.println(newGrandPrix.getName() + " results have been recorded!");
         displayScoreboard();
     }
 
@@ -876,8 +879,8 @@ public class FantasyApp {
 
     // EFFECTS: displays given driver's total number of points, wins, and fastest laps
     private void showDriverReport(Driver driver) {
-        System.out.println(driver.getName() + " (" + driver.getNum() + ") has " + driver.getPoints()
-                + " point(s), " + driver.getWins() + " win(s), and " + driver.getFastestLaps() + " fastest lap(s)!");
+        System.out.println(driver.getName() + " (" + driver.getNum() + ") has " + driver.getPoints() + " point(s), "
+                + driver.getWins() + " win(s), and " + driver.getFastestLaps() + " fastest lap(s)!");
 
         displayDriverMenu();
         processDriverMenuCommand(driver);
