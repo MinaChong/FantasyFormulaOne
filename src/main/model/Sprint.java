@@ -16,8 +16,8 @@ public class Sprint implements Race {
         this.places = places;
     }
 
-    // EFFECTS: adds points and wins to drivers according to their race placements
     @Override
+    // EFFECTS: adds points and wins to drivers according to their race placements
     public void updateDriverPoints() {
         Driver first = places.get(0);
         first.addPoints(8);

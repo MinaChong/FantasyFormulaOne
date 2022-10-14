@@ -19,6 +19,7 @@ public class GrandPrix implements Race {
         this.fastestLap = fastestLap;
     }
 
+    @Override
     // EFFECTS: adds points and wins to drivers according to their race placements
     public void updateDriverPoints() {
         updateFastestLap();

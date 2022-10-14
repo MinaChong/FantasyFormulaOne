@@ -167,6 +167,7 @@ public class FantasyApp {
         addNetherlands();
         addItaly();
         addSingapore();
+        addJapan();
     }
 
     // MODIFIES: this
@@ -524,6 +525,25 @@ public class FantasyApp {
         GrandPrix singapore = new GrandPrix("Singapore Grand Prix", "02/10/22", drivers, grussell);
         singapore.updateDriverPoints();
         allRaces.add(singapore);
+    }
+
+    // MODIFIES: this
+    // EFFECTS: add results of Japanese Grand Prix
+    private void addJapan() {
+        List<Driver> drivers = new ArrayList<>();
+        drivers.add(mverstappen);
+        drivers.add(sperez);
+        drivers.add(cleclerc);
+        drivers.add(eocon);
+        drivers.add(lhamilton);
+        drivers.add(svettel);
+        drivers.add(falonso);
+        drivers.add(grussell);
+        drivers.add(nlatifi);
+        drivers.add(lnorris);
+        GrandPrix japan = new GrandPrix("Japanese Grand Prix", "09/10/22", drivers, gzhou);
+        japan.updateDriverPoints();
+        allRaces.add(japan);
     }
 
     // EFFECTS: displays main menu to user
