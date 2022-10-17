@@ -73,5 +73,4 @@ public class LeagueTest {
         testLeague.removeTeam(anotherTestTeam);
         assertEquals(0, testLeague.getTeams().size());
     }
-
 }

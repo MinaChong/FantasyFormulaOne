@@ -15,7 +15,7 @@ public class Team {
     // EFFECTS: team is created with given name, no drivers, 0 points, 0 wins, and 0 fastest laps
     public Team(String name) {
         this.name = name;
-        this.drivers = new ArrayList<Driver>();
+        this.drivers = new ArrayList<>();
         this.points = 0;
         this.wins = 0;
         this.fastestLaps = 0;
@@ -55,6 +55,7 @@ public class Team {
     // EFFECTS: returns total number of wins that a team has
     public int getWins() {
         int total = 0;
+
         for (Driver driver : drivers) {
             total = total + driver.getWins();
         }
@@ -65,6 +66,7 @@ public class Team {
     // EFFECTS: returns total number of fastest laps that a team has
     public int getFastestLaps() {
         int total = 0;
+
         for (Driver driver : drivers) {
             total = total + driver.getFastestLaps();
         }

@@ -12,7 +12,7 @@ public class League {
     // EFFECTS: creates a league with given name, and no teams
     public League(String name) {
         this.name = name;
-        this.teams = new ArrayList<Team>();
+        this.teams = new ArrayList<>();
     }
 
     // MODIFIES: this

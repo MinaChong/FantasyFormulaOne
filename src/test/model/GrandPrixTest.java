@@ -58,7 +58,6 @@ public class GrandPrixTest {
         vbottas = new Driver("Valtteri Bottas", 77);
         ytsunoda = new Driver("Yuki Tsunoda", 22);
 
-
         drivers = new ArrayList<>();
         drivers.add(sperez);
         drivers.add(cleclerc);

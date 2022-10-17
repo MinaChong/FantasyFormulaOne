@@ -2,13 +2,14 @@ package model;
 
 import java.util.List;
 
-// Represents a sprint race with a name and a list of drivers in the order that they finished
+// Represents a sprint race with a name, date and list of drivers in the order that they finished
 public class Sprint implements Race {
     private String name;            // the name of the sprint race
     private String date;            // the date of the sprint race as DD/MM/YY
     private List<Driver> places;    // the list of drivers in order that they finished
 
-    // REQUIRES: name of sprint race is of non-zero length
+    // REQUIRES: name of sprint race is of non-zero length, date of race is in form DD/MM/YY where D, M, Y are positive
+    // integers, and places is a list of eight drivers
     // EFFECTS: creates a sprint race with given name, date, list of driver in order that they finished,
     public Sprint(String name, String date, List<Driver> places) {
         this.name = name;
@@ -40,8 +41,8 @@ public class Sprint implements Race {
         Driver seventh = places.get(6);
         seventh.addPoints(2);
 
-        Driver eigth = places.get(7);
-        eigth.addPoints(1);
+        Driver eighth = places.get(7);
+        eighth.addPoints(1);
     }
 
     @Override

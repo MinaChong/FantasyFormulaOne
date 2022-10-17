@@ -9,7 +9,8 @@ public class GrandPrix implements Race {
     private List<Driver> places;    // the list of drivers in order that they finished
     private Driver fastestLap;      // the driver with the fastest lap of the race
 
-    // REQUIRES: name of race is of non-zero length
+    // REQUIRES: name of grand prix is of non-zero length, date of race is in form DD/MM/YY where D, M, Y are positive
+    // integers, and places is a list of ten drivers
     // EFFECTS: creates a race with given name, date, list of drivers in order that they finished,
     // and driver with the fastest lap of the race
     public GrandPrix(String name, String date, List<Driver> places, Driver fastestLap) {
@@ -63,14 +64,17 @@ public class GrandPrix implements Race {
         }
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public String getDate() {
         return date;
     }
 
+    @Override
     public List<Driver> getPlaces() {
         return places;
     }

@@ -46,7 +46,7 @@ public class Driver {
 
     // REQUIRES: driver number must be two digits long and >= 0
     // MODIFIES: this
-    // EFFECTS: changes
+    // EFFECTS: changes the driver's number to the given number
     public void changeDriverNum(int num) {
         this.num = num;
     }
@@ -71,6 +71,3 @@ public class Driver {
         return fastestLaps;
     }
 }
-
-
-

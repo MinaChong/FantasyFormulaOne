@@ -96,6 +96,4 @@ public class DriverTest {
         testDriver.changeDriverNum(10);
         assertEquals(10, testDriver.getNum());
     }
-
-
 }

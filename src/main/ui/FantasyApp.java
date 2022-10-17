@@ -61,7 +61,6 @@ public class FantasyApp {
                 processMainMenuCommand(command);
             }
         }
-
         System.out.println("\nSee you later!");
     }
 
@@ -615,6 +614,7 @@ public class FantasyApp {
     private void processRaceMenuCommand() {
         System.out.print("Select option: ");
         String i = input.next();
+
         if (i.equals("A")) {
             addRace();
         } else {
@@ -633,6 +633,7 @@ public class FantasyApp {
     private void showRaceReport(Race race) {
         System.out.println(race.getName().toUpperCase() + " RESULTS:");
         int j = 1;
+
         for (Driver driver : race.getPlaces()) {
             System.out.println("\t" + j + ". " + driver.getName());
             j = j + 1;
@@ -646,6 +647,7 @@ public class FantasyApp {
         System.out.println("\tA -> Add New Grand Prix");
         System.out.print("Select type: ");
         String select = input.next();
+
         if (select.equals("S")) {
             addSprintRace();
         } else if (select.equals("G")) {
