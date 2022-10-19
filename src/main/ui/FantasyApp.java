@@ -644,7 +644,7 @@ public class FantasyApp {
     // EFFECTS: allows user to choose to add a sprint race or grand prix
     private void addRace() {
         System.out.println("\tS -> Add New Sprint Race");
-        System.out.println("\tA -> Add New Grand Prix");
+        System.out.println("\tG -> Add New Grand Prix");
         System.out.print("Select type: ");
         String select = input.next();
 

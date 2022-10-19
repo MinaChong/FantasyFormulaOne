@@ -45,3 +45,6 @@ and wins
 - As a user, I want to be able to select a driver and change their driver number
 - As a user, I want to be able to declare the league winner with the most points, or the most wins if there is a tie,
 or the greater number of fastest laps if there is another tie
+- As a user, I want to be able to save the current state of the Fantasy F1 League, including all races, teams, 
+and drivers
+- As a user, when I start the Fantasy F1 application, I want to be able to reload my Fantasy F1 League from file
