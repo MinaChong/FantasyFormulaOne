@@ -1,16 +1,23 @@
 package ui;
 
 import model.*;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 // Fantasy F1 Application
 public class FantasyApp {
+    private static final String JSON_STORE = "./data/workroom.json";
+    private Scanner input;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
+
     private League league;
-    private List<Driver> allDrivers;
-    private List<Race> allRaces;
 
     private Driver aalbon;
     private Driver cleclerc;
@@ -35,10 +42,9 @@ public class FantasyApp {
     private Driver vbottas;
     private Driver ytsunoda;
 
-    private Scanner input;
-
     // EFFECTS: runs the Fantasy F1 application
-    public FantasyApp() {
+    public FantasyApp() throws FileNotFoundException {
+        initialize();
         runFantasy();
     }
 
@@ -48,8 +54,6 @@ public class FantasyApp {
     private void runFantasy() {
         boolean keepRunning = true;
         String command;
-
-        initialize();
 
         while (keepRunning) {
             displayMainMenu();
@@ -67,24 +71,27 @@ public class FantasyApp {
     // MODIFIES: this
     // EFFECTS: initializes league
     private void initialize() {
+        jsonReader = new JsonReader(JSON_STORE);
+        jsonWriter = new JsonWriter(JSON_STORE);
+
         league = new League("My Fantasy F1 League");
 
         initializeDrivers();
         initializeGrid();
         initializeRaces();
 
-        Team teamKimi = new Team("Kimi's Team");
-        teamKimi.addDriver(mverstappen);
-        teamKimi.addDriver(lhamilton);
-        teamKimi.addDriver(lstroll);
-
-        Team teamMichael = new Team("Michael's Team");
-        teamMichael.addDriver(cleclerc);
-        teamMichael.addDriver(lhamilton);
-        teamMichael.addDriver(lnorris);
-
-        league.addTeam(teamKimi);
-        league.addTeam(teamMichael);
+//        Team teamKimi = new Team("Kimi's Team");
+//        teamKimi.addDriver(mverstappen);
+//        teamKimi.addDriver(lhamilton);
+//        teamKimi.addDriver(lstroll);
+//
+//        Team teamMichael = new Team("Michael's Team");
+//        teamMichael.addDriver(cleclerc);
+//        teamMichael.addDriver(lhamilton);
+//        teamMichael.addDriver(lnorris);
+//
+//        league.addTeam(teamKimi);
+//        league.addTeam(teamMichael);
 
         input = new Scanner(System.in);
         input.useDelimiter("\n");
@@ -120,430 +127,442 @@ public class FantasyApp {
     // MODIFIES: this
     // EFFECTS: initializes current grid of 20 drivers
     private void initializeGrid() {
-        allDrivers = new ArrayList<>();
-        allDrivers.add(aalbon);
-        allDrivers.add(cleclerc);
-        allDrivers.add(csainz);
-        allDrivers.add(dricciardo);
-        allDrivers.add(eocon);
-        allDrivers.add(falonso);
-        allDrivers.add(grussell);
-        allDrivers.add(gzhou);
-        allDrivers.add(kmagnussen);
-        allDrivers.add(lhamilton);
-        allDrivers.add(lnorris);
-        allDrivers.add(lstroll);
-        allDrivers.add(mschumacher);
-        allDrivers.add(mverstappen);
-        allDrivers.add(nlatifi);
-        allDrivers.add(pgasly);
-        allDrivers.add(sperez);
-        allDrivers.add(svettel);
-        allDrivers.add(vbottas);
-        allDrivers.add(ytsunoda);
+        league.addDriver(aalbon);
+        league.addDriver(cleclerc);
+        league.addDriver(csainz);
+        league.addDriver(dricciardo);
+        league.addDriver(eocon);
+        league.addDriver(falonso);
+        league.addDriver(grussell);
+        league.addDriver(gzhou);
+        league.addDriver(kmagnussen);
+        league.addDriver(lhamilton);
+        league.addDriver(lnorris);
+        league.addDriver(lstroll);
+        league.addDriver(mschumacher);
+        league.addDriver(mverstappen);
+        league.addDriver(nlatifi);
+        league.addDriver(pgasly);
+        league.addDriver(sperez);
+        league.addDriver(svettel);
+        league.addDriver(vbottas);
+        league.addDriver(ytsunoda);
     }
 
     // MODIFIES: this
     // EFFECTS: initializes list of F1 races that have been held so far in 2022
     private void initializeRaces() {
-        allRaces = new ArrayList<>();
-        addBahrain();
-        addSaudiArabia();
-        addAustralia();
-        addEmiliaRomagnaSprint();
-        addEmiliaRomagna();
-        addMiami();
-        addSpain();
-        addMonaco();
-        addAzerbaijan();
-        addCanada();
-        addGreatBritain();
-        addAustriaSprint();
-        addAustria();
-        addFrance();
-        addHungary();
-        addBelgium();
-        addNetherlands();
-        addItaly();
-        addSingapore();
-        addJapan();
+//        addBahrain();
+//        addSaudiArabia();
+//        addAustralia();
+//        addEmiliaRomagnaSprint();
+//        addEmiliaRomagna();
+//        addMiami();
+//        addSpain();
+//        addMonaco();
+//        addAzerbaijan();
+//        addCanada();
+//        addGreatBritain();
+//        addAustriaSprint();
+//        addAustria();
+//        addFrance();
+//        addHungary();
+//        addBelgium();
+//        addNetherlands();
+//        addItaly();
+//        addSingapore();
+//        addJapan();
     }
 
-    // MODIFIES: this
-    // EFFECTS: add results of Bahrain Grand Prix
-    private void addBahrain() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(cleclerc);
-        drivers.add(csainz);
-        drivers.add(lhamilton);
-        drivers.add(grussell);
-        drivers.add(kmagnussen);
-        drivers.add(vbottas);
-        drivers.add(eocon);
-        drivers.add(ytsunoda);
-        drivers.add(falonso);
-        drivers.add(gzhou);
-        GrandPrix bahrain = new GrandPrix("Bahrain Grand Prix", "20/03/22", drivers, cleclerc);
-        bahrain.updateDriverPoints();
-        allRaces.add(bahrain);
-    }
+//    // MODIFIES: this
+//    // EFFECTS: add results of Bahrain Grand Prix
+//    private void addBahrain() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(cleclerc);
+//        drivers.add(csainz);
+//        drivers.add(lhamilton);
+//        drivers.add(grussell);
+//        drivers.add(kmagnussen);
+//        drivers.add(vbottas);
+//        drivers.add(eocon);
+//        drivers.add(ytsunoda);
+//        drivers.add(falonso);
+//        drivers.add(gzhou);
+//        Race bahrain = new GrandPrix("Bahrain Grand Prix", "20/03/22");
+//        bahrain.setPlaces(drivers);
+//        bahrain.setFastestLap(cleclerc);
+//        bahrain.updateDriverPoints();
+//        league.addRace(bahrain);
+//    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: add results of Saudi Arabian Grand Prix
+//    private void addSaudiArabia() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(mverstappen);
+//        drivers.add(cleclerc);
+//        drivers.add(csainz);
+//        drivers.add(sperez);
+//        drivers.add(grussell);
+//        drivers.add(eocon);
+//        drivers.add(lnorris);
+//        drivers.add(pgasly);
+//        drivers.add(kmagnussen);
+//        drivers.add(lhamilton);
+//        Race saudiArabia = new GrandPrix("Saudi Arabian Grand Prix", "27/03/22");
+//        saudiArabia.setPlaces(drivers);
+//        saudiArabia.setFastestLap(cleclerc);
+//        saudiArabia.updateDriverPoints();
+//        league.addRace(saudiArabia);
+//    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: add results of Australian Grand Prix
+//    private void addAustralia() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(cleclerc);
+//        drivers.add(sperez);
+//        drivers.add(grussell);
+//        drivers.add(lhamilton);
+//        drivers.add(lnorris);
+//        drivers.add(dricciardo);
+//        drivers.add(eocon);
+//        drivers.add(vbottas);
+//        drivers.add(pgasly);
+//        drivers.add(aalbon);
+//        Race australia = new GrandPrix("Australian Grand Prix", "10/04/22");
+//        australia.setPlaces(drivers);
+//        australia.setFastestLap(cleclerc);
+//        australia.updateDriverPoints();
+//        league.addRace(australia);
+//    }
 
-    // MODIFIES: this
-    // EFFECTS: add results of Saudi Arabian Grand Prix
-    private void addSaudiArabia() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(mverstappen);
-        drivers.add(cleclerc);
-        drivers.add(csainz);
-        drivers.add(sperez);
-        drivers.add(grussell);
-        drivers.add(eocon);
-        drivers.add(lnorris);
-        drivers.add(pgasly);
-        drivers.add(kmagnussen);
-        drivers.add(lhamilton);
-        GrandPrix saudiArabia = new GrandPrix("Saudi Arabian Grand Prix", "27/03/22", drivers, cleclerc);
-        saudiArabia.updateDriverPoints();
-        allRaces.add(saudiArabia);
-    }
+//    // MODIFIES: this
+//    // EFFECTS: add results of Emilia Romagna Sprint Race
+//    private void addEmiliaRomagnaSprint() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(mverstappen);
+//        drivers.add(cleclerc);
+//        drivers.add(sperez);
+//        drivers.add(csainz);
+//        drivers.add(lnorris);
+//        drivers.add(dricciardo);
+//        drivers.add(vbottas);
+//        drivers.add(kmagnussen);
+//        Race emiliaRomagnaSprint = new Sprint("Emilia Romagna Sprint Race", "23/04/22");
+//        emiliaRomagnaSprint.setPlaces(drivers);
+//        emiliaRomagnaSprint.setFastestLap(mverstappen);
+//        emiliaRomagnaSprint.updateDriverPoints();
+//        league.addRace(emiliaRomagnaSprint);
+//    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: add results of Emilia Romagna Grand Prix
+//    private void addEmiliaRomagna() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(mverstappen);
+//        drivers.add(sperez);
+//        drivers.add(lnorris);
+//        drivers.add(grussell);
+//        drivers.add(vbottas);
+//        drivers.add(cleclerc);
+//        drivers.add(ytsunoda);
+//        drivers.add(svettel);
+//        drivers.add(kmagnussen);
+//        drivers.add(lstroll);
+//        Race emiliaRomagna = new GrandPrix("Emilia Romagna Grand Prix", "24/04/22");
+//        emiliaRomagna.setPlaces(drivers);
+//        emiliaRomagna.setFastestLap(mverstappen);
+//        emiliaRomagna.updateDriverPoints();
+//        league.addRace(emiliaRomagna);
+//    }
 
-    // MODIFIES: this
-    // EFFECTS: add results of Australian Grand Prix
-    private void addAustralia() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(cleclerc);
-        drivers.add(sperez);
-        drivers.add(grussell);
-        drivers.add(lhamilton);
-        drivers.add(lnorris);
-        drivers.add(dricciardo);
-        drivers.add(eocon);
-        drivers.add(vbottas);
-        drivers.add(pgasly);
-        drivers.add(aalbon);
-        GrandPrix australia = new GrandPrix("Australian Grand Prix", "10/04/22", drivers, cleclerc);
-        australia.updateDriverPoints();
-        allRaces.add(australia);
-    }
+//    // MODIFIES: this
+//    // EFFECTS: add results of Miami Grand Prix
+//    private void addMiami() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(mverstappen);
+//        drivers.add(cleclerc);
+//        drivers.add(csainz);
+//        drivers.add(sperez);
+//        drivers.add(grussell);
+//        drivers.add(lhamilton);
+//        drivers.add(vbottas);
+//        drivers.add(eocon);
+//        drivers.add(aalbon);
+//        drivers.add(lstroll);
+//        Race miami = new GrandPrix("Miami Grand Prix", "08/05/22");
+//        miami.setPlaces(drivers);
+//        miami.setFastestLap(mverstappen);
+//        miami.updateDriverPoints();
+//        league.addRace(miami);
+//    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: add results of Spanish Grand Prix
+//    private void addSpain() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(mverstappen);
+//        drivers.add(sperez);
+//        drivers.add(grussell);
+//        drivers.add(csainz);
+//        drivers.add(lhamilton);
+//        drivers.add(vbottas);
+//        drivers.add(eocon);
+//        drivers.add(lnorris);
+//        drivers.add(falonso);
+//        drivers.add(ytsunoda);
+//        Race spain = new GrandPrix("Spanish Grand Prix", "22/05/22");
+//        spain.setPlaces(drivers);
+//        spain.setFastestLap(sperez);
+//        spain.updateDriverPoints();
+//        league.addRace(spain);
+//    }
 
-    // MODIFIES: this
-    // EFFECTS: add results of Emilia Romagna Sprint Race
-    private void addEmiliaRomagnaSprint() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(mverstappen);
-        drivers.add(cleclerc);
-        drivers.add(sperez);
-        drivers.add(csainz);
-        drivers.add(lnorris);
-        drivers.add(dricciardo);
-        drivers.add(vbottas);
-        drivers.add(kmagnussen);
-        Sprint emiliaRomagnaSprint = new Sprint("Emilia Romagna Sprint Race", "23/04/22", drivers);
-        emiliaRomagnaSprint.updateDriverPoints();
-        allRaces.add(emiliaRomagnaSprint);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add results of Emilia Romagna Grand Prix
-    private void addEmiliaRomagna() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(mverstappen);
-        drivers.add(sperez);
-        drivers.add(lnorris);
-        drivers.add(grussell);
-        drivers.add(vbottas);
-        drivers.add(cleclerc);
-        drivers.add(ytsunoda);
-        drivers.add(svettel);
-        drivers.add(kmagnussen);
-        drivers.add(lstroll);
-        GrandPrix emiliaRomagna = new GrandPrix("Emilia Romagna Grand Prix", "24/04/22", drivers, mverstappen);
-        emiliaRomagna.updateDriverPoints();
-        allRaces.add(emiliaRomagna);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add results of Miami Grand Prix
-    private void addMiami() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(mverstappen);
-        drivers.add(cleclerc);
-        drivers.add(csainz);
-        drivers.add(sperez);
-        drivers.add(grussell);
-        drivers.add(lhamilton);
-        drivers.add(vbottas);
-        drivers.add(eocon);
-        drivers.add(aalbon);
-        drivers.add(lstroll);
-        GrandPrix miami = new GrandPrix("Miami Grand Prix", "08/05/22", drivers, mverstappen);
-        miami.updateDriverPoints();
-        allRaces.add(miami);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add results of Spanish Grand Prix
-    private void addSpain() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(mverstappen);
-        drivers.add(sperez);
-        drivers.add(grussell);
-        drivers.add(csainz);
-        drivers.add(lhamilton);
-        drivers.add(vbottas);
-        drivers.add(eocon);
-        drivers.add(lnorris);
-        drivers.add(falonso);
-        drivers.add(ytsunoda);
-        GrandPrix spain = new GrandPrix("Spanish Grand Prix", "22/05/22", drivers, sperez);
-        spain.updateDriverPoints();
-        allRaces.add(spain);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add results of Monaco Grand Prix
-    private void addMonaco() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(sperez);
-        drivers.add(csainz);
-        drivers.add(mverstappen);
-        drivers.add(cleclerc);
-        drivers.add(grussell);
-        drivers.add(lnorris);
-        drivers.add(falonso);
-        drivers.add(lhamilton);
-        drivers.add(vbottas);
-        drivers.add(svettel);
-        GrandPrix monaco = new GrandPrix("Monaco Grand Prix", "29/05/22", drivers, lnorris);
-        monaco.updateDriverPoints();
-        allRaces.add(monaco);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add results of Azerbaijan Grand Prix
-    private void addAzerbaijan() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(mverstappen);
-        drivers.add(sperez);
-        drivers.add(grussell);
-        drivers.add(lhamilton);
-        drivers.add(pgasly);
-        drivers.add(svettel);
-        drivers.add(falonso);
-        drivers.add(dricciardo);
-        drivers.add(lnorris);
-        drivers.add(eocon);
-        GrandPrix azerbaijan = new GrandPrix("Azerbaijan Grand Prix", "12/06/22", drivers, sperez);
-        azerbaijan.updateDriverPoints();
-        allRaces.add(azerbaijan);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add results of Canadian Grand Prix
-    private void addCanada() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(mverstappen);
-        drivers.add(csainz);
-        drivers.add(lhamilton);
-        drivers.add(grussell);
-        drivers.add(cleclerc);
-        drivers.add(eocon);
-        drivers.add(vbottas);
-        drivers.add(gzhou);
-        drivers.add(falonso);
-        drivers.add(lstroll);
-        GrandPrix canada = new GrandPrix("Canadian Grand Prix", "19/06/22", drivers, csainz);
-        canada.updateDriverPoints();
-        allRaces.add(canada);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add results of British Grand Prix
-    private void addGreatBritain() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(csainz);
-        drivers.add(sperez);
-        drivers.add(lhamilton);
-        drivers.add(cleclerc);
-        drivers.add(falonso);
-        drivers.add(lnorris);
-        drivers.add(mverstappen);
-        drivers.add(mschumacher);
-        drivers.add(svettel);
-        drivers.add(kmagnussen);
-        GrandPrix greatBritain = new GrandPrix("British Grand Prix", "03/07/22", drivers, lhamilton);
-        greatBritain.updateDriverPoints();
-        allRaces.add(greatBritain);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add results of Austrian Sprint Race
-    private void addAustriaSprint() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(mverstappen);
-        drivers.add(cleclerc);
-        drivers.add(csainz);
-        drivers.add(grussell);
-        drivers.add(sperez);
-        drivers.add(eocon);
-        drivers.add(kmagnussen);
-        drivers.add(lhamilton);
-        Sprint austriaSprint = new Sprint("Austrian Sprint Race", "10/06/22", drivers);
-        austriaSprint.updateDriverPoints();
-        allRaces.add(austriaSprint);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add results of Austrian Grand Prix
-    private void addAustria() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(cleclerc);
-        drivers.add(mverstappen);
-        drivers.add(lhamilton);
-        drivers.add(grussell);
-        drivers.add(eocon);
-        drivers.add(mschumacher);
-        drivers.add(lnorris);
-        drivers.add(kmagnussen);
-        drivers.add(dricciardo);
-        drivers.add(falonso);
-        GrandPrix austria = new GrandPrix("Austrian Grand Prix", "10/07/22", drivers, mverstappen);
-        austria.updateDriverPoints();
-        allRaces.add(austria);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add results of French Grand Prix
-    private void addFrance() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(mverstappen);
-        drivers.add(lhamilton);
-        drivers.add(grussell);
-        drivers.add(sperez);
-        drivers.add(csainz);
-        drivers.add(falonso);
-        drivers.add(lnorris);
-        drivers.add(eocon);
-        drivers.add(dricciardo);
-        drivers.add(lstroll);
-        GrandPrix france = new GrandPrix("French Grand Prix", "24/07/22", drivers, csainz);
-        france.updateDriverPoints();
-        allRaces.add(france);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add results of Hungarian Grand Prix
-    private void addHungary() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(mverstappen);
-        drivers.add(lhamilton);
-        drivers.add(grussell);
-        drivers.add(csainz);
-        drivers.add(sperez);
-        drivers.add(cleclerc);
-        drivers.add(lnorris);
-        drivers.add(falonso);
-        drivers.add(eocon);
-        drivers.add(svettel);
-        GrandPrix hungary = new GrandPrix("Hungarian Grand Prix", "31/07/22", drivers, lhamilton);
-        hungary.updateDriverPoints();
-        allRaces.add(hungary);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add results of Belgian Grand Prix
-    private void addBelgium() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(mverstappen);
-        drivers.add(sperez);
-        drivers.add(csainz);
-        drivers.add(grussell);
-        drivers.add(falonso);
-        drivers.add(cleclerc);
-        drivers.add(eocon);
-        drivers.add(svettel);
-        drivers.add(pgasly);
-        drivers.add(aalbon);
-        GrandPrix belgium = new GrandPrix("Belgian Grand Prix", "28/08/22", drivers, mverstappen);
-        belgium.updateDriverPoints();
-        allRaces.add(belgium);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add results of Dutch Grand Prix
-    private void addNetherlands() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(mverstappen);
-        drivers.add(grussell);
-        drivers.add(cleclerc);
-        drivers.add(lhamilton);
-        drivers.add(sperez);
-        drivers.add(falonso);
-        drivers.add(lnorris);
-        drivers.add(csainz);
-        drivers.add(eocon);
-        drivers.add(lstroll);
-        GrandPrix netherlands = new GrandPrix("Dutch Grand Prix", "04/09/22", drivers, mverstappen);
-        netherlands.updateDriverPoints();
-        allRaces.add(netherlands);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add results of Italian Grand Prix
-    private void addItaly() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(mverstappen);
-        drivers.add(cleclerc);
-        drivers.add(grussell);
-        drivers.add(csainz);
-        drivers.add(lhamilton);
-        drivers.add(sperez);
-        drivers.add(lnorris);
-        drivers.add(pgasly);
-        drivers.add(ndevries);
-        drivers.add(gzhou);
-        GrandPrix italy = new GrandPrix("Italian Grand Prix", "11/09/22", drivers, sperez);
-        italy.updateDriverPoints();
-        allRaces.add(italy);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add results of Singapore Grand Prix
-    private void addSingapore() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(sperez);
-        drivers.add(cleclerc);
-        drivers.add(csainz);
-        drivers.add(lnorris);
-        drivers.add(dricciardo);
-        drivers.add(lstroll);
-        drivers.add(mverstappen);
-        drivers.add(svettel);
-        drivers.add(lhamilton);
-        drivers.add(pgasly);
-        GrandPrix singapore = new GrandPrix("Singapore Grand Prix", "02/10/22", drivers, grussell);
-        singapore.updateDriverPoints();
-        allRaces.add(singapore);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: add results of Japanese Grand Prix
-    private void addJapan() {
-        List<Driver> drivers = new ArrayList<>();
-        drivers.add(mverstappen);
-        drivers.add(sperez);
-        drivers.add(cleclerc);
-        drivers.add(eocon);
-        drivers.add(lhamilton);
-        drivers.add(svettel);
-        drivers.add(falonso);
-        drivers.add(grussell);
-        drivers.add(nlatifi);
-        drivers.add(lnorris);
-        GrandPrix japan = new GrandPrix("Japanese Grand Prix", "09/10/22", drivers, gzhou);
-        japan.updateDriverPoints();
-        allRaces.add(japan);
-    }
+//    // MODIFIES: this
+//    // EFFECTS: add results of Monaco Grand Prix
+//    private void addMonaco() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(sperez);
+//        drivers.add(csainz);
+//        drivers.add(mverstappen);
+//        drivers.add(cleclerc);
+//        drivers.add(grussell);
+//        drivers.add(lnorris);
+//        drivers.add(falonso);
+//        drivers.add(lhamilton);
+//        drivers.add(vbottas);
+//        drivers.add(svettel);
+//        GrandPrix monaco = new GrandPrix("Monaco Grand Prix", "29/05/22", drivers, lnorris);
+//        monaco.updateDriverPoints();
+//        allRaces.add(monaco);
+//    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: add results of Azerbaijan Grand Prix
+//    private void addAzerbaijan() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(mverstappen);
+//        drivers.add(sperez);
+//        drivers.add(grussell);
+//        drivers.add(lhamilton);
+//        drivers.add(pgasly);
+//        drivers.add(svettel);
+//        drivers.add(falonso);
+//        drivers.add(dricciardo);
+//        drivers.add(lnorris);
+//        drivers.add(eocon);
+//        GrandPrix azerbaijan = new GrandPrix("Azerbaijan Grand Prix", "12/06/22", drivers, sperez);
+//        azerbaijan.updateDriverPoints();
+//        allRaces.add(azerbaijan);
+//    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: add results of Canadian Grand Prix
+//    private void addCanada() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(mverstappen);
+//        drivers.add(csainz);
+//        drivers.add(lhamilton);
+//        drivers.add(grussell);
+//        drivers.add(cleclerc);
+//        drivers.add(eocon);
+//        drivers.add(vbottas);
+//        drivers.add(gzhou);
+//        drivers.add(falonso);
+//        drivers.add(lstroll);
+//        GrandPrix canada = new GrandPrix("Canadian Grand Prix", "19/06/22", drivers, csainz);
+//        canada.updateDriverPoints();
+//        allRaces.add(canada);
+//    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: add results of British Grand Prix
+//    private void addGreatBritain() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(csainz);
+//        drivers.add(sperez);
+//        drivers.add(lhamilton);
+//        drivers.add(cleclerc);
+//        drivers.add(falonso);
+//        drivers.add(lnorris);
+//        drivers.add(mverstappen);
+//        drivers.add(mschumacher);
+//        drivers.add(svettel);
+//        drivers.add(kmagnussen);
+//        GrandPrix greatBritain = new GrandPrix("British Grand Prix", "03/07/22", drivers, lhamilton);
+//        greatBritain.updateDriverPoints();
+//        allRaces.add(greatBritain);
+//    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: add results of Austrian Sprint Race
+//    private void addAustriaSprint() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(mverstappen);
+//        drivers.add(cleclerc);
+//        drivers.add(csainz);
+//        drivers.add(grussell);
+//        drivers.add(sperez);
+//        drivers.add(eocon);
+//        drivers.add(kmagnussen);
+//        drivers.add(lhamilton);
+//        Sprint austriaSprint = new Sprint("Austrian Sprint Race", "10/06/22", drivers);
+//        austriaSprint.updateDriverPoints();
+//        allRaces.add(austriaSprint);
+//    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: add results of Austrian Grand Prix
+//    private void addAustria() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(cleclerc);
+//        drivers.add(mverstappen);
+//        drivers.add(lhamilton);
+//        drivers.add(grussell);
+//        drivers.add(eocon);
+//        drivers.add(mschumacher);
+//        drivers.add(lnorris);
+//        drivers.add(kmagnussen);
+//        drivers.add(dricciardo);
+//        drivers.add(falonso);
+//        GrandPrix austria = new GrandPrix("Austrian Grand Prix", "10/07/22", drivers, mverstappen);
+//        austria.updateDriverPoints();
+//        allRaces.add(austria);
+//    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: add results of French Grand Prix
+//    private void addFrance() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(mverstappen);
+//        drivers.add(lhamilton);
+//        drivers.add(grussell);
+//        drivers.add(sperez);
+//        drivers.add(csainz);
+//        drivers.add(falonso);
+//        drivers.add(lnorris);
+//        drivers.add(eocon);
+//        drivers.add(dricciardo);
+//        drivers.add(lstroll);
+//        GrandPrix france = new GrandPrix("French Grand Prix", "24/07/22", drivers, csainz);
+//        france.updateDriverPoints();
+//        allRaces.add(france);
+//    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: add results of Hungarian Grand Prix
+//    private void addHungary() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(mverstappen);
+//        drivers.add(lhamilton);
+//        drivers.add(grussell);
+//        drivers.add(csainz);
+//        drivers.add(sperez);
+//        drivers.add(cleclerc);
+//        drivers.add(lnorris);
+//        drivers.add(falonso);
+//        drivers.add(eocon);
+//        drivers.add(svettel);
+//        GrandPrix hungary = new GrandPrix("Hungarian Grand Prix", "31/07/22", drivers, lhamilton);
+//        hungary.updateDriverPoints();
+//        allRaces.add(hungary);
+//    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: add results of Belgian Grand Prix
+//    private void addBelgium() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(mverstappen);
+//        drivers.add(sperez);
+//        drivers.add(csainz);
+//        drivers.add(grussell);
+//        drivers.add(falonso);
+//        drivers.add(cleclerc);
+//        drivers.add(eocon);
+//        drivers.add(svettel);
+//        drivers.add(pgasly);
+//        drivers.add(aalbon);
+//        GrandPrix belgium = new GrandPrix("Belgian Grand Prix", "28/08/22", drivers, mverstappen);
+//        belgium.updateDriverPoints();
+//        allRaces.add(belgium);
+//    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: add results of Dutch Grand Prix
+//    private void addNetherlands() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(mverstappen);
+//        drivers.add(grussell);
+//        drivers.add(cleclerc);
+//        drivers.add(lhamilton);
+//        drivers.add(sperez);
+//        drivers.add(falonso);
+//        drivers.add(lnorris);
+//        drivers.add(csainz);
+//        drivers.add(eocon);
+//        drivers.add(lstroll);
+//        GrandPrix netherlands = new GrandPrix("Dutch Grand Prix", "04/09/22", drivers, mverstappen);
+//        netherlands.updateDriverPoints();
+//        allRaces.add(netherlands);
+//    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: add results of Italian Grand Prix
+//    private void addItaly() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(mverstappen);
+//        drivers.add(cleclerc);
+//        drivers.add(grussell);
+//        drivers.add(csainz);
+//        drivers.add(lhamilton);
+//        drivers.add(sperez);
+//        drivers.add(lnorris);
+//        drivers.add(pgasly);
+//        drivers.add(ndevries);
+//        drivers.add(gzhou);
+//        GrandPrix italy = new GrandPrix("Italian Grand Prix", "11/09/22", drivers, sperez);
+//        italy.updateDriverPoints();
+//        allRaces.add(italy);
+//    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: add results of Singapore Grand Prix
+//    private void addSingapore() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(sperez);
+//        drivers.add(cleclerc);
+//        drivers.add(csainz);
+//        drivers.add(lnorris);
+//        drivers.add(dricciardo);
+//        drivers.add(lstroll);
+//        drivers.add(mverstappen);
+//        drivers.add(svettel);
+//        drivers.add(lhamilton);
+//        drivers.add(pgasly);
+//        GrandPrix singapore = new GrandPrix("Singapore Grand Prix", "02/10/22", drivers, grussell);
+//        singapore.updateDriverPoints();
+//        allRaces.add(singapore);
+//    }
+//
+//    // MODIFIES: this
+//    // EFFECTS: add results of Japanese Grand Prix
+//    private void addJapan() {
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(mverstappen);
+//        drivers.add(sperez);
+//        drivers.add(cleclerc);
+//        drivers.add(eocon);
+//        drivers.add(lhamilton);
+//        drivers.add(svettel);
+//        drivers.add(falonso);
+//        drivers.add(grussell);
+//        drivers.add(nlatifi);
+//        drivers.add(lnorris);
+//        GrandPrix japan = new GrandPrix("Japanese Grand Prix", "09/10/22", drivers, gzhou);
+//        japan.updateDriverPoints();
+//        allRaces.add(japan);
+//    }
 
     // EFFECTS: displays main menu to user
     private void displayMainMenu() {
@@ -553,6 +572,8 @@ public class FantasyApp {
         System.out.println("\t3 -> View Teams");
         System.out.println("\t4 -> View Drivers");
         System.out.println("\tW -> Declare " + league.getName() + " Winner");
+        System.out.println("\tS -> Save " + league.getName() + " to File");
+        System.out.println("\tL -> Load " + league.getName() + " from File");
         System.out.println("\tQ -> Quit");
     }
 
@@ -569,6 +590,10 @@ public class FantasyApp {
             selectDriver();
         } else if (command.equals("W")) {
             declareWinner();
+        } else if (command.equals("S")) {
+            saveLeague();
+        } else if (command.equals("L")) {
+            loadLeague();
         } else {
             System.out.println("Input not recognized. Please try again.");
         }
@@ -597,10 +622,10 @@ public class FantasyApp {
     // EFFECTS: displays race menu
     private void displayRaceMenu() {
         System.out.println("\nF1 RACES:");
-        if (allRaces.size() > 0) {
+        if (league.getRaces().size() > 0) {
             int i = 1;
 
-            for (Race race : allRaces) {
+            for (Race race : league.getRaces()) {
                 System.out.println("\t" + i + " -> " + race.getName());
                 i = i + 1;
             }
@@ -619,9 +644,9 @@ public class FantasyApp {
             addRace();
         } else {
             int n = Integer.parseInt(i);
-            if (n <= allRaces.size()) {
+            if (n <= league.getRaces().size()) {
                 n = n - 1;
-                showRaceReport(allRaces.get(n));
+                showRaceReport(league.getRaces().get(n));
             } else {
                 System.out.println("\tInput not recognized. Please try again.");
                 selectRace();
@@ -667,15 +692,18 @@ public class FantasyApp {
         String date = input.next();
         System.out.println("Set sprint race results:");
         int i = 1;
-        for (Driver driver : allDrivers) {
+        for (Driver driver : league.getDrivers()) {
             System.out.println("\t" + i + " -> " + driver.getName());
             i = i + 1;
         }
         List<Driver> places = setPlaces(8);
+        Driver fastestLap = setFastestLap();
 
-        Sprint newSprint = new Sprint(name, date, places);
+        Sprint newSprint = new Sprint(name, date);
+        newSprint.setPlaces(places);
+        newSprint.setFastestLap(fastestLap);
         newSprint.updateDriverPoints();
-        allRaces.add(newSprint);
+        league.addRace(newSprint);
         System.out.println(newSprint.getName() + " results have been recorded!");
         displayScoreboard();
     }
@@ -689,16 +717,18 @@ public class FantasyApp {
         String date = input.next();
         System.out.println("Set grand prix results:");
         int i = 1;
-        for (Driver driver : allDrivers) {
+        for (Driver driver : league.getDrivers()) {
             System.out.println("\t" + i + " -> " + driver.getName());
             i = i + 1;
         }
         List<Driver> places = setPlaces(10);
         Driver fastestLap = setFastestLap();
 
-        GrandPrix newGrandPrix = new GrandPrix(name, date, places, fastestLap);
+        GrandPrix newGrandPrix = new GrandPrix(name, date);
+        newGrandPrix.setPlaces(places);
+        newGrandPrix.setFastestLap(fastestLap);
         newGrandPrix.updateDriverPoints();
-        allRaces.add(newGrandPrix);
+        league.addRace(newGrandPrix);
         System.out.println(newGrandPrix.getName() + " results have been recorded!");
         displayScoreboard();
     }
@@ -710,7 +740,7 @@ public class FantasyApp {
             System.out.print("Select driver in " + i + " place: ");
             int n = input.nextInt();
             n = n - 1;
-            Driver driver = allDrivers.get(n);
+            Driver driver = league.getDrivers().get(n);
             places.add(driver);
         }
         return places;
@@ -721,7 +751,7 @@ public class FantasyApp {
         System.out.print("Select driver with fastest lap of race: ");
         int n = input.nextInt();
         n = n - 1;
-        return allDrivers.get(n);
+        return league.getDrivers().get(n);
     }
 
     // EFFECTS: allows user to select a team from the existing teams, or add a new team
@@ -820,7 +850,7 @@ public class FantasyApp {
             List<Driver> availableDrivers = new ArrayList<>();
             int i = 1;
 
-            for (Driver driver : allDrivers) {
+            for (Driver driver : league.getDrivers()) {
                 if (!team.getDrivers().contains(driver)) {
                     System.out.println("\t" + i + " -> " + driver.getName());
                     availableDrivers.add(driver);
@@ -833,7 +863,7 @@ public class FantasyApp {
             n = n - 1;
             team.addDriver(availableDrivers.get(n));
             System.out.println(availableDrivers.get(n).getName() + " has been added to " + team.getName() + ".");
-        } else if (allDrivers.size() >= 3) {
+        } else if (league.getDrivers().size() >= 3) {
             System.out.println("You already have the maximum number of drivers (3) and cannot add more to your team.");
         }
         showTeamReport(team);
@@ -886,7 +916,7 @@ public class FantasyApp {
     private void selectDriver() {
         System.out.println("CURRENT F1 DRIVERS:");
         int i = 1;
-        for (Driver driver : allDrivers) {
+        for (Driver driver : league.getDrivers()) {
             System.out.println("\t" + i + " -> " + driver.getName());
             i = i + 1;
         }
@@ -894,7 +924,7 @@ public class FantasyApp {
         System.out.print("Select driver: ");
         int n = input.nextInt();
         n = n - 1;
-        Driver driver = allDrivers.get(n);
+        Driver driver = league.getDrivers().get(n);
 
         showDriverReport(driver);
     }
@@ -1020,5 +1050,28 @@ public class FantasyApp {
             }
         }
         return winner;
+    }
+
+    // EFFECTS: saves league to file
+    private void saveLeague() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(league);
+            jsonWriter.close();
+            System.out.println("Saved " + league.getName() + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads league from file
+    private void loadLeague() {
+        try {
+            league = jsonReader.read();
+            System.out.println("Loaded " + league.getName() + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
     }
 }

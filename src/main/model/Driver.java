@@ -1,7 +1,10 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 // Represents a driver having a name, number, points total, wins total, and fastest laps total
-public class Driver {
+public class Driver implements Writable {
     private String name;        // the driver's name
     private int num;            // the driver's number
     private int points;         // the driver's total number of points
@@ -51,6 +54,14 @@ public class Driver {
         this.num = num;
     }
 
+    public void setWins(int wins) {
+        this.wins = wins;
+    }
+
+    public void setFastestLaps(int fastestLaps) {
+        this.fastestLaps = fastestLaps;
+    }
+
     public String getName() {
         return name;
     }
@@ -69,5 +80,27 @@ public class Driver {
 
     public int getFastestLaps() {
         return fastestLaps;
+    }
+
+    // EFFECTS: returns string representation of this driver
+    public String toString() {
+        return name;
+    }
+
+    // EFFECTS: returns string representation of this driver
+    public int toInt() {
+        return num;
+    }
+
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("num", num);
+        json.put("points", points);
+        json.put("wins", wins);
+        json.put("fastestlaps", fastestLaps);
+        return json;
     }
 }

@@ -1,10 +1,14 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 import java.util.List;
 
 // Represents a team having a name, list of drivers, points total, wins total, and fastest laps total
-public class Team {
+public class Team implements Writable {
     private String name;                // the team's name
     private List<Driver> drivers;       // drivers on the team
     private int points;                 // the team's total number of points
@@ -31,6 +35,18 @@ public class Team {
     // EFFECTS: removes given driver from list of drivers on team
     public void removeDriver(Driver driver) {
         drivers.remove(driver);
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
+    public void setWins(int wins) {
+        this.wins = wins;
+    }
+
+    public void setFastestLaps(int fastestLaps) {
+        this.fastestLaps = fastestLaps;
     }
 
     public String getName() {
@@ -72,5 +88,32 @@ public class Team {
         }
         fastestLaps = total;
         return fastestLaps;
+    }
+
+    // EFFECTS: returns string representation of this team
+    public String toString() {
+        return name;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("drivers", driversToJson());
+        json.put("points", points);
+        json.put("wins", wins);
+        json.put("fastestlaps", fastestLaps);
+        return json;
+    }
+
+    // EFFECTS returns teams in this league as a JSON array
+    private JSONArray driversToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Driver driver : drivers) {
+            jsonArray.put(driver.toJson());
+        }
+
+        return jsonArray;
     }
 }
