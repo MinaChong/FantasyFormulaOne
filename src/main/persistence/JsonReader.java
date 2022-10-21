@@ -1,6 +1,5 @@
 package persistence;
 
-
 import model.Driver;
 import model.League;
 import model.Race;

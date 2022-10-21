@@ -77,11 +77,6 @@ public class League implements Writable {
         return drivers;
     }
 
-//    // EFFECTS: returns string representation of this league
-//    public String toString() {
-//        return name;
-//    } TODO CAN I GET RID OF THIS?
-
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();

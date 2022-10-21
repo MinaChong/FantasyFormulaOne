@@ -21,65 +21,35 @@ public class Race implements Writable {
         this.fastestLap = null;
     }
 
-    public void updateDriverPoints() {
-        // VOID
+    public JSONObject toJson() {
+        return null;
     }
 
+    // SETTERS:
 
+    public void setPlaces(List<Driver> places) {
+        this.places = places;
+    }
+
+    public void setFastestLap(Driver fastestLap) {
+        this.fastestLap = fastestLap;
+    }
+
+    // GETTERS:
 
     public String getName() {
         return name;
+    }
+
+    public String getDate() {
+        return date;
     }
 
     public List<Driver> getPlaces() {
         return places;
     }
 
-    // EFFECTS: returns string representation of this race
-    public String toString() {
-        return name;
-    }
-
-    public JSONObject toJson() {
-        JSONObject json = new JSONObject();
-        json.put("name", name);
-        json.put("date", date);
-        json.put("places", placesToJson());
-        json.put("fastestlap", fastestLapToJson());
-        return json;
-    }
-
-    // EFFECTS returns drivers in places as a JSON array
-    private JSONArray placesToJson() {
-        JSONArray jsonArray = new JSONArray();
-
-        for (Driver driver : places) {
-            jsonArray.put(driver.toJson());
-        }
-
-        return jsonArray;
-    }
-
-    // EFFECTS: returns driver with fastest lap as a JSON object
-    private JSONObject fastestLapToJson() {
-        JSONObject json = new JSONObject();
-        json.put("name", fastestLap.getName());
-        json.put("num", fastestLap.getNum());
-        json.put("points", fastestLap.getPoints());
-        json.put("wins", fastestLap.getWins());
-        json.put("fastestlaps", fastestLap.getFastestLaps());
-        return json;
-    }
-
-    public void setPlaces(List<Driver> places) {
-        this.places = places;
-    }
-
-    public void setPlace(Driver place) {
-        places.add(place);
-    }
-
-    public void setFastestLap(Driver fastestLap) {
-        this.fastestLap = fastestLap;
+    public Driver getFastestLap() {
+        return fastestLap;
     }
 }

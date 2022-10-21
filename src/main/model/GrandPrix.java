@@ -3,33 +3,14 @@ package model;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.List;
-
-// Represents a race with a name, date, list of drivers in the order that they finished, and driver with the fastest lap
+// Represents a grand prix with a name, date, list of drivers places, and driver with the fastest lap
 public class GrandPrix extends Race {
-//    private String name;            // the name of the race
-//    private String date;            // the date of the race as DD/MM/YY
-//    private List<Driver> places;    // the list of drivers in order that they finished
-//    private Driver fastestLap;      // the driver with the fastest lap of the race
-
     // REQUIRES: name of grand prix is of non-zero length, date of race is in form DD/MM/YY where D, M, Y are positive
     // integers, and places is a list of ten drivers
     // EFFECTS: creates a race with given name, date, list of drivers in order that they finished,
     // and driver with the fastest lap of the race
     public GrandPrix(String name, String date) {
         super(name, date);
-    }
-
-    public void setPlaces(List<Driver> places) {
-        this.places = places;
-    }
-
-    public void setPlace(Driver place) {
-        places.add(place);
-    }
-
-    public void setFastestLap(Driver fastestLap) {
-        this.fastestLap = fastestLap;
     }
 
     // EFFECTS: adds points and wins to drivers according to their race placements
@@ -75,27 +56,7 @@ public class GrandPrix extends Race {
         }
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public List<Driver> getPlaces() {
-        return places;
-    }
-
-    public Driver getFastestLap() {
-        return fastestLap;
-    }
-
-    // EFFECTS: returns string representation of this grand prix
-    public String toString() {
-        return name;
-    }
-
+    @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("name", name);

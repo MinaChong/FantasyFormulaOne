@@ -1,0 +1,328 @@
+{
+    "teams": [{
+        "wins": 1,
+        "fastestlaps": 0,
+        "name": "Team 1",
+        "drivers": [
+            {
+                "wins": 1,
+                "fastestlaps": 1,
+                "num": 23,
+                "name": "Alex Albon",
+                "points": 34
+            },
+            {
+                "wins": 0,
+                "fastestlaps": 0,
+                "num": 16,
+                "name": "Charles Leclerc",
+                "points": 25
+            },
+            {
+                "wins": 0,
+                "fastestlaps": 0,
+                "num": 55,
+                "name": "Carlos Sainz",
+                "points": 21
+            }
+        ],
+        "points": 80
+    }],
+    "races": [
+        {
+            "date": "11/11/11",
+            "places": [
+                {
+                    "wins": 1,
+                    "fastestlaps": 1,
+                    "num": 23,
+                    "name": "Alex Albon",
+                    "points": 34
+                },
+                {
+                    "wins": 0,
+                    "fastestlaps": 0,
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 25
+                },
+                {
+                    "wins": 0,
+                    "fastestlaps": 0,
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 21
+                },
+                {
+                    "wins": 0,
+                    "fastestlaps": 0,
+                    "num": 3,
+                    "name": "Daniel Ricciardo",
+                    "points": 17
+                },
+                {
+                    "wins": 0,
+                    "fastestlaps": 0,
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 14
+                },
+                {
+                    "wins": 0,
+                    "fastestlaps": 0,
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 11
+                },
+                {
+                    "wins": 0,
+                    "fastestlaps": 0,
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 8
+                },
+                {
+                    "wins": 0,
+                    "fastestlaps": 0,
+                    "num": 24,
+                    "name": "Guanyu Zhou",
+                    "points": 5
+                }
+            ],
+            "name": "Sprint Race",
+            "fastestlap": {
+                "wins": 1,
+                "fastestlaps": 1,
+                "num": 23,
+                "name": "Alex Albon",
+                "points": 34
+            }
+        },
+        {
+            "date": "22/22/22",
+            "places": [
+                {
+                    "wins": 1,
+                    "fastestlaps": 1,
+                    "num": 23,
+                    "name": "Alex Albon",
+                    "points": 34
+                },
+                {
+                    "wins": 0,
+                    "fastestlaps": 0,
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 25
+                },
+                {
+                    "wins": 0,
+                    "fastestlaps": 0,
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 21
+                },
+                {
+                    "wins": 0,
+                    "fastestlaps": 0,
+                    "num": 3,
+                    "name": "Daniel Ricciardo",
+                    "points": 17
+                },
+                {
+                    "wins": 0,
+                    "fastestlaps": 0,
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 14
+                },
+                {
+                    "wins": 0,
+                    "fastestlaps": 0,
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 11
+                },
+                {
+                    "wins": 0,
+                    "fastestlaps": 0,
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 8
+                },
+                {
+                    "wins": 0,
+                    "fastestlaps": 0,
+                    "num": 24,
+                    "name": "Guanyu Zhou",
+                    "points": 5
+                },
+                {
+                    "wins": 0,
+                    "fastestlaps": 0,
+                    "num": 20,
+                    "name": "Kevin Magnussen",
+                    "points": 2
+                },
+                {
+                    "wins": 0,
+                    "fastestlaps": 0,
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 1
+                }
+            ],
+            "name": "Grand Prix",
+            "fastestlap": {
+                "wins": 1,
+                "fastestlaps": 1,
+                "num": 23,
+                "name": "Alex Albon",
+                "points": 34
+            }
+        }
+    ],
+    "name": "My Fantasy F1 League",
+    "drivers": [
+        {
+            "wins": 1,
+            "fastestlaps": 1,
+            "num": 23,
+            "name": "Alex Albon",
+            "points": 34
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 16,
+            "name": "Charles Leclerc",
+            "points": 25
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 55,
+            "name": "Carlos Sainz",
+            "points": 21
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 3,
+            "name": "Daniel Ricciardo",
+            "points": 17
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 31,
+            "name": "Esteban Ocon",
+            "points": 14
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 14,
+            "name": "Fernando Alonso",
+            "points": 11
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 63,
+            "name": "George Russell",
+            "points": 8
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 24,
+            "name": "Guanyu Zhou",
+            "points": 5
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 20,
+            "name": "Kevin Magnussen",
+            "points": 2
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 44,
+            "name": "Lewis Hamilton",
+            "points": 1
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 4,
+            "name": "Lando Norris",
+            "points": 0
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 18,
+            "name": "Lance Stroll",
+            "points": 0
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 47,
+            "name": "Mick Schumacher",
+            "points": 0
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 1,
+            "name": "Max Verstappen",
+            "points": 0
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 6,
+            "name": "Nicholas Latifi",
+            "points": 0
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 10,
+            "name": "Pierre Gasly",
+            "points": 0
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 11,
+            "name": "Sergio Perez",
+            "points": 0
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 5,
+            "name": "Sebastian Vettel",
+            "points": 0
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 77,
+            "name": "Valtteri Bottas",
+            "points": 0
+        },
+        {
+            "wins": 0,
+            "fastestlaps": 0,
+            "num": 22,
+            "name": "Yuki Tsunoda",
+            "points": 0
+        }
+    ]
+}

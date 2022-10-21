@@ -47,20 +47,30 @@ public class Driver implements Writable {
         this.fastestLaps = this.fastestLaps + 1;
     }
 
+    // SETTERS:
+
     // REQUIRES: driver number must be two digits long and >= 0
     // MODIFIES: this
     // EFFECTS: changes the driver's number to the given number
-    public void changeDriverNum(int num) {
+    public void setNum(int num) {
         this.num = num;
     }
 
+    // REQUIRES: wins >= 0
+    // MODIFIES: this
+    // EFFECTS: sets wins for given driver
     public void setWins(int wins) {
         this.wins = wins;
     }
 
+    // REQUIRES: fastestLaps >= 0
+    // MODIFIES: this
+    // EFFECTS: sets fastest laps for given driver
     public void setFastestLaps(int fastestLaps) {
         this.fastestLaps = fastestLaps;
     }
+
+    // GETTERS:
 
     public String getName() {
         return name;
@@ -81,17 +91,6 @@ public class Driver implements Writable {
     public int getFastestLaps() {
         return fastestLaps;
     }
-
-    // EFFECTS: returns string representation of this driver
-    public String toString() {
-        return name;
-    }
-
-    // EFFECTS: returns string representation of this driver
-    public int toInt() {
-        return num;
-    }
-
 
     @Override
     public JSONObject toJson() {

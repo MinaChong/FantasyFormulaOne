@@ -93,7 +93,7 @@ public class DriverTest {
 
     @Test
     public void changeDriverNumTest() {
-        testDriver.changeDriverNum(10);
+        testDriver.setNum(10);
         assertEquals(10, testDriver.getNum());
     }
 }

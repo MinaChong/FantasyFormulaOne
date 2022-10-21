@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 // Fantasy F1 Application
 public class FantasyApp {
-    private static final String JSON_STORE = "./data/workroom.json";
+    private static final String JSON_STORE = "./data/league.json";
     private Scanner input;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
@@ -943,8 +943,8 @@ public class FantasyApp {
         System.out.println("\nChoose option to modify driver:");
         System.out.println("\t1 -> Add points");
         System.out.println("\t2 -> Remove points");
-        System.out.println("\t3 -> Add win");
-        System.out.println("\t4 -> Add fastest lap");
+        System.out.println("\t3 -> Set wins");
+        System.out.println("\t4 -> Set fastest laps");
         System.out.println("\t5 -> Change driver number");
         System.out.println("\tQ -> Return to main menu");
     }
@@ -957,9 +957,9 @@ public class FantasyApp {
         } else if (command.equals("2")) {
             removePoints(driver);
         } else if (command.equals("3")) {
-            addWin(driver);
+            setWins(driver);
         } else if (command.equals("4")) {
-            addFastestLap(driver);
+            setFastestLaps(driver);
         } else if (command.equals("5")) {
             changeDriverNumber(driver);
         } else if (command.equals("Q")) {
@@ -991,18 +991,22 @@ public class FantasyApp {
     }
 
     // MODIFIES: this
-    // EFFECTS: allows user to add win to given driver
-    private void addWin(Driver driver) {
-        driver.addWin();
-        System.out.println("A win has been added to " + driver.getName() + ".");
+    // EFFECTS: allows user to set number of wins for given driver
+    private void setWins(Driver driver) {
+        System.out.print("Input number of wins for " + driver.getName() + ": ");
+        int n = input.nextInt();
+        driver.setWins(n);
+        System.out.println(driver.getName() + " has " + n + " win(s).");
         showDriverReport(driver);
     }
 
     // MODIFIES: this
-    // EFFECTS: allows user to add fastest lap to given driver
-    private void addFastestLap(Driver driver) {
-        driver.addFastestLap();
-        System.out.println("A fastest lap has been added to " + driver.getName() + ".");
+    // EFFECTS: allows user to set number of fastest laps for given driver
+    private void setFastestLaps(Driver driver) {
+        System.out.print("Input number of fastest laps for " + driver.getName() + ": ");
+        int n = input.nextInt();
+        driver.setFastestLaps(n);
+        System.out.println(driver.getName() + " has " + n + " fastest lap(s).");
         showDriverReport(driver);
     }
 
@@ -1011,7 +1015,7 @@ public class FantasyApp {
     private void changeDriverNumber(Driver driver) {
         System.out.print("Input new driver number for " + driver.getName() + ": ");
         int n = input.nextInt();
-        driver.changeDriverNum(n);
+        driver.setNum(n);
         System.out.println(driver.getName() + "'s driver number has been changed to " + n + ".");
         showDriverReport(driver);
     }

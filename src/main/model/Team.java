@@ -37,17 +37,30 @@ public class Team implements Writable {
         drivers.remove(driver);
     }
 
+    // SETTERS:
+
+    // REQUIRES: points >= 0
+    // MODIFIES: this
+    // EFFECTS: sets points for given driver
     public void setPoints(int points) {
         this.points = points;
     }
 
+    // REQUIRES: wins >= 0
+    // MODIFIES: this
+    // EFFECTS: sets wins for given driver
     public void setWins(int wins) {
         this.wins = wins;
     }
 
+    // REQUIRES: fastestLaps >= 0
+    // MODIFIES: this
+    // EFFECTS: sets fastest laps for given driver
     public void setFastestLaps(int fastestLaps) {
         this.fastestLaps = fastestLaps;
     }
+
+    // GETTERS:
 
     public String getName() {
         return name;
@@ -88,11 +101,6 @@ public class Team implements Writable {
         }
         fastestLaps = total;
         return fastestLaps;
-    }
-
-    // EFFECTS: returns string representation of this team
-    public String toString() {
-        return name;
     }
 
     @Override
