@@ -74,7 +74,7 @@ public class SprintTest {
     }
 
     @Test
-    public void raceTest() {
+    public void sprintTest() {
         assertEquals("Singapore Grand Prix", testSprint.getName());
         assertEquals("02/10/22", testSprint.getDate());
         assertEquals(8, testSprint.getPlaces().size());
@@ -83,7 +83,7 @@ public class SprintTest {
 
     @Test
     public void updateDriverPointsTest() {
-        testSprint.updateDriverPoints();
+        testSprint.updateDriverStats();
 
         assertEquals(8, sperez.getPoints());
         assertEquals(7, cleclerc.getPoints());

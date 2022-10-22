@@ -129,6 +129,13 @@ public class JsonWriterTest {
 
             league.addTeam(team);
 
+            Team anotherTeam = new Team("Team 2");
+            anotherTeam.addDriver(aalbon);
+            anotherTeam.addDriver(cleclerc);
+            anotherTeam.addDriver(csainz);
+
+            league.addTeam(anotherTeam);
+
             JsonWriter writer = new JsonWriter("./data/testGeneralLeague.json");
             writer.open();
             writer.write(league);
@@ -139,7 +146,7 @@ public class JsonWriterTest {
             assertEquals("General League", league.getName());
             assertEquals(20, league.getDrivers().size());
             assertEquals(2, league.getRaces().size());
-            assertEquals(1, league.getTeams().size());
+            assertEquals(2, league.getTeams().size());
         } catch (FileNotFoundException e) {
             fail("Exception should not have been thrown");
         } catch (IOException e) {

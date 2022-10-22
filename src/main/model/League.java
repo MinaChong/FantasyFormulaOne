@@ -87,7 +87,7 @@ public class League implements Writable {
         return json;
     }
 
-    // EFFECTS returns drivers in this league as a JSON array
+    // EFFECTS: returns drivers in this league as a JSON array
     private JSONArray driversToJson() {
         JSONArray jsonArray = new JSONArray();
 
@@ -98,7 +98,7 @@ public class League implements Writable {
         return jsonArray;
     }
 
-    // EFFECTS returns races in this league as a JSON array
+    // EFFECTS: returns races in this league as a JSON array
     private JSONArray racesToJson() {
         JSONArray jsonArray = new JSONArray();
 
@@ -109,7 +109,7 @@ public class League implements Writable {
         return jsonArray;
     }
 
-    // EFFECTS returns teams in this league as a JSON array
+    // EFFECTS: returns teams in this league as a JSON array
     private JSONArray teamsToJson() {
         JSONArray jsonArray = new JSONArray();
 

@@ -20,6 +20,7 @@ public class DriverTest {
         assertEquals(0, testDriver.getPoints());
         assertEquals(0, testDriver.getWins());
         assertEquals(0, testDriver.getFastestLaps());
+        assertEquals(0, testDriver.getTeamNames().size());
     }
 
     @Test
@@ -95,5 +96,41 @@ public class DriverTest {
     public void changeDriverNumTest() {
         testDriver.setNum(10);
         assertEquals(10, testDriver.getNum());
+    }
+
+    @Test
+    public void addTeamNameTest() {
+        testDriver.addTeamName("team 1");
+        assertEquals(1, testDriver.getTeamNames().size());
+    }
+
+    @Test
+    public void addTeamNameMultipleTimesTest() {
+        testDriver.addTeamName("team 1");
+        assertEquals(1, testDriver.getTeamNames().size());
+
+        testDriver.addTeamName("team 2");
+        assertEquals(2, testDriver.getTeamNames().size());
+    }
+
+    @Test
+    public void removeTeamNameTest() {
+        testDriver.addTeamName("team 1");
+        assertEquals(1, testDriver.getTeamNames().size());
+
+        testDriver.removeTeamName("team 1");
+        assertEquals(0, testDriver.getTeamNames().size());
+    }
+
+    @Test
+    public void removeTeamNameMultipleTimesTest() {
+        testDriver.addTeamName("team 1");
+        testDriver.addTeamName("team 2");
+        assertEquals(2, testDriver.getTeamNames().size());
+
+        testDriver.removeTeamName("team 1");
+        assertEquals(1, testDriver.getTeamNames().size());
+        testDriver.removeTeamName("team 2");
+        assertEquals(0, testDriver.getTeamNames().size());
     }
 }

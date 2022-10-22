@@ -79,6 +79,7 @@ public class FantasyApp {
         initializeDrivers();
         initializeGrid();
         initializeRaces();
+//        league.updateStats();
 
 //        Team teamKimi = new Team("Kimi's Team");
 //        teamKimi.addDriver(mverstappen);
@@ -152,26 +153,26 @@ public class FantasyApp {
     // MODIFIES: this
     // EFFECTS: initializes list of F1 races that have been held so far in 2022
     private void initializeRaces() {
-        addBahrain();
-        addSaudiArabia();
-        addAustralia();
-        addEmiliaRomagnaSprint();
-        addEmiliaRomagna();
-        addMiami();
-        addSpain();
-        addMonaco();
-        addAzerbaijan();
-        addCanada();
-        addGreatBritain();
-        addAustriaSprint();
-        addAustria();
-        addFrance();
-        addHungary();
-        addBelgium();
-        addNetherlands();
-        addItaly();
-        addSingapore();
-        addJapan();
+//        addBahrain();
+//        addSaudiArabia();
+//        addAustralia();
+//        addEmiliaRomagnaSprint();
+//        addEmiliaRomagna();
+//        addMiami();
+//        addSpain();
+//        addMonaco();
+//        addAzerbaijan();
+//        addCanada();
+//        addGreatBritain();
+//        addAustriaSprint();
+//        addAustria();
+//        addFrance();
+//        addHungary();
+//        addBelgium();
+//        addNetherlands();
+//        addItaly();
+//        addSingapore();
+//        addJapan();
     }
 
     // MODIFIES: this
@@ -191,7 +192,7 @@ public class FantasyApp {
         Race bahrain = new GrandPrix("Bahrain Grand Prix", "20/03/22");
         bahrain.setPlaces(drivers);
         bahrain.setFastestLap(cleclerc);
-        bahrain.updateDriverPoints();
+//        bahrain.updateDriverStats();
         league.addRace(bahrain);
     }
 
@@ -212,7 +213,7 @@ public class FantasyApp {
         Race saudiArabia = new GrandPrix("Saudi Arabian Grand Prix", "27/03/22");
         saudiArabia.setPlaces(drivers);
         saudiArabia.setFastestLap(cleclerc);
-        saudiArabia.updateDriverPoints();
+//        saudiArabia.updateDriverStats();
         league.addRace(saudiArabia);
     }
 
@@ -233,7 +234,7 @@ public class FantasyApp {
         Race australia = new GrandPrix("Australian Grand Prix", "10/04/22");
         australia.setPlaces(drivers);
         australia.setFastestLap(cleclerc);
-        australia.updateDriverPoints();
+//        australia.updateDriverStats();
         league.addRace(australia);
     }
 
@@ -252,7 +253,7 @@ public class FantasyApp {
         Race emiliaRomagnaSprint = new Sprint("Emilia Romagna Sprint Race", "23/04/22");
         emiliaRomagnaSprint.setPlaces(drivers);
         emiliaRomagnaSprint.setFastestLap(mverstappen);
-        emiliaRomagnaSprint.updateDriverPoints();
+//        emiliaRomagnaSprint.updateDriverStats();
         league.addRace(emiliaRomagnaSprint);
     }
 
@@ -273,7 +274,7 @@ public class FantasyApp {
         Race emiliaRomagna = new GrandPrix("Emilia Romagna Grand Prix", "24/04/22");
         emiliaRomagna.setPlaces(drivers);
         emiliaRomagna.setFastestLap(mverstappen);
-        emiliaRomagna.updateDriverPoints();
+//        emiliaRomagna.updateDriverStats();
         league.addRace(emiliaRomagna);
     }
 
@@ -294,7 +295,7 @@ public class FantasyApp {
         Race miami = new GrandPrix("Miami Grand Prix", "08/05/22");
         miami.setPlaces(drivers);
         miami.setFastestLap(mverstappen);
-        miami.updateDriverPoints();
+//        miami.updateDriverStats();
         league.addRace(miami);
     }
 
@@ -315,7 +316,7 @@ public class FantasyApp {
         Race spain = new GrandPrix("Spanish Grand Prix", "22/05/22");
         spain.setPlaces(drivers);
         spain.setFastestLap(sperez);
-        spain.updateDriverPoints();
+//        spain.updateDriverStats();
         league.addRace(spain);
     }
 
@@ -336,7 +337,7 @@ public class FantasyApp {
         Race monaco = new GrandPrix("Monaco Grand Prix", "29/05/22");
         monaco.setPlaces(drivers);
         monaco.setFastestLap(lnorris);
-        monaco.updateDriverPoints();
+//        monaco.updateDriverStats();
         league.addRace(monaco);
     }
 
@@ -357,7 +358,7 @@ public class FantasyApp {
         Race azerbaijan = new GrandPrix("Azerbaijan Grand Prix", "12/06/22");
         azerbaijan.setPlaces(drivers);
         azerbaijan.setFastestLap(sperez);
-        azerbaijan.updateDriverPoints();
+//        azerbaijan.updateDriverStats();
         league.addRace(azerbaijan);
     }
 
@@ -378,7 +379,7 @@ public class FantasyApp {
         Race canada = new GrandPrix("Canadian Grand Prix", "19/06/22");
         canada.setPlaces(drivers);
         canada.setFastestLap(csainz);
-        canada.updateDriverPoints();
+//        canada.updateDriverStats();
         league.addRace(canada);
     }
 
@@ -399,7 +400,7 @@ public class FantasyApp {
         Race greatBritain = new GrandPrix("British Grand Prix", "03/07/22");
         greatBritain.setPlaces(drivers);
         greatBritain.setFastestLap(lhamilton);
-        greatBritain.updateDriverPoints();
+//        greatBritain.updateDriverStats();
         league.addRace(greatBritain);
     }
 
@@ -418,7 +419,7 @@ public class FantasyApp {
         Race austriaSprint = new Sprint("Austrian Sprint Race", "10/06/22");
         austriaSprint.setPlaces(drivers);
         austriaSprint.setFastestLap(mverstappen);
-        austriaSprint.updateDriverPoints();
+//        austriaSprint.updateDriverStats();
         league.addRace(austriaSprint);
     }
 
@@ -439,7 +440,7 @@ public class FantasyApp {
         Race austria = new GrandPrix("Austrian Grand Prix", "10/07/22");
         austria.setPlaces(drivers);
         austria.setFastestLap(cleclerc);
-        austria.updateDriverPoints();
+//        austria.updateDriverStats();
         league.addRace(austria);
     }
 
@@ -460,7 +461,7 @@ public class FantasyApp {
         Race france = new GrandPrix("French Grand Prix", "24/07/22");
         france.setPlaces(drivers);
         france.setFastestLap(csainz);
-        france.updateDriverPoints();
+//        france.updateDriverStats();
         league.addRace(france);
     }
 
@@ -481,7 +482,7 @@ public class FantasyApp {
         Race hungary = new GrandPrix("Hungarian Grand Prix", "31/07/22");
         hungary.setPlaces(drivers);
         hungary.setFastestLap(lhamilton);
-        hungary.updateDriverPoints();
+//        hungary.updateDriverStats();
         league.addRace(hungary);
     }
 
@@ -502,7 +503,7 @@ public class FantasyApp {
         Race belgium = new GrandPrix("Belgian Grand Prix", "28/08/22");
         belgium.setPlaces(drivers);
         belgium.setFastestLap(mverstappen);
-        belgium.updateDriverPoints();
+//        belgium.updateDriverStats();
         league.addRace(belgium);
     }
 
@@ -523,7 +524,7 @@ public class FantasyApp {
         Race netherlands = new GrandPrix("Dutch Grand Prix", "04/09/22");
         netherlands.setPlaces(drivers);
         netherlands.setFastestLap(mverstappen);
-        netherlands.updateDriverPoints();
+//        netherlands.updateDriverStats();
         league.addRace(netherlands);
     }
 
@@ -544,7 +545,7 @@ public class FantasyApp {
         Race italy = new GrandPrix("Italian Grand Prix", "11/09/22");
         italy.setPlaces(drivers);
         italy.setFastestLap(sperez);
-        italy.updateDriverPoints();
+//        italy.updateDriverStats();
         league.addRace(italy);
     }
 
@@ -565,7 +566,7 @@ public class FantasyApp {
         Race singapore = new GrandPrix("Singapore Grand Prix", "02/10/22");
         singapore.setPlaces(drivers);
         singapore.setFastestLap(grussell);
-        singapore.updateDriverPoints();
+//        singapore.updateDriverStats();
         league.addRace(singapore);
     }
 
@@ -586,7 +587,7 @@ public class FantasyApp {
         Race japan = new GrandPrix("Japanese Grand Prix", "09/10/22");
         japan.setPlaces(drivers);
         japan.setFastestLap(gzhou);
-        japan.updateDriverPoints();
+//        japan.updateDriverStats();
         league.addRace(japan);
     }
 
@@ -707,6 +708,7 @@ public class FantasyApp {
             System.out.println("\tInput not recognized. Please try again.");
             addRace();
         }
+//        league.updateStats();
     }
 
     // MODIFIES: this
@@ -728,10 +730,9 @@ public class FantasyApp {
         Sprint newSprint = new Sprint(name, date);
         newSprint.setPlaces(places);
         newSprint.setFastestLap(fastestLap);
-        newSprint.updateDriverPoints();
+        newSprint.updateDriverStats();
         league.addRace(newSprint);
         System.out.println(newSprint.getName() + " results have been recorded!");
-        displayScoreboard();
     }
 
     // MODIFIES: this
@@ -753,10 +754,9 @@ public class FantasyApp {
         GrandPrix newGrandPrix = new GrandPrix(name, date);
         newGrandPrix.setPlaces(places);
         newGrandPrix.setFastestLap(fastestLap);
-        newGrandPrix.updateDriverPoints();
+        newGrandPrix.updateDriverStats();
         league.addRace(newGrandPrix);
         System.out.println(newGrandPrix.getName() + " results have been recorded!");
-        displayScoreboard();
     }
 
     // EFFECTS: returns list of drivers in order of their finishing position that user selects
@@ -866,6 +866,7 @@ public class FantasyApp {
             displayTeamMenu();
             processTeamMenuCommand(team);
         }
+//        league.updateStats();
     }
 
     // MODIFIES: this
@@ -892,7 +893,6 @@ public class FantasyApp {
         } else if (league.getDrivers().size() >= 3) {
             System.out.println("You already have the maximum number of drivers (3) and cannot add more to your team.");
         }
-        showTeamReport(team);
     }
 
     // MODIFIES: this
@@ -917,7 +917,6 @@ public class FantasyApp {
         } else {
             System.out.println("There are no drivers to remove.");
         }
-        showTeamReport(team);
     }
 
     // MODIFIES: this
@@ -935,7 +934,6 @@ public class FantasyApp {
         Team newTeam = new Team(name);
         league.addTeam(newTeam);
         System.out.println(newTeam.getName() + " has been added to " + league.getName() + ".");
-        showTeamReport(newTeam);
     }
 
     // EFFECTS: displays list of current F1 drivers and allows user to select a driver to view their stats
@@ -994,6 +992,7 @@ public class FantasyApp {
             System.out.println("\tInput not recognized. Please try again.");
             processDriverMenuCommand(driver);
         }
+//        league.updateStats();
     }
 
     // MODIFIES: this
@@ -1003,7 +1002,6 @@ public class FantasyApp {
         int n = input.nextInt();
         driver.addPoints(n);
         System.out.println(n + " point(s) have been added to " + driver.getName() + ".");
-        showDriverReport(driver);
     }
 
     // MODIFIES: this
@@ -1013,7 +1011,6 @@ public class FantasyApp {
         int n = input.nextInt();
         driver.removePoints(n);
         System.out.println(n + " point(s) have been removed from " + driver.getName() + ".");
-        showDriverReport(driver);
     }
 
     // MODIFIES: this
@@ -1023,7 +1020,6 @@ public class FantasyApp {
         int n = input.nextInt();
         driver.setWins(n);
         System.out.println(driver.getName() + " has " + n + " win(s).");
-        showDriverReport(driver);
     }
 
     // MODIFIES: this
@@ -1033,7 +1029,6 @@ public class FantasyApp {
         int n = input.nextInt();
         driver.setFastestLaps(n);
         System.out.println(driver.getName() + " has " + n + " fastest lap(s).");
-        showDriverReport(driver);
     }
 
     // MODIFIES: this
@@ -1043,7 +1038,6 @@ public class FantasyApp {
         int n = input.nextInt();
         driver.setNum(n);
         System.out.println(driver.getName() + "'s driver number has been changed to " + n + ".");
-        showDriverReport(driver);
     }
 
     // EFFECTS: allows user to declare winner of fantasy league

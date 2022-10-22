@@ -24,10 +24,6 @@ public class Race implements Writable {
         this.fastestLap = null;
     }
 
-    public void updateDriverPoints() {
-        // this has two overrides in sprint, grand prix
-    }
-
     // SETTERS:
 
     public void setPlaces(List<Driver> places) {
@@ -62,11 +58,11 @@ public class Race implements Writable {
         json.put("name", name);
         json.put("date", date);
         json.put("places", placesToJson());
-        json.put("fastestlap", fastestLapToJson());
+        json.put("fastestLap", fastestLapToJson());
         return json;
     }
 
-    // EFFECTS returns drivers in places as a JSON array
+    // EFFECTS: returns drivers in places as a JSON array
     private JSONArray placesToJson() {
         JSONArray jsonArray = new JSONArray();
 
@@ -84,7 +80,7 @@ public class Race implements Writable {
         json.put("num", fastestLap.getNum());
         json.put("points", fastestLap.getPoints());
         json.put("wins", fastestLap.getWins());
-        json.put("fastestlaps", fastestLap.getFastestLaps());
+        json.put("fastestLaps", fastestLap.getFastestLaps());
         return json;
     }
 }

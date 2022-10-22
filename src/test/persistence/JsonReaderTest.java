@@ -41,7 +41,7 @@ public class JsonReaderTest {
             League league = reader.read();
             assertEquals("General League", league.getName());
             assertEquals(20, league.getDrivers().size());
-            assertEquals(1, league.getTeams().size());
+            assertEquals(2, league.getTeams().size());
             assertEquals(2, league.getRaces().size());
         } catch (IOException e) {
             fail("Couldn't read from file");

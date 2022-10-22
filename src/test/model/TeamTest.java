@@ -21,9 +21,6 @@ public class TeamTest {
     public void teamTest() {
         assertEquals("Red Team", testTeam.getName());
         assertEquals(0, testTeam.getDrivers().size());
-        assertEquals(0, testTeam.getPoints());
-        assertEquals(0, testTeam.getWins());
-        assertEquals(0, testTeam.getFastestLaps());
     }
 
     @Test

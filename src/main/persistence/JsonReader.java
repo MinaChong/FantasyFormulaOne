@@ -71,12 +71,29 @@ public class JsonReader {
         int num = jsonObject.getInt("num");
         int points = jsonObject.getInt("points");
         int wins = jsonObject.getInt("wins");
-        int fastestlaps = jsonObject.getInt("fastestlaps");
+        int fastestlaps = jsonObject.getInt("fastestLaps");
+        List<String> teams = addDriverTeams(league, jsonObject);
         Driver driver = new Driver(name, num);
         driver.addPoints(points);
         driver.setWins(wins);
         driver.setFastestLaps(fastestlaps);
+        driver.setTeamNames(teams);
         league.addDriver(driver);
+    }
+
+    private List<String> addDriverTeams(League league, JSONObject jsonObject) {
+        List<String> teams = new ArrayList<>();
+        JSONArray jsonArray = jsonObject.getJSONArray("teamNames");
+        for (Object json : jsonArray) {
+            JSONObject nextTeam = (JSONObject) json;
+            teams.add(addDriverTeam(league, nextTeam));
+        }
+        return teams;
+    }
+
+    private String addDriverTeam(League league, JSONObject jsonObject) {
+        String name = jsonObject.getString("name");
+        return name;
     }
 
     // MODIFIES: league
@@ -119,7 +136,7 @@ public class JsonReader {
         int num = jsonObject.getInt("num");
         int points = jsonObject.getInt("points");
         int wins = jsonObject.getInt("wins");
-        int fastestlaps = jsonObject.getInt("fastestlaps");
+        int fastestlaps = jsonObject.getInt("fastestLaps");
         Driver driver = new Driver(name, num);
         driver.addPoints(points);
         driver.setWins(wins);
@@ -130,12 +147,12 @@ public class JsonReader {
     // MODIFIES: race
     // EFFECTS: parses driver with fastest lap from JSON object and adds it to race
     private void addFastestLap(Race race, JSONObject jsonObject) {
-        JSONObject json = (JSONObject) jsonObject.get("fastestlap");
+        JSONObject json = (JSONObject) jsonObject.get("fastestLap");
         String name = json.getString("name");
         int num = json.getInt("num");
         int points = json.getInt("points");
         int wins = json.getInt("wins");
-        int fastestlaps = json.getInt("fastestlaps");
+        int fastestlaps = json.getInt("fastestLaps");
         Driver driver = new Driver(name, num);
         driver.addPoints(points);
         driver.setWins(wins);
@@ -158,38 +175,17 @@ public class JsonReader {
     private void addTeam(League league, JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         Team team = new Team(name);
-        addTeamDrivers(team, jsonObject);
-        int points = jsonObject.getInt("points");
-        int wins = jsonObject.getInt("wins");
-        int fastestLaps = jsonObject.getInt("fastestlaps");
-        team.setPoints(points);
-        team.setWins(wins);
-        team.setFastestLaps(fastestLaps);
+        addTeamDrivers(league, team, jsonObject);
         league.addTeam(team);
     }
 
     // MODIFIES: team
     // EFFECTS: parses drivers from JSON object and adds them to team
-    private void addTeamDrivers(Team team, JSONObject jsonObject) {
-        JSONArray jsonArray = jsonObject.getJSONArray("drivers");
-        for (Object json : jsonArray) {
-            JSONObject nextDriver = (JSONObject) json;
-            addTeamDriver(team, nextDriver);
+    private void addTeamDrivers(League league, Team team, JSONObject jsonObject) {
+        for (Driver driver : league.getDrivers()) {
+            if (driver.getTeamNames().contains(team.getName())) {
+                team.addDriver(driver);
+            }
         }
-    }
-
-    // MODIFIES: league
-    // EFFECTS: parses driver from JSON object and adds it to team
-    private void addTeamDriver(Team team, JSONObject jsonObject) {
-        String name = jsonObject.getString("name");
-        int num = jsonObject.getInt("num");
-        int points = jsonObject.getInt("points");
-        int wins = jsonObject.getInt("wins");
-        int fastestlaps = jsonObject.getInt("fastestlaps");
-        Driver driver = new Driver(name, num);
-        driver.addPoints(points);
-        driver.setWins(wins);
-        driver.setFastestLaps(fastestlaps);
-        team.addDriver(driver);
     }
 }

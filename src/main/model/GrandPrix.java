@@ -1,8 +1,5 @@
 package model;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 // Represents a grand prix with a name, date, list of drivers places, and driver with the fastest lap
 public class GrandPrix extends Race {
     // REQUIRES: name of grand prix is of non-zero length, date of race is in form DD/MM/YY where D, M, Y are positive
@@ -13,7 +10,7 @@ public class GrandPrix extends Race {
     }
 
     // EFFECTS: adds points and wins to drivers according to their race placements
-    public void updateDriverPoints() {
+    public void updateDriverStats() {
         updateFastestLap();
 
         Driver first = places.get(0);
@@ -54,36 +51,4 @@ public class GrandPrix extends Race {
             fastestLap.addPoints(1);
         }
     }
-
-//    @Override
-//    public JSONObject toJson() {
-//        JSONObject json = new JSONObject();
-//        json.put("name", name);
-//        json.put("date", date);
-//        json.put("places", placesToJson());
-//        json.put("fastestlap", fastestLapToJson());
-//        return json;
-//    }
-//
-//    // EFFECTS returns drivers in places as a JSON array
-//    private JSONArray placesToJson() {
-//        JSONArray jsonArray = new JSONArray();
-//
-//        for (Driver driver : places) {
-//            jsonArray.put(driver.toJson());
-//        }
-//
-//        return jsonArray;
-//    }
-//
-//    // EFFECTS: returns driver with fastest lap as a JSON object
-//    private JSONObject fastestLapToJson() {
-//        JSONObject json = new JSONObject();
-//        json.put("name", fastestLap.getName());
-//        json.put("num", fastestLap.getNum());
-//        json.put("points", fastestLap.getPoints());
-//        json.put("wins", fastestLap.getWins());
-//        json.put("fastestlaps", fastestLap.getFastestLaps());
-//        return json;
-//    }
 }

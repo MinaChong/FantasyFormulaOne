@@ -79,7 +79,7 @@ public class GrandPrixTest {
     }
 
     @Test
-    public void raceTest() {
+    public void grandPrixTest() {
         assertEquals("Singapore Grand Prix", testGrandPrix.getName());
         assertEquals("02/10/22", testGrandPrix.getDate());
         assertEquals(10, testGrandPrix.getPlaces().size());
@@ -88,7 +88,7 @@ public class GrandPrixTest {
 
     @Test
     public void updateDriverPointsTest() {
-        testGrandPrix.updateDriverPoints();
+        testGrandPrix.updateDriverStats();
 
         assertEquals(26, sperez.getPoints());
         assertEquals(18, cleclerc.getPoints());
