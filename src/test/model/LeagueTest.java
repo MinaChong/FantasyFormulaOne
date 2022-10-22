@@ -1,6 +1,5 @@
 package model;
 
-import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -176,21 +175,4 @@ public class LeagueTest {
         testLeague.removeTeam(anotherTestTeam);
         assertEquals(0, testLeague.getTeams().size());
     }
-
-//    @Test
-//    public void toJsonTest() {
-//        testLeague.addDriver(testDriver);
-//        testLeague.addDriver(anotherTestDriver);
-//        testLeague.addRace(testRace);
-//        testLeague.addRace(anotherTestRace);
-//        testLeague.addTeam(testTeam);
-//        testLeague.addTeam(anotherTestTeam);
-//
-//        JSONObject json = testLeague.toJson();
-//        String name =
-//        assertEquals("My League", json.getString("name"));
-//        assertEquals(testLeague.getDrivers(), json.get("drivers"));
-//        assertEquals(testLeague.getRaces(), json.get("races"));
-//        assertEquals(testLeague.getTeams(), json.get("teams"));
-//    } TODO CAN I AVOID TESTING HERE BY TESTING IT IN PERMISSIONS TEST?
 }

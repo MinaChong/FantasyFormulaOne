@@ -12,10 +12,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class JsonWriterTest {
-    //NOTE TO CPSC 210 STUDENTS: the strategy in designing tests for the JsonWriter is to
-    //write data to a file and then use the reader to read it back in and check that we
-    //read in a copy of what was written out.
-
     @Test
     public void testWriterInvalidFile() {
         try {
@@ -32,12 +28,12 @@ public class JsonWriterTest {
     public void testWriterEmptyLeague() {
         try {
             League league = new League("Empty League");
-            JsonWriter writer = new JsonWriter("./data/emptyLeague.json");
+            JsonWriter writer = new JsonWriter("./data/testEmptyLeague.json");
             writer.open();
             writer.write(league);
             writer.close();
 
-            JsonReader reader = new JsonReader("./data/emptyLeague.json");
+            JsonReader reader = new JsonReader("./data/testEmptyLeague.json");
             league = reader.read();
             assertEquals("Empty League", league.getName());
             assertEquals(0, league.getDrivers().size());
@@ -133,12 +129,12 @@ public class JsonWriterTest {
 
             league.addTeam(team);
 
-            JsonWriter writer = new JsonWriter("./data/generalLeague.json");
+            JsonWriter writer = new JsonWriter("./data/testGeneralLeague.json");
             writer.open();
             writer.write(league);
             writer.close();
 
-            JsonReader reader = new JsonReader("./data/generalLeague.json");
+            JsonReader reader = new JsonReader("./data/testGeneralLeague.json");
             league = reader.read();
             assertEquals("General League", league.getName());
             assertEquals(20, league.getDrivers().size());

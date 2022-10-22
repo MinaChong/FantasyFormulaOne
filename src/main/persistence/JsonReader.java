@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-// Represents a reader that reads league from JSON data stored in file TODO NEED TO FIGURE OUT UPDATE ISSUE
+// Represents a reader that reads league from JSON data stored in file
 // NOTE: lends structure from JsonSerializationDemo
 public class JsonReader {
     private String source;
@@ -90,7 +90,7 @@ public class JsonReader {
     }
 
     // MODIFIES: league
-    // EFFECTS: parses race from JSON object and adds it to league
+    // EFFECTS: parses race from JSON object and adds it to league TODO how to add sprint/grand prix
     private void addRace(League league, JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         String date = jsonObject.getString("date");

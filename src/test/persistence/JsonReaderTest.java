@@ -22,7 +22,7 @@ public class JsonReaderTest {
 
     @Test
     public void testReaderEmptyLeague() {
-        JsonReader reader = new JsonReader("./data/emptyLeague.json");
+        JsonReader reader = new JsonReader("./data/testEmptyLeague.json");
         try {
             League league = reader.read();
             assertEquals("Empty League", league.getName());
@@ -33,24 +33,10 @@ public class JsonReaderTest {
             fail("Couldn't read from file");
         }
     }
-//
-//    @Test
-//    void testReaderGeneralWorkRoom() {
-//        JsonReader reader = new JsonReader("./data/testReaderGeneralWorkRoom.json");
-//        try {
-//            WorkRoom wr = reader.read();
-//            assertEquals("My work room", wr.getName());
-//            List<Thingy> thingies = wr.getThingies();
-//            assertEquals(2, thingies.size());
-//            checkThingy("needle", Category.STITCHING, thingies.get(0));
-//            checkThingy("saw", Category.WOODWORK, thingies.get(1));
-//        } catch (IOException e) {
-//            fail("Couldn't read from file");
-//        }
-//    }
+
     @Test
     public void testReaderGeneralLeague() {
-        JsonReader reader = new JsonReader("./data/generalLeague.json");
+        JsonReader reader = new JsonReader("./data/testGeneralLeague.json");
         try {
             League league = reader.read();
             assertEquals("General League", league.getName());
