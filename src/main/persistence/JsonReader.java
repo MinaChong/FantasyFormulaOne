@@ -107,7 +107,7 @@ public class JsonReader {
     }
 
     // MODIFIES: league
-    // EFFECTS: parses race from JSON object and adds it to league TODO how to add sprint/grand prix
+    // EFFECTS: parses race from JSON object and adds it to league
     private void addRace(League league, JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         String date = jsonObject.getString("date");
