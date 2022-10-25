@@ -92,7 +92,6 @@ public class JsonWriterTest {
             league.addDriver(vbottas);
             league.addDriver(ytsunoda);
 
-            Race sprint = new Sprint("Sprint Race", "11/11/11");
             List<Driver> sprintPlaces = new ArrayList<>();
             sprintPlaces.add(aalbon);
             sprintPlaces.add(cleclerc);
@@ -102,11 +101,9 @@ public class JsonWriterTest {
             sprintPlaces.add(falonso);
             sprintPlaces.add(grussell);
             sprintPlaces.add(gzhou);
-            sprint.setPlaces(sprintPlaces);
-            sprint.setFastestLap(aalbon);
+            Race sprint = new Sprint("Sprint Race", "11/11/11", sprintPlaces);
             league.addRace(sprint);
 
-            Race grandPrix = new GrandPrix("Grand Prix", "22/22/22");
             List<Driver> grandPrixPlaces = new ArrayList<>();
             grandPrixPlaces.add(aalbon);
             grandPrixPlaces.add(cleclerc);
@@ -118,8 +115,7 @@ public class JsonWriterTest {
             grandPrixPlaces.add(gzhou);
             grandPrixPlaces.add(kmagnussen);
             grandPrixPlaces.add(lhamilton);
-            grandPrix.setPlaces(grandPrixPlaces);
-            grandPrix.setFastestLap(aalbon);
+            Race grandPrix = new GrandPrix("Grand Prix", "22/22/22", grandPrixPlaces, aalbon);
             league.addRace(grandPrix);
 
             Team team = new Team("Team 1");

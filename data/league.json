@@ -1,40 +1,60 @@
 {
-    "teams": [],
+    "teams": [
+        {"name": "Kimi's Team"},
+        {"name": "Michael's Team"},
+        {"name": "Sarah's Team"}
+    ],
     "races": [
         {
-            "date": "1",
+            "date": "20/03/22",
             "places": [
                 {
-                    "wins": 1,
-                    "fastestLaps": 1,
-                    "teamNames": [],
-                    "num": 23,
-                    "name": "Alex Albon",
-                    "points": 34
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
+                    "wins": 3,
+                    "fastestLaps": 4,
                     "teamNames": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 25
+                    "points": 293
                 },
                 {
-                    "wins": 0,
-                    "fastestLaps": 0,
+                    "wins": 1,
+                    "fastestLaps": 2,
                     "teamNames": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 21
+                    "points": 223
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
                     "teamNames": [],
-                    "num": 3,
-                    "name": "Daniel Ricciardo",
-                    "points": 17
+                    "num": 20,
+                    "name": "Kevin Magnussen",
+                    "points": 28
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 77,
+                    "name": "Valtteri Bottas",
+                    "points": 46
                 },
                 {
                     "wins": 0,
@@ -42,7 +62,15 @@
                     "teamNames": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 14
+                    "points": 93
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 22,
+                    "name": "Yuki Tsunoda",
+                    "points": 13
                 },
                 {
                     "wins": 0,
@@ -50,32 +78,1929 @@
                     "teamNames": [],
                     "num": 14,
                     "name": "Fernando Alonso",
+                    "points": 76
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 24,
+                    "name": "Guanyu Zhou",
+                    "points": 11
+                }
+            ],
+            "name": "Bahrain Grand Prix",
+            "fastestLap": {
+                "wins": 3,
+                "fastestLaps": 4,
+                "num": 16,
+                "name": "Charles Leclerc",
+                "points": 293
+            }
+        },
+        {
+            "date": "27/03/22",
+            "places": [
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 223
+                },
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 93
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 4,
+                    "name": "Lando Norris",
+                    "points": 109
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 10,
+                    "name": "Pierre Gasly",
+                    "points": 23
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 20,
+                    "name": "Kevin Magnussen",
+                    "points": 28
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                }
+            ],
+            "name": "Saudi Arabian Grand Prix",
+            "fastestLap": {
+                "wins": 3,
+                "fastestLaps": 4,
+                "num": 16,
+                "name": "Charles Leclerc",
+                "points": 293
+            }
+        },
+        {
+            "date": "10/04/22",
+            "places": [
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 4,
+                    "name": "Lando Norris",
+                    "points": 109
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 3,
+                    "name": "Daniel Ricciardo",
+                    "points": 46
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 93
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 77,
+                    "name": "Valtteri Bottas",
+                    "points": 46
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 10,
+                    "name": "Pierre Gasly",
+                    "points": 23
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 23,
+                    "name": "Alex Albon",
+                    "points": 38
+                }
+            ],
+            "name": "Australian Grand Prix",
+            "fastestLap": {
+                "wins": 3,
+                "fastestLaps": 4,
+                "num": 16,
+                "name": "Charles Leclerc",
+                "points": 293
+            }
+        },
+        {
+            "date": "23/04/22",
+            "places": [
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 223
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 4,
+                    "name": "Lando Norris",
+                    "points": 109
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 3,
+                    "name": "Daniel Ricciardo",
+                    "points": 46
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 77,
+                    "name": "Valtteri Bottas",
+                    "points": 46
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 20,
+                    "name": "Kevin Magnussen",
+                    "points": 28
+                }
+            ],
+            "name": "Emilia Romagna Sprint Race",
+            "fastestLap": {
+                "wins": 13,
+                "fastestLaps": 4,
+                "num": 1,
+                "name": "Max Verstappen",
+                "points": 390
+            }
+        },
+        {
+            "date": "24/04/22",
+            "places": [
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 4,
+                    "name": "Lando Norris",
+                    "points": 109
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 77,
+                    "name": "Valtteri Bottas",
+                    "points": 46
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 22,
+                    "name": "Yuki Tsunoda",
+                    "points": 13
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 5,
+                    "name": "Sebastian Vettel",
+                    "points": 38
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 20,
+                    "name": "Kevin Magnussen",
+                    "points": 28
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 18,
+                    "name": "Lance Stroll",
+                    "points": 13
+                }
+            ],
+            "name": "Emilia Romagna Grand Prix",
+            "fastestLap": {
+                "wins": 13,
+                "fastestLaps": 4,
+                "num": 1,
+                "name": "Max Verstappen",
+                "points": 390
+            }
+        },
+        {
+            "date": "08/05/22",
+            "places": [
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 223
+                },
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 77,
+                    "name": "Valtteri Bottas",
+                    "points": 46
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 93
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 23,
+                    "name": "Alex Albon",
+                    "points": 38
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 18,
+                    "name": "Lance Stroll",
+                    "points": 13
+                }
+            ],
+            "name": "Miami Grand Prix",
+            "fastestLap": {
+                "wins": 13,
+                "fastestLaps": 4,
+                "num": 1,
+                "name": "Max Verstappen",
+                "points": 390
+            }
+        },
+        {
+            "date": "22/05/22",
+            "places": [
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 223
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 77,
+                    "name": "Valtteri Bottas",
+                    "points": 46
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 93
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 4,
+                    "name": "Lando Norris",
+                    "points": 109
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 76
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 22,
+                    "name": "Yuki Tsunoda",
+                    "points": 13
+                }
+            ],
+            "name": "Spanish Grand Prix",
+            "fastestLap": {
+                "wins": 2,
+                "fastestLaps": 3,
+                "num": 11,
+                "name": "Sergio Perez",
+                "points": 265
+            }
+        },
+        {
+            "date": "29/05/22",
+            "places": [
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 223
+                },
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 4,
+                    "name": "Lando Norris",
+                    "points": 109
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 76
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 77,
+                    "name": "Valtteri Bottas",
+                    "points": 46
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 5,
+                    "name": "Sebastian Vettel",
+                    "points": 38
+                }
+            ],
+            "name": "Monaco Grand Prix",
+            "fastestLap": {
+                "wins": 0,
+                "fastestLaps": 1,
+                "num": 4,
+                "name": "Lando Norris",
+                "points": 109
+            }
+        },
+        {
+            "date": "12/06/22",
+            "places": [
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 10,
+                    "name": "Pierre Gasly",
+                    "points": 23
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 5,
+                    "name": "Sebastian Vettel",
+                    "points": 38
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 76
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 3,
+                    "name": "Daniel Ricciardo",
+                    "points": 46
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 4,
+                    "name": "Lando Norris",
+                    "points": 109
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 93
+                }
+            ],
+            "name": "Azerbaijan Grand Prix",
+            "fastestLap": {
+                "wins": 2,
+                "fastestLaps": 3,
+                "num": 11,
+                "name": "Sergio Perez",
+                "points": 265
+            }
+        },
+        {
+            "date": "19/06/22",
+            "places": [
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 223
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 93
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 77,
+                    "name": "Valtteri Bottas",
+                    "points": 46
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 24,
+                    "name": "Guanyu Zhou",
                     "points": 11
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
                     "teamNames": [],
-                    "num": 63,
-                    "name": "George Russell",
-                    "points": 8
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 76
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
                     "teamNames": [],
-                    "num": 24,
-                    "name": "Guanyu Zhou",
-                    "points": 5
+                    "num": 18,
+                    "name": "Lance Stroll",
+                    "points": 13
                 }
             ],
-            "name": "Sprint",
+            "name": "Canadian Grand Prix",
             "fastestLap": {
                 "wins": 1,
+                "fastestLaps": 2,
+                "num": 55,
+                "name": "Carlos Sainz",
+                "points": 223
+            }
+        },
+        {
+            "date": "03/07/22",
+            "places": [
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 223
+                },
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 76
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 4,
+                    "name": "Lando Norris",
+                    "points": 109
+                },
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 47,
+                    "name": "Mick Schumacher",
+                    "points": 12
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 5,
+                    "name": "Sebastian Vettel",
+                    "points": 38
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 20,
+                    "name": "Kevin Magnussen",
+                    "points": 28
+                }
+            ],
+            "name": "British Grand Prix",
+            "fastestLap": {
+                "wins": 0,
+                "fastestLaps": 2,
+                "num": 44,
+                "name": "Lewis Hamilton",
+                "points": 199
+            }
+        },
+        {
+            "date": "10/06/22",
+            "places": [
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 223
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 93
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 20,
+                    "name": "Kevin Magnussen",
+                    "points": 28
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                }
+            ],
+            "name": "Austrian Sprint Race",
+            "fastestLap": {
+                "wins": 13,
+                "fastestLaps": 4,
+                "num": 1,
+                "name": "Max Verstappen",
+                "points": 390
+            }
+        },
+        {
+            "date": "10/07/22",
+            "places": [
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 93
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 47,
+                    "name": "Mick Schumacher",
+                    "points": 12
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 4,
+                    "name": "Lando Norris",
+                    "points": 109
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 20,
+                    "name": "Kevin Magnussen",
+                    "points": 28
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 3,
+                    "name": "Daniel Ricciardo",
+                    "points": 46
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 76
+                }
+            ],
+            "name": "Austrian Grand Prix",
+            "fastestLap": {
+                "wins": 3,
+                "fastestLaps": 4,
+                "num": 16,
+                "name": "Charles Leclerc",
+                "points": 293
+            }
+        },
+        {
+            "date": "24/07/22",
+            "places": [
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 223
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 76
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 4,
+                    "name": "Lando Norris",
+                    "points": 109
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 93
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 3,
+                    "name": "Daniel Ricciardo",
+                    "points": 46
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 18,
+                    "name": "Lance Stroll",
+                    "points": 13
+                }
+            ],
+            "name": "French Grand Prix",
+            "fastestLap": {
+                "wins": 1,
+                "fastestLaps": 2,
+                "num": 55,
+                "name": "Carlos Sainz",
+                "points": 223
+            }
+        },
+        {
+            "date": "31/07/22",
+            "places": [
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 223
+                },
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 4,
+                    "name": "Lando Norris",
+                    "points": 109
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 76
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 93
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 5,
+                    "name": "Sebastian Vettel",
+                    "points": 38
+                }
+            ],
+            "name": "Hungarian Grand Prix",
+            "fastestLap": {
+                "wins": 0,
+                "fastestLaps": 2,
+                "num": 44,
+                "name": "Lewis Hamilton",
+                "points": 199
+            }
+        },
+        {
+            "date": "28/08/22",
+            "places": [
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 223
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 76
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 93
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 5,
+                    "name": "Sebastian Vettel",
+                    "points": 38
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 10,
+                    "name": "Pierre Gasly",
+                    "points": 23
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 23,
+                    "name": "Alex Albon",
+                    "points": 38
+                }
+            ],
+            "name": "Belgian Grand Prix",
+            "fastestLap": {
+                "wins": 13,
+                "fastestLaps": 4,
+                "num": 1,
+                "name": "Max Verstappen",
+                "points": 390
+            }
+        },
+        {
+            "date": "04/09/22",
+            "places": [
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                },
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 76
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 4,
+                    "name": "Lando Norris",
+                    "points": 109
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 223
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 93
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 18,
+                    "name": "Lance Stroll",
+                    "points": 13
+                }
+            ],
+            "name": "Dutch Grand Prix",
+            "fastestLap": {
+                "wins": 13,
+                "fastestLaps": 4,
+                "num": 1,
+                "name": "Max Verstappen",
+                "points": 390
+            }
+        },
+        {
+            "date": "11/09/22",
+            "places": [
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 223
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                },
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 4,
+                    "name": "Lando Norris",
+                    "points": 109
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 10,
+                    "name": "Pierre Gasly",
+                    "points": 23
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 17,
+                    "name": "Nyck de Vries",
+                    "points": 2
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 24,
+                    "name": "Guanyu Zhou",
+                    "points": 11
+                }
+            ],
+            "name": "Italian Grand Prix",
+            "fastestLap": {
+                "wins": 2,
+                "fastestLaps": 3,
+                "num": 11,
+                "name": "Sergio Perez",
+                "points": 265
+            }
+        },
+        {
+            "date": "02/10/22",
+            "places": [
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 223
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 4,
+                    "name": "Lando Norris",
+                    "points": 109
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 3,
+                    "name": "Daniel Ricciardo",
+                    "points": 46
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 18,
+                    "name": "Lance Stroll",
+                    "points": 13
+                },
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 5,
+                    "name": "Sebastian Vettel",
+                    "points": 38
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 10,
+                    "name": "Pierre Gasly",
+                    "points": 23
+                }
+            ],
+            "name": "Singapore Grand Prix",
+            "fastestLap": {
+                "wins": 0,
+                "fastestLaps": 2,
+                "num": 63,
+                "name": "George Russell",
+                "points": 226
+            }
+        },
+        {
+            "date": "09/10/22",
+            "places": [
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 93
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 5,
+                    "name": "Sebastian Vettel",
+                    "points": 38
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 76
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 6,
+                    "name": "Nicholas Latifi",
+                    "points": 2
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 4,
+                    "name": "Lando Norris",
+                    "points": 109
+                }
+            ],
+            "name": "Japanese Grand Prix",
+            "fastestLap": {
+                "wins": 0,
                 "fastestLaps": 1,
-                "num": 23,
-                "name": "Alex Albon",
-                "points": 34
+                "num": 24,
+                "name": "Guanyu Zhou",
+                "points": 11
+            }
+        },
+        {
+            "date": "23/10/22",
+            "places": [
+                {
+                    "wins": 13,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 1,
+                    "name": "Max Verstappen",
+                    "points": 390
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 199
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 2,
+                    "fastestLaps": 3,
+                    "teamNames": [],
+                    "num": 11,
+                    "name": "Sergio Perez",
+                    "points": 265
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 4,
+                    "name": "Lando Norris",
+                    "points": 109
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 5,
+                    "name": "Sebastian Vettel",
+                    "points": 38
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 20,
+                    "name": "Kevin Magnussen",
+                    "points": 28
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 22,
+                    "name": "Yuki Tsunoda",
+                    "points": 13
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 93
+                }
+            ],
+            "name": "United States Grand Prix",
+            "fastestLap": {
+                "wins": 0,
+                "fastestLaps": 2,
+                "num": 63,
+                "name": "George Russell",
+                "points": 226
+            }
+        },
+        {
+            "date": "",
+            "places": [
+                {
+                    "wins": 1,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 23,
+                    "name": "Alex Albon",
+                    "points": 38
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teamNames": [],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 293
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 223
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 3,
+                    "name": "Daniel Ricciardo",
+                    "points": 46
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 93
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teamNames": [],
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 76
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teamNames": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 226
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teamNames": [],
+                    "num": 24,
+                    "name": "Guanyu Zhou",
+                    "points": 11
+                }
+            ],
+            "name": "Sprint Race",
+            "fastestLap": {
+                "wins": 0,
+                "fastestLaps": 0,
+                "num": 20,
+                "name": "Kevin Magnussen",
+                "points": 28
             }
         },
         {
@@ -87,23 +2012,23 @@
                     "teamNames": [],
                     "num": 23,
                     "name": "Alex Albon",
-                    "points": 34
+                    "points": 38
                 },
                 {
-                    "wins": 0,
-                    "fastestLaps": 0,
+                    "wins": 3,
+                    "fastestLaps": 4,
                     "teamNames": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 25
+                    "points": 293
                 },
                 {
-                    "wins": 0,
-                    "fastestLaps": 0,
+                    "wins": 1,
+                    "fastestLaps": 2,
                     "teamNames": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 21
+                    "points": 223
                 },
                 {
                     "wins": 0,
@@ -111,7 +2036,7 @@
                     "teamNames": [],
                     "num": 3,
                     "name": "Daniel Ricciardo",
-                    "points": 17
+                    "points": 46
                 },
                 {
                     "wins": 0,
@@ -119,7 +2044,7 @@
                     "teamNames": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 14
+                    "points": 93
                 },
                 {
                     "wins": 0,
@@ -127,23 +2052,23 @@
                     "teamNames": [],
                     "num": 14,
                     "name": "Fernando Alonso",
-                    "points": 11
+                    "points": 76
                 },
                 {
                     "wins": 0,
-                    "fastestLaps": 0,
+                    "fastestLaps": 2,
                     "teamNames": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 8
+                    "points": 226
                 },
                 {
                     "wins": 0,
-                    "fastestLaps": 0,
+                    "fastestLaps": 1,
                     "teamNames": [],
                     "num": 24,
                     "name": "Guanyu Zhou",
-                    "points": 5
+                    "points": 11
                 },
                 {
                     "wins": 0,
@@ -151,24 +2076,24 @@
                     "teamNames": [],
                     "num": 20,
                     "name": "Kevin Magnussen",
-                    "points": 2
+                    "points": 28
                 },
                 {
                     "wins": 0,
-                    "fastestLaps": 0,
+                    "fastestLaps": 2,
                     "teamNames": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 1
+                    "points": 199
                 }
             ],
-            "name": "G",
+            "name": "Grand Prix",
             "fastestLap": {
                 "wins": 1,
                 "fastestLaps": 1,
                 "num": 23,
                 "name": "Alex Albon",
-                "points": 34
+                "points": 38
             }
         }
     ],
@@ -180,23 +2105,27 @@
             "teamNames": [],
             "num": 23,
             "name": "Alex Albon",
-            "points": 34
+            "points": 38
         },
         {
-            "wins": 0,
-            "fastestLaps": 0,
-            "teamNames": [],
+            "wins": 3,
+            "fastestLaps": 4,
+            "teamNames": [
+                {"name": "Michael's Team"},
+                {"name": "Michael's Team"},
+                {"name": "Michael's Team"}
+            ],
             "num": 16,
             "name": "Charles Leclerc",
-            "points": 25
+            "points": 293
         },
         {
-            "wins": 0,
-            "fastestLaps": 0,
+            "wins": 1,
+            "fastestLaps": 2,
             "teamNames": [],
             "num": 55,
             "name": "Carlos Sainz",
-            "points": 21
+            "points": 223
         },
         {
             "wins": 0,
@@ -204,7 +2133,7 @@
             "teamNames": [],
             "num": 3,
             "name": "Daniel Ricciardo",
-            "points": 17
+            "points": 46
         },
         {
             "wins": 0,
@@ -212,7 +2141,7 @@
             "teamNames": [],
             "num": 31,
             "name": "Esteban Ocon",
-            "points": 14
+            "points": 93
         },
         {
             "wins": 0,
@@ -220,23 +2149,27 @@
             "teamNames": [],
             "num": 14,
             "name": "Fernando Alonso",
-            "points": 11
+            "points": 76
         },
         {
-            "wins": 0,
-            "fastestLaps": 0,
-            "teamNames": [],
+            "wins": 1,
+            "fastestLaps": 2,
+            "teamNames": [
+                {"name": "Sarah's Team"},
+                {"name": "Sarah's Team"},
+                {"name": "Sarah's Team"}
+            ],
             "num": 63,
             "name": "George Russell",
-            "points": 8
+            "points": 226
         },
         {
             "wins": 0,
-            "fastestLaps": 0,
+            "fastestLaps": 1,
             "teamNames": [],
             "num": 24,
             "name": "Guanyu Zhou",
-            "points": 5
+            "points": 11
         },
         {
             "wins": 0,
@@ -244,31 +2177,46 @@
             "teamNames": [],
             "num": 20,
             "name": "Kevin Magnussen",
-            "points": 2
+            "points": 28
         },
         {
             "wins": 0,
-            "fastestLaps": 0,
-            "teamNames": [],
+            "fastestLaps": 2,
+            "teamNames": [
+                {"name": "Kimi's Team"},
+                {"name": "Michael's Team"},
+                {"name": "Kimi's Team"},
+                {"name": "Michael's Team"},
+                {"name": "Kimi's Team"},
+                {"name": "Michael's Team"}
+            ],
             "num": 44,
             "name": "Lewis Hamilton",
-            "points": 1
+            "points": 199
         },
         {
             "wins": 0,
-            "fastestLaps": 0,
-            "teamNames": [],
+            "fastestLaps": 1,
+            "teamNames": [
+                {"name": "Michael's Team"},
+                {"name": "Michael's Team"},
+                {"name": "Michael's Team"}
+            ],
             "num": 4,
             "name": "Lando Norris",
-            "points": 0
+            "points": 109
         },
         {
             "wins": 0,
             "fastestLaps": 0,
-            "teamNames": [],
+            "teamNames": [
+                {"name": "Kimi's Team"},
+                {"name": "Kimi's Team"},
+                {"name": "Kimi's Team"}
+            ],
             "num": 18,
             "name": "Lance Stroll",
-            "points": 0
+            "points": 13
         },
         {
             "wins": 0,
@@ -276,15 +2224,19 @@
             "teamNames": [],
             "num": 47,
             "name": "Mick Schumacher",
-            "points": 0
+            "points": 12
         },
         {
-            "wins": 0,
-            "fastestLaps": 0,
-            "teamNames": [],
+            "wins": 13,
+            "fastestLaps": 4,
+            "teamNames": [
+                {"name": "Kimi's Team"},
+                {"name": "Kimi's Team"},
+                {"name": "Kimi's Team"}
+            ],
             "num": 1,
             "name": "Max Verstappen",
-            "points": 0
+            "points": 390
         },
         {
             "wins": 0,
@@ -292,7 +2244,7 @@
             "teamNames": [],
             "num": 6,
             "name": "Nicholas Latifi",
-            "points": 0
+            "points": 2
         },
         {
             "wins": 0,
@@ -300,15 +2252,15 @@
             "teamNames": [],
             "num": 10,
             "name": "Pierre Gasly",
-            "points": 0
+            "points": 23
         },
         {
-            "wins": 0,
-            "fastestLaps": 0,
+            "wins": 2,
+            "fastestLaps": 3,
             "teamNames": [],
             "num": 11,
             "name": "Sergio Perez",
-            "points": 0
+            "points": 265
         },
         {
             "wins": 0,
@@ -316,7 +2268,7 @@
             "teamNames": [],
             "num": 5,
             "name": "Sebastian Vettel",
-            "points": 0
+            "points": 38
         },
         {
             "wins": 0,
@@ -324,7 +2276,7 @@
             "teamNames": [],
             "num": 77,
             "name": "Valtteri Bottas",
-            "points": 0
+            "points": 46
         },
         {
             "wins": 0,
@@ -332,7 +2284,7 @@
             "teamNames": [],
             "num": 22,
             "name": "Yuki Tsunoda",
-            "points": 0
+            "points": 13
         }
     ]
 }

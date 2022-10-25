@@ -69,8 +69,7 @@ public class SprintTest {
         drivers.add(mverstappen);
         drivers.add(svettel);
 
-        testSprint = new Sprint("Singapore Grand Prix", "02/10/22");
-        testSprint.setPlaces(drivers);
+        testSprint = new Sprint("Singapore Grand Prix", "02/10/22", drivers);
     }
 
     @Test
@@ -78,7 +77,6 @@ public class SprintTest {
         assertEquals("Singapore Grand Prix", testSprint.getName());
         assertEquals("02/10/22", testSprint.getDate());
         assertEquals(8, testSprint.getPlaces().size());
-        assertNull(testSprint.getFastestLap());
     }
 
     @Test

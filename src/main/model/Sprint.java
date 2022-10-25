@@ -1,12 +1,23 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.List;
+
 // Represents a sprint race with a name, date, list of drivers places, and driver with the fastest lap
 public class Sprint extends Race {
+    private String name;
+    private String date;
+    private List<Driver> places;
+
     // REQUIRES: name of sprint race is of non-zero length, date of race is in form DD/MM/YY where D, M, Y are positive
-    // integers
+    // integers, places is a list of eight drivers
     // EFFECTS: creates a sprint race with given name and date
-    public Sprint(String name, String date) {
-        super(name, date);
+    public Sprint(String name, String date, List<Driver> places) {
+        this.name = name;
+        this.date = date;
+        this.places = places;
     }
 
     // EFFECTS: adds points and wins to drivers according to their race placements
@@ -34,5 +45,43 @@ public class Sprint extends Race {
 
         Driver eighth = places.get(7);
         eighth.addPoints(1);
+    }
+
+    // GETTERS:
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    @Override
+    public List<Driver> getPlaces() {
+        return places;
+    }
+
+    @Override
+    // EFFECTS: returns this as JSON object
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("sprint?", true);
+        json.put("name", name);
+        json.put("date", date);
+        json.put("places", placesToJson());
+        return json;
+    }
+
+    // EFFECTS: returns drivers in places as a JSON array
+    private JSONArray placesToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Driver driver : places) {
+            jsonArray.put(driver.toJson());
+        }
+
+        return jsonArray;
     }
 }

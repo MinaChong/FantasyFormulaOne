@@ -15,8 +15,8 @@ public class LeagueTest {
     private Driver testDriver;
     private Driver anotherTestDriver;
     private Driver yetAnotherTestDriver;
-    private Race testRace;
-    private Race anotherTestRace;
+    private Sprint testRace;
+    private Sprint anotherTestRace;
 
     @BeforeEach
     public void setup() {
@@ -29,7 +29,6 @@ public class LeagueTest {
         anotherTestDriver = new Driver("Driver 2", 2);
         yetAnotherTestDriver = new Driver("Driver 3", 3);
 
-        testRace = new Race("Race 1", "11/11/11");
         List<Driver> drivers = new ArrayList<>();
         drivers.add(new Driver("Alex Albon", 23));
         drivers.add(new Driver("Charles Leclerc", 16));
@@ -39,12 +38,9 @@ public class LeagueTest {
         drivers.add(new Driver("Fernando Alonso", 14));
         drivers.add(new Driver("George Russell", 63));
         drivers.add(new Driver("Guanyu Zhou", 24));
-        testRace.setPlaces(drivers);
-        testRace.setFastestLap(new Driver("Alex Albon", 23));
+        testRace = new Sprint("Race 1", "11/11/11", drivers);
 
-        anotherTestRace = new Race("Race 2", "22/22/22");
-        anotherTestRace.setPlaces(drivers);
-        anotherTestRace.setFastestLap(new Driver("Alex Albon", 23));
+        anotherTestRace = new Sprint("Race 2", "22/22/22", drivers);
 
         testTeam.addDriver(testDriver);
         testTeam.addDriver(anotherTestDriver);

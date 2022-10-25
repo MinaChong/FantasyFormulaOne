@@ -70,12 +70,8 @@ public class GrandPrixTest {
         drivers.add(lhamilton);
         drivers.add(pgasly);
 
-        testGrandPrix = new GrandPrix("Singapore Grand Prix", "02/10/22");
-        testGrandPrix.setPlaces(drivers);
-        testGrandPrix.setFastestLap(sperez);
-        anotherTestGrandPrix = new GrandPrix("another race", "00/00/00");
-        anotherTestGrandPrix.setPlaces(drivers);
-        anotherTestGrandPrix.setFastestLap(grussell);
+        testGrandPrix = new GrandPrix("Singapore Grand Prix", "02/10/22", drivers, sperez);
+        anotherTestGrandPrix = new GrandPrix("another race", "00/00/00", drivers, grussell);
     }
 
     @Test

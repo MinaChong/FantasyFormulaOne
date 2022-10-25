@@ -1,9 +1,6 @@
 package persistence;
 
-import model.Driver;
-import model.League;
-import model.Race;
-import model.Team;
+import model.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -111,22 +108,28 @@ public class JsonReader {
     private void addRace(League league, JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         String date = jsonObject.getString("date");
-        Race race = new Race(name, date);
-        addPlaces(race, jsonObject);
-        addFastestLap(race, jsonObject);
-        league.addRace(race);
+        List<Driver> places = addPlaces(jsonObject);
+
+        if (jsonObject.getBoolean("sprint?")) {
+            Sprint sprint = new Sprint(name, date, places);
+            league.addRace(sprint);
+        } else {
+            Driver fastestLap = addFastestLap(jsonObject);
+            GrandPrix grandPrix = new GrandPrix(name, date, places, fastestLap);
+            league.addRace(grandPrix);
+        }
     }
 
     // MODIFIES: race
     // EFFECTS: parses places from JSON object and adds them to race
-    private void addPlaces(Race race, JSONObject jsonObject) {
+    private List<Driver> addPlaces(JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("places");
         List<Driver> places = new ArrayList<>();
         for (Object json : jsonArray) {
             JSONObject nextPlace = (JSONObject) json;
             places.add(addPlace(nextPlace));
         }
-        race.setPlaces(places);
+        return places;
     }
 
     // MODIFIES: race
@@ -137,27 +140,27 @@ public class JsonReader {
         int points = jsonObject.getInt("points");
         int wins = jsonObject.getInt("wins");
         int fastestlaps = jsonObject.getInt("fastestLaps");
-        Driver driver = new Driver(name, num);
-        driver.addPoints(points);
-        driver.setWins(wins);
-        driver.setFastestLaps(fastestlaps);
-        return driver;
+        Driver place = new Driver(name, num);
+        place.addPoints(points);
+        place.setWins(wins);
+        place.setFastestLaps(fastestlaps);
+        return place;
     }
 
     // MODIFIES: race
     // EFFECTS: parses driver with fastest lap from JSON object and adds it to race
-    private void addFastestLap(Race race, JSONObject jsonObject) {
+    private Driver addFastestLap(JSONObject jsonObject) {
         JSONObject json = (JSONObject) jsonObject.get("fastestLap");
         String name = json.getString("name");
         int num = json.getInt("num");
         int points = json.getInt("points");
         int wins = json.getInt("wins");
         int fastestlaps = json.getInt("fastestLaps");
-        Driver driver = new Driver(name, num);
-        driver.addPoints(points);
-        driver.setWins(wins);
-        driver.setFastestLaps(fastestlaps);
-        race.setFastestLap(driver);
+        Driver fastestLap = new Driver(name, num);
+        fastestLap.addPoints(points);
+        fastestLap.setWins(wins);
+        fastestLap.setFastestLaps(fastestlaps);
+        return fastestLap;
     }
 
     // MODIFIES: league

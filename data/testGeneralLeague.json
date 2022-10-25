@@ -81,14 +81,8 @@
                     "points": 0
                 }
             ],
-            "name": "Sprint Race",
-            "fastestLap": {
-                "wins": 0,
-                "fastestLaps": 0,
-                "num": 23,
-                "name": "Alex Albon",
-                "points": 0
-            }
+            "sprint?": true,
+            "name": "Sprint Race"
         },
         {
             "date": "22/22/22",
@@ -183,6 +177,7 @@
                     "points": 0
                 }
             ],
+            "sprint?": false,
             "name": "Grand Prix",
             "fastestLap": {
                 "wins": 0,
