@@ -5,7 +5,7 @@ import persistence.Writable;
 
 import java.util.List;
 
-// Represents an abstract class that can handle sprint races and grand prix
+// Represents an abstract class that includes sprint races and grand prix
 public abstract class Race implements Writable {
     // EFFECTS: returns this as JSON object
     public abstract JSONObject toJson();

@@ -78,6 +78,7 @@ public class JsonReader {
         league.addDriver(driver);
     }
 
+    // EFFECTS: parses list of driver's team names from JSON object and returns it
     private List<String> addDriverTeams(League league, JSONObject jsonObject) {
         List<String> teams = new ArrayList<>();
         JSONArray jsonArray = jsonObject.getJSONArray("teamNames");
@@ -88,6 +89,7 @@ public class JsonReader {
         return teams;
     }
 
+    // EFFECTS: parses driver's team names from JSON object and returns it
     private String addDriverTeam(League league, JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         return name;
@@ -120,8 +122,7 @@ public class JsonReader {
         }
     }
 
-    // MODIFIES: race
-    // EFFECTS: parses places from JSON object and adds them to race
+    // EFFECTS: parses list of places from JSON object and returns it
     private List<Driver> addPlaces(JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("places");
         List<Driver> places = new ArrayList<>();
@@ -132,8 +133,7 @@ public class JsonReader {
         return places;
     }
 
-    // MODIFIES: race
-    // EFFECTS: parses place from JSON object and adds it to race
+    // EFFECTS: parses place from JSON object and returns it
     private Driver addPlace(JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         int num = jsonObject.getInt("num");
@@ -147,8 +147,7 @@ public class JsonReader {
         return place;
     }
 
-    // MODIFIES: race
-    // EFFECTS: parses driver with fastest lap from JSON object and adds it to race
+    // EFFECTS: parses driver with fastest lap from JSON object and returns it
     private Driver addFastestLap(JSONObject jsonObject) {
         JSONObject json = (JSONObject) jsonObject.get("fastestLap");
         String name = json.getString("name");
@@ -183,7 +182,7 @@ public class JsonReader {
     }
 
     // MODIFIES: team
-    // EFFECTS: parses drivers from JSON object and adds them to team
+    // EFFECTS: parses drivers on given team and adds them to the team
     private void addTeamDrivers(League league, Team team, JSONObject jsonObject) {
         for (Driver driver : league.getDrivers()) {
             if (driver.getTeamNames().contains(team.getName())) {

@@ -7,14 +7,15 @@ import persistence.Writable;
 import java.util.ArrayList;
 import java.util.List;
 
-// Represents a driver having a name, number, points total, wins total, and fastest laps total
+// Represents a driver having a name, number, points total, wins total, fastest laps total, and list of names of teams
+// that they are on
 public class Driver implements Writable {
-    private String name;        // the driver's name
-    private int num;            // the driver's number
-    private int points;         // the driver's total number of points
-    private int wins;           // the driver's total number of wins
-    private int fastestLaps;    // the driver's total number of fastest laps
-    private List<String> teamNames;   // the names of teams that the driver is on
+    private String name;                // the driver's name
+    private int num;                    // the driver's number
+    private int points;                 // the driver's total number of points
+    private int wins;                   // the driver's total number of wins
+    private int fastestLaps;            // the driver's total number of fastest laps
+    private List<String> teamNames;     // the names of teams that the driver is on
 
     // REQUIRES: name of driver has non-zero length
     // EFFECTS: driver is created with given name, given driver number, 0 points, 0 wins, 0 fastest laps, and 0 teams
@@ -88,6 +89,8 @@ public class Driver implements Writable {
         this.fastestLaps = fastestLaps;
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets team names for given driver
     public void setTeamNames(List<String> teamNames) {
         this.teamNames = teamNames;
     }
@@ -119,6 +122,7 @@ public class Driver implements Writable {
     }
 
     @Override
+    // EFFECTS: returns this as JSON object
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("name", name);

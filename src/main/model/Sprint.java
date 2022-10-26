@@ -5,15 +5,15 @@ import org.json.JSONObject;
 
 import java.util.List;
 
-// Represents a sprint race with a name, date, list of drivers places, and driver with the fastest lap
+// Represents a sprint race with a name, date, and list of driver places
 public class Sprint extends Race {
-    private String name;
-    private String date;
-    private List<Driver> places;
+    private String name;            // the name of the sprint race
+    private String date;            // the date of the sprint race
+    private List<Driver> places;    // list of drivers in the order that they finished the sprint race
 
     // REQUIRES: name of sprint race is of non-zero length, date of race is in form DD/MM/YY where D, M, Y are positive
     // integers, places is a list of eight drivers
-    // EFFECTS: creates a sprint race with given name and date
+    // EFFECTS: creates a sprint race with given name, date, and driver places
     public Sprint(String name, String date, List<Driver> places) {
         this.name = name;
         this.date = date;

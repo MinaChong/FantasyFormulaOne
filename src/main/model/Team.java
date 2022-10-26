@@ -76,6 +76,7 @@ public class Team implements Writable {
     }
 
     @Override
+    // EFFECTS: returns this as JSON object
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("name", name);

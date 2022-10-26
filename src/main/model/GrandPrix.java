@@ -3,19 +3,18 @@ package model;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.List;
 
 // Represents a grand prix with a name, date, list of drivers places, and driver with the fastest lap
 public class GrandPrix extends Race {
-    private String name;
-    private String date;
-    private List<Driver> places;
-    private Driver fastestLap;
+    private String name;            // the name of the grand prix
+    private String date;            // the date of the grand prix in format DD/MM/YY
+    private List<Driver> places;    // list of drivers in the order that they finished the grand prix
+    private Driver fastestLap;      // the driver with the fastest lap of the grand prix
 
     // REQUIRES: name of grand prix is of non-zero length, date of race is in form DD/MM/YY where D, M, Y are positive
     // integers, places is a list of ten drivers
-    // EFFECTS: creates a race with given name and date
+    // EFFECTS: creates a race with given name, date, driver places, and driver with fastest lap
     public GrandPrix(String name, String date, List<Driver> places, Driver fastestLap) {
         this.name = name;
         this.date = date;
@@ -59,6 +58,7 @@ public class GrandPrix extends Race {
         tenth.addPoints(1);
     }
 
+    // EFFECTS: adds a point for the driver with the fastest lap if the driver finished in the first ten places
     public void updateFastestLap() {
         fastestLap.addFastestLap();
         if (places.contains(fastestLap)) {
