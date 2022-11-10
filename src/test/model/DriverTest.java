@@ -7,10 +7,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DriverTest {
     private Driver testDriver;
+    private Team testTeam;
+    private Team anotherTestTeam;
 
     @BeforeEach
     public void setup() {
         testDriver = new Driver("Bob the Driver", 1);
+        testTeam = new Team("team 1");
+        anotherTestTeam = new Team("team 2");
     }
 
     @Test
@@ -20,7 +24,7 @@ public class DriverTest {
         assertEquals(0, testDriver.getPoints());
         assertEquals(0, testDriver.getWins());
         assertEquals(0, testDriver.getFastestLaps());
-        assertEquals(0, testDriver.getTeamNames().size());
+        assertEquals(0, testDriver.getTeams().size());
     }
 
     @Test
@@ -99,38 +103,38 @@ public class DriverTest {
     }
 
     @Test
-    public void addTeamNameTest() {
-        testDriver.addTeamName("team 1");
-        assertEquals(1, testDriver.getTeamNames().size());
+    public void addTeamTest() {
+        testDriver.addTeam(testTeam);
+        assertEquals(1, testDriver.getTeams().size());
     }
 
     @Test
-    public void addTeamNameMultipleTimesTest() {
-        testDriver.addTeamName("team 1");
-        assertEquals(1, testDriver.getTeamNames().size());
+    public void addTeamMultipleTimesTest() {
+        testDriver.addTeam(testTeam);
+        assertEquals(1, testDriver.getTeams().size());
 
-        testDriver.addTeamName("team 2");
-        assertEquals(2, testDriver.getTeamNames().size());
+        testDriver.addTeam(anotherTestTeam);
+        assertEquals(2, testDriver.getTeams().size());
     }
 
     @Test
-    public void removeTeamNameTest() {
-        testDriver.addTeamName("team 1");
-        assertEquals(1, testDriver.getTeamNames().size());
+    public void removeTeamTest() {
+        testDriver.addTeam(testTeam);
+        assertEquals(1, testDriver.getTeams().size());
 
-        testDriver.removeTeamName("team 1");
-        assertEquals(0, testDriver.getTeamNames().size());
+        testDriver.removeTeam(testTeam);
+        assertEquals(0, testDriver.getTeams().size());
     }
 
     @Test
-    public void removeTeamNameMultipleTimesTest() {
-        testDriver.addTeamName("team 1");
-        testDriver.addTeamName("team 2");
-        assertEquals(2, testDriver.getTeamNames().size());
+    public void removeTeamMultipleTimesTest() {
+        testDriver.addTeam(testTeam);
+        testDriver.addTeam(anotherTestTeam);
+        assertEquals(2, testDriver.getTeams().size());
 
-        testDriver.removeTeamName("team 1");
-        assertEquals(1, testDriver.getTeamNames().size());
-        testDriver.removeTeamName("team 2");
-        assertEquals(0, testDriver.getTeamNames().size());
+        testDriver.removeTeam(testTeam);
+        assertEquals(1, testDriver.getTeams().size());
+        testDriver.removeTeam(anotherTestTeam);
+        assertEquals(0, testDriver.getTeams().size());
     }
 }

@@ -5,6 +5,7 @@ import persistence.Writable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 // Represents a team having a name and list of drivers
 public class Team implements Writable {
@@ -21,15 +22,19 @@ public class Team implements Writable {
     // MODIFIES: this
     // EFFECTS: adds given driver to list of drivers on team
     public void addDriver(Driver driver) {
-        drivers.add(driver);
-        driver.addTeamName(name);
+        if (!drivers.contains(driver)) {
+            drivers.add(driver);
+            driver.addTeam(this);
+        }
     }
 
     // MODIFIES: this
     // EFFECTS: removes given driver from list of drivers on team
     public void removeDriver(Driver driver) {
-        drivers.remove(driver);
-        driver.removeTeamName(name);
+        if (drivers.contains(driver)) {
+            drivers.remove(driver);
+            driver.removeTeam(this);
+        }
     }
 
     // GETTERS:
@@ -81,5 +86,22 @@ public class Team implements Writable {
         JSONObject json = new JSONObject();
         json.put("name", name);
         return json;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Team)) {
+            return false;
+        }
+        Team team = (Team) o;
+        return name.equals(team.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

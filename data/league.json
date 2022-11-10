@@ -11,47 +11,47 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 1,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 223
+                    "points": 202
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 20,
                     "name": "Kevin Magnussen",
-                    "points": 28
+                    "points": 26
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 77,
                     "name": "Valtteri Bottas",
                     "points": 46
@@ -59,15 +59,15 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 93
+                    "points": 79
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 22,
                     "name": "Yuki Tsunoda",
                     "points": 13
@@ -75,18 +75,18 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 14,
                     "name": "Fernando Alonso",
-                    "points": 76
+                    "points": 65
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 24,
                     "name": "Guanyu Zhou",
-                    "points": 11
+                    "points": 6
                 }
             ],
             "sprint?": false,
@@ -96,7 +96,7 @@
                 "fastestLaps": 4,
                 "num": 16,
                 "name": "Charles Leclerc",
-                "points": 293
+                "points": 268
             }
         },
         {
@@ -105,7 +105,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -113,23 +113,23 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 1,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 223
+                    "points": 202
                 },
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -137,23 +137,23 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 93
+                    "points": 79
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -161,7 +161,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 10,
                     "name": "Pierre Gasly",
                     "points": 23
@@ -169,18 +169,18 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 20,
                     "name": "Kevin Magnussen",
-                    "points": 28
+                    "points": 26
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 }
             ],
             "sprint?": false,
@@ -190,7 +190,7 @@
                 "fastestLaps": 4,
                 "num": 16,
                 "name": "Charles Leclerc",
-                "points": 293
+                "points": 268
             }
         },
         {
@@ -199,15 +199,15 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -215,23 +215,23 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -239,23 +239,23 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 3,
                     "name": "Daniel Ricciardo",
-                    "points": 46
+                    "points": 29
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 93
+                    "points": 79
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 77,
                     "name": "Valtteri Bottas",
                     "points": 46
@@ -263,18 +263,18 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 10,
                     "name": "Pierre Gasly",
                     "points": 23
                 },
                 {
-                    "wins": 1,
-                    "fastestLaps": 1,
-                    "teamNames": [],
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teams": [],
                     "num": 23,
                     "name": "Alex Albon",
-                    "points": 38
+                    "points": 4
                 }
             ],
             "sprint?": false,
@@ -284,7 +284,7 @@
                 "fastestLaps": 4,
                 "num": 16,
                 "name": "Charles Leclerc",
-                "points": 293
+                "points": 268
             }
         },
         {
@@ -293,7 +293,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -301,15 +301,15 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -317,15 +317,15 @@
                 {
                     "wins": 1,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 223
+                    "points": 202
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -333,15 +333,15 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 3,
                     "name": "Daniel Ricciardo",
-                    "points": 46
+                    "points": 29
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 77,
                     "name": "Valtteri Bottas",
                     "points": 46
@@ -349,10 +349,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 20,
                     "name": "Kevin Magnussen",
-                    "points": 28
+                    "points": 26
                 }
             ],
             "sprint?": true,
@@ -364,7 +364,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -372,7 +372,7 @@
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -380,7 +380,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -388,15 +388,15 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 77,
                     "name": "Valtteri Bottas",
                     "points": 46
@@ -404,15 +404,15 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 22,
                     "name": "Yuki Tsunoda",
                     "points": 13
@@ -420,7 +420,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 5,
                     "name": "Sebastian Vettel",
                     "points": 38
@@ -428,15 +428,15 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 20,
                     "name": "Kevin Magnussen",
-                    "points": 28
+                    "points": 26
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 18,
                     "name": "Lance Stroll",
                     "points": 13
@@ -458,7 +458,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -466,23 +466,23 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 1,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 223
+                    "points": 202
                 },
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -490,23 +490,23 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 77,
                     "name": "Valtteri Bottas",
                     "points": 46
@@ -514,23 +514,23 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 93
-                },
-                {
-                    "wins": 1,
-                    "fastestLaps": 1,
-                    "teamNames": [],
-                    "num": 23,
-                    "name": "Alex Albon",
-                    "points": 38
+                    "points": 79
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
+                    "num": 23,
+                    "name": "Alex Albon",
+                    "points": 4
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teams": [],
                     "num": 18,
                     "name": "Lance Stroll",
                     "points": 13
@@ -552,7 +552,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -560,7 +560,7 @@
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -568,31 +568,31 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 1,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 223
+                    "points": 202
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 77,
                     "name": "Valtteri Bottas",
                     "points": 46
@@ -600,15 +600,15 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 93
+                    "points": 79
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -616,15 +616,15 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 14,
                     "name": "Fernando Alonso",
-                    "points": 76
+                    "points": 65
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 22,
                     "name": "Yuki Tsunoda",
                     "points": 13
@@ -646,7 +646,7 @@
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -654,15 +654,15 @@
                 {
                     "wins": 1,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 223
+                    "points": 202
                 },
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -670,23 +670,23 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -694,23 +694,23 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 14,
                     "name": "Fernando Alonso",
-                    "points": 76
+                    "points": 65
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 77,
                     "name": "Valtteri Bottas",
                     "points": 46
@@ -718,7 +718,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 5,
                     "name": "Sebastian Vettel",
                     "points": 38
@@ -740,7 +740,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -748,7 +748,7 @@
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -756,23 +756,23 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 10,
                     "name": "Pierre Gasly",
                     "points": 23
@@ -780,7 +780,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 5,
                     "name": "Sebastian Vettel",
                     "points": 38
@@ -788,23 +788,23 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 14,
                     "name": "Fernando Alonso",
-                    "points": 76
+                    "points": 65
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 3,
                     "name": "Daniel Ricciardo",
-                    "points": 46
+                    "points": 29
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -812,10 +812,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 93
+                    "points": 79
                 }
             ],
             "sprint?": false,
@@ -834,7 +834,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -842,47 +842,47 @@
                 {
                     "wins": 1,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 223
+                    "points": 202
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 93
+                    "points": 79
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 77,
                     "name": "Valtteri Bottas",
                     "points": 46
@@ -890,23 +890,23 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 24,
                     "name": "Guanyu Zhou",
-                    "points": 11
+                    "points": 6
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 14,
                     "name": "Fernando Alonso",
-                    "points": 76
+                    "points": 65
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 18,
                     "name": "Lance Stroll",
                     "points": 13
@@ -919,7 +919,7 @@
                 "fastestLaps": 2,
                 "num": 55,
                 "name": "Carlos Sainz",
-                "points": 223
+                "points": 202
             }
         },
         {
@@ -928,15 +928,15 @@
                 {
                     "wins": 1,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 223
+                    "points": 202
                 },
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -944,31 +944,31 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 },
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 14,
                     "name": "Fernando Alonso",
-                    "points": 76
+                    "points": 65
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -976,7 +976,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -984,7 +984,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 47,
                     "name": "Mick Schumacher",
                     "points": 12
@@ -992,7 +992,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 5,
                     "name": "Sebastian Vettel",
                     "points": 38
@@ -1000,10 +1000,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 20,
                     "name": "Kevin Magnussen",
-                    "points": 28
+                    "points": 26
                 }
             ],
             "sprint?": false,
@@ -1013,7 +1013,7 @@
                 "fastestLaps": 2,
                 "num": 44,
                 "name": "Lewis Hamilton",
-                "points": 199
+                "points": 198
             }
         },
         {
@@ -1022,7 +1022,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1030,31 +1030,31 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 1,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 223
+                    "points": 202
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -1062,26 +1062,26 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 93
+                    "points": 79
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 20,
                     "name": "Kevin Magnussen",
-                    "points": 28
+                    "points": 26
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 }
             ],
             "sprint?": true,
@@ -1093,15 +1093,15 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1109,31 +1109,31 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 93
+                    "points": 79
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 47,
                     "name": "Mick Schumacher",
                     "points": 12
@@ -1141,7 +1141,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -1149,26 +1149,26 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 20,
                     "name": "Kevin Magnussen",
-                    "points": 28
+                    "points": 26
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 3,
                     "name": "Daniel Ricciardo",
-                    "points": 46
+                    "points": 29
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 14,
                     "name": "Fernando Alonso",
-                    "points": 76
+                    "points": 65
                 }
             ],
             "sprint?": false,
@@ -1178,7 +1178,7 @@
                 "fastestLaps": 4,
                 "num": 16,
                 "name": "Charles Leclerc",
-                "points": 293
+                "points": 268
             }
         },
         {
@@ -1187,7 +1187,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1195,23 +1195,23 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -1219,23 +1219,23 @@
                 {
                     "wins": 1,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 223
+                    "points": 202
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 14,
                     "name": "Fernando Alonso",
-                    "points": 76
+                    "points": 65
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -1243,23 +1243,23 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 93
+                    "points": 79
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 3,
                     "name": "Daniel Ricciardo",
-                    "points": 46
+                    "points": 29
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 18,
                     "name": "Lance Stroll",
                     "points": 13
@@ -1272,7 +1272,7 @@
                 "fastestLaps": 2,
                 "num": 55,
                 "name": "Carlos Sainz",
-                "points": 223
+                "points": 202
             }
         },
         {
@@ -1281,7 +1281,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1289,31 +1289,31 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 1,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 223
+                    "points": 202
                 },
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -1321,15 +1321,15 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -1337,23 +1337,23 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 14,
                     "name": "Fernando Alonso",
-                    "points": 76
+                    "points": 65
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 93
+                    "points": 79
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 5,
                     "name": "Sebastian Vettel",
                     "points": 38
@@ -1366,7 +1366,7 @@
                 "fastestLaps": 2,
                 "num": 44,
                 "name": "Lewis Hamilton",
-                "points": 199
+                "points": 198
             }
         },
         {
@@ -1375,7 +1375,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1383,7 +1383,7 @@
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -1391,47 +1391,47 @@
                 {
                     "wins": 1,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 223
+                    "points": 202
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 14,
                     "name": "Fernando Alonso",
-                    "points": 76
+                    "points": 65
                 },
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 93
+                    "points": 79
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 5,
                     "name": "Sebastian Vettel",
                     "points": 38
@@ -1439,18 +1439,18 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 10,
                     "name": "Pierre Gasly",
                     "points": 23
                 },
                 {
-                    "wins": 1,
-                    "fastestLaps": 1,
-                    "teamNames": [],
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teams": [],
                     "num": 23,
                     "name": "Alex Albon",
-                    "points": 38
+                    "points": 4
                 }
             ],
             "sprint?": false,
@@ -1469,7 +1469,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1477,31 +1477,31 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 },
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -1509,15 +1509,15 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 14,
                     "name": "Fernando Alonso",
-                    "points": 76
+                    "points": 65
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -1525,23 +1525,23 @@
                 {
                     "wins": 1,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 223
+                    "points": 202
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 93
+                    "points": 79
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 18,
                     "name": "Lance Stroll",
                     "points": 13
@@ -1563,7 +1563,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1571,39 +1571,39 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 1,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 223
+                    "points": 202
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 },
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -1611,7 +1611,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -1619,7 +1619,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 10,
                     "name": "Pierre Gasly",
                     "points": 23
@@ -1627,7 +1627,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 17,
                     "name": "Nyck de Vries",
                     "points": 2
@@ -1635,10 +1635,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 24,
                     "name": "Guanyu Zhou",
-                    "points": 11
+                    "points": 6
                 }
             ],
             "sprint?": false,
@@ -1657,7 +1657,7 @@
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -1665,23 +1665,23 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 1,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 55,
                     "name": "Carlos Sainz",
-                    "points": 223
+                    "points": 202
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -1689,15 +1689,15 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 3,
                     "name": "Daniel Ricciardo",
-                    "points": 46
+                    "points": 29
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 18,
                     "name": "Lance Stroll",
                     "points": 13
@@ -1705,7 +1705,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1713,7 +1713,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 5,
                     "name": "Sebastian Vettel",
                     "points": 38
@@ -1721,15 +1721,15 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 10,
                     "name": "Pierre Gasly",
                     "points": 23
@@ -1742,7 +1742,7 @@
                 "fastestLaps": 2,
                 "num": 63,
                 "name": "George Russell",
-                "points": 226
+                "points": 218
             }
         },
         {
@@ -1751,7 +1751,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1759,7 +1759,7 @@
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -1767,31 +1767,31 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 93
+                    "points": 79
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 5,
                     "name": "Sebastian Vettel",
                     "points": 38
@@ -1799,23 +1799,23 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 14,
                     "name": "Fernando Alonso",
-                    "points": 76
+                    "points": 65
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 6,
                     "name": "Nicholas Latifi",
                     "points": 2
@@ -1823,7 +1823,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -1836,7 +1836,7 @@
                 "fastestLaps": 1,
                 "num": 24,
                 "name": "Guanyu Zhou",
-                "points": 11
+                "points": 6
             }
         },
         {
@@ -1845,7 +1845,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1853,23 +1853,23 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 44,
                     "name": "Lewis Hamilton",
-                    "points": 199
+                    "points": 198
                 },
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 16,
                     "name": "Charles Leclerc",
-                    "points": 293
+                    "points": 268
                 },
                 {
                     "wins": 2,
                     "fastestLaps": 3,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 11,
                     "name": "Sergio Perez",
                     "points": 265
@@ -1877,15 +1877,15 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 63,
                     "name": "George Russell",
-                    "points": 226
+                    "points": 218
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -1893,7 +1893,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 5,
                     "name": "Sebastian Vettel",
                     "points": 38
@@ -1901,15 +1901,15 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 20,
                     "name": "Kevin Magnussen",
-                    "points": 28
+                    "points": 26
                 },
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 22,
                     "name": "Yuki Tsunoda",
                     "points": 13
@@ -1917,10 +1917,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 31,
                     "name": "Esteban Ocon",
-                    "points": 93
+                    "points": 79
                 }
             ],
             "sprint?": false,
@@ -1930,280 +1930,170 @@
                 "fastestLaps": 2,
                 "num": 63,
                 "name": "George Russell",
-                "points": 226
+                "points": 218
             }
         },
         {
-            "date": "11/11",
+            "date": "11/11/11",
             "places": [
                 {
-                    "wins": 1,
-                    "fastestLaps": 1,
-                    "teamNames": [],
-                    "num": 23,
-                    "name": "Alex Albon",
-                    "points": 38
-                },
-                {
                     "wins": 3,
-                    "fastestLaps": 4,
-                    "teamNames": [],
-                    "num": 16,
-                    "name": "Charles Leclerc",
-                    "points": 293
-                },
-                {
-                    "wins": 1,
                     "fastestLaps": 2,
-                    "teamNames": [],
-                    "num": 55,
-                    "name": "Carlos Sainz",
-                    "points": 223
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teamNames": [],
-                    "num": 3,
-                    "name": "Daniel Ricciardo",
-                    "points": 46
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teamNames": [],
-                    "num": 31,
-                    "name": "Esteban Ocon",
-                    "points": 93
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teamNames": [],
-                    "num": 14,
-                    "name": "Fernando Alonso",
-                    "points": 76
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 2,
-                    "teamNames": [],
+                    "teams": [{"name": "Mina's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 226
                 },
                 {
                     "wins": 0,
+                    "fastestLaps": 0,
+                    "teams": [],
+                    "num": 23,
+                    "name": "Alex Albon",
+                    "points": 11
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teams": [{"name": "Michael's Team"}],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 274
+                },
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teams": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 207
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teams": [],
+                    "num": 3,
+                    "name": "Daniel Ricciardo",
+                    "points": 33
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teams": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 82
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teams": [],
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 67
+                },
+                {
+                    "wins": 0,
                     "fastestLaps": 1,
-                    "teamNames": [],
+                    "teams": [],
                     "num": 24,
                     "name": "Guanyu Zhou",
-                    "points": 11
+                    "points": 7
                 }
             ],
             "sprint?": true,
-            "name": "Sprint Race"
-        },
-        {
-            "date": "22/10",
-            "places": [
-                {
-                    "wins": 1,
-                    "fastestLaps": 1,
-                    "teamNames": [],
-                    "num": 23,
-                    "name": "Alex Albon",
-                    "points": 38
-                },
-                {
-                    "wins": 3,
-                    "fastestLaps": 4,
-                    "teamNames": [],
-                    "num": 16,
-                    "name": "Charles Leclerc",
-                    "points": 293
-                },
-                {
-                    "wins": 1,
-                    "fastestLaps": 2,
-                    "teamNames": [],
-                    "num": 55,
-                    "name": "Carlos Sainz",
-                    "points": 223
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teamNames": [],
-                    "num": 3,
-                    "name": "Daniel Ricciardo",
-                    "points": 46
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teamNames": [],
-                    "num": 31,
-                    "name": "Esteban Ocon",
-                    "points": 93
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teamNames": [],
-                    "num": 14,
-                    "name": "Fernando Alonso",
-                    "points": 76
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 2,
-                    "teamNames": [],
-                    "num": 63,
-                    "name": "George Russell",
-                    "points": 226
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 1,
-                    "teamNames": [],
-                    "num": 24,
-                    "name": "Guanyu Zhou",
-                    "points": 11
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teamNames": [],
-                    "num": 20,
-                    "name": "Kevin Magnussen",
-                    "points": 28
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 2,
-                    "teamNames": [],
-                    "num": 44,
-                    "name": "Lewis Hamilton",
-                    "points": 199
-                }
-            ],
-            "sprint?": false,
-            "name": "Grand Prix",
-            "fastestLap": {
-                "wins": 1,
-                "fastestLaps": 1,
-                "num": 23,
-                "name": "Alex Albon",
-                "points": 38
-            }
+            "name": "Sprint"
         }
     ],
     "name": "My Fantasy F1 League",
     "drivers": [
         {
-            "wins": 1,
-            "fastestLaps": 1,
-            "teamNames": [],
+            "wins": 0,
+            "fastestLaps": 0,
+            "teams": [],
             "num": 23,
             "name": "Alex Albon",
-            "points": 38
+            "points": 11
         },
         {
             "wins": 3,
             "fastestLaps": 4,
-            "teamNames": [
-                {"name": "Michael's Team"},
-                {"name": "Michael's Team"},
-                {"name": "Michael's Team"}
-            ],
+            "teams": [{"name": "Michael's Team"}],
             "num": 16,
             "name": "Charles Leclerc",
-            "points": 293
+            "points": 274
         },
         {
             "wins": 1,
             "fastestLaps": 2,
-            "teamNames": [],
+            "teams": [],
             "num": 55,
             "name": "Carlos Sainz",
-            "points": 223
+            "points": 207
         },
         {
             "wins": 0,
             "fastestLaps": 0,
-            "teamNames": [],
+            "teams": [],
             "num": 3,
             "name": "Daniel Ricciardo",
-            "points": 46
+            "points": 33
         },
         {
             "wins": 0,
             "fastestLaps": 0,
-            "teamNames": [],
+            "teams": [],
             "num": 31,
             "name": "Esteban Ocon",
-            "points": 93
+            "points": 82
         },
         {
             "wins": 0,
             "fastestLaps": 0,
-            "teamNames": [],
+            "teams": [],
             "num": 14,
             "name": "Fernando Alonso",
-            "points": 76
+            "points": 67
         },
         {
-            "wins": 1,
+            "wins": 3,
             "fastestLaps": 2,
-            "teamNames": [
-                {"name": "Mina's Team"},
-                {"name": "Mina's Team"},
-                {"name": "Mina's Team"}
-            ],
+            "teams": [{"name": "Mina's Team"}],
             "num": 63,
             "name": "George Russell",
-            "points": 216
+            "points": 226
         },
         {
             "wins": 0,
             "fastestLaps": 1,
-            "teamNames": [],
+            "teams": [],
             "num": 24,
             "name": "Guanyu Zhou",
-            "points": 11
+            "points": 7
         },
         {
             "wins": 0,
             "fastestLaps": 0,
-            "teamNames": [],
+            "teams": [],
             "num": 20,
             "name": "Kevin Magnussen",
-            "points": 28
+            "points": 26
         },
         {
             "wins": 0,
             "fastestLaps": 2,
-            "teamNames": [
-                {"name": "Kimi's Team"},
-                {"name": "Michael's Team"},
-                {"name": "Kimi's Team"},
-                {"name": "Michael's Team"},
+            "teams": [
                 {"name": "Kimi's Team"},
                 {"name": "Michael's Team"}
             ],
             "num": 44,
             "name": "Lewis Hamilton",
-            "points": 199
+            "points": 198
         },
         {
             "wins": 0,
             "fastestLaps": 1,
-            "teamNames": [
-                {"name": "Michael's Team"},
-                {"name": "Michael's Team"},
-                {"name": "Michael's Team"}
-            ],
+            "teams": [{"name": "Michael's Team"}],
             "num": 4,
             "name": "Lando Norris",
             "points": 109
@@ -2211,11 +2101,7 @@
         {
             "wins": 0,
             "fastestLaps": 0,
-            "teamNames": [
-                {"name": "Kimi's Team"},
-                {"name": "Kimi's Team"},
-                {"name": "Kimi's Team"}
-            ],
+            "teams": [{"name": "Kimi's Team"}],
             "num": 18,
             "name": "Lance Stroll",
             "points": 13
@@ -2223,7 +2109,7 @@
         {
             "wins": 0,
             "fastestLaps": 0,
-            "teamNames": [],
+            "teams": [],
             "num": 47,
             "name": "Mick Schumacher",
             "points": 12
@@ -2231,11 +2117,7 @@
         {
             "wins": 13,
             "fastestLaps": 4,
-            "teamNames": [
-                {"name": "Kimi's Team"},
-                {"name": "Kimi's Team"},
-                {"name": "Kimi's Team"}
-            ],
+            "teams": [{"name": "Kimi's Team"}],
             "num": 1,
             "name": "Max Verstappen",
             "points": 390
@@ -2243,7 +2125,7 @@
         {
             "wins": 0,
             "fastestLaps": 0,
-            "teamNames": [],
+            "teams": [],
             "num": 6,
             "name": "Nicholas Latifi",
             "points": 2
@@ -2251,7 +2133,7 @@
         {
             "wins": 0,
             "fastestLaps": 0,
-            "teamNames": [],
+            "teams": [],
             "num": 10,
             "name": "Pierre Gasly",
             "points": 23
@@ -2259,7 +2141,7 @@
         {
             "wins": 2,
             "fastestLaps": 3,
-            "teamNames": [],
+            "teams": [],
             "num": 11,
             "name": "Sergio Perez",
             "points": 265
@@ -2267,7 +2149,7 @@
         {
             "wins": 0,
             "fastestLaps": 0,
-            "teamNames": [],
+            "teams": [],
             "num": 5,
             "name": "Sebastian Vettel",
             "points": 38
@@ -2275,7 +2157,7 @@
         {
             "wins": 0,
             "fastestLaps": 0,
-            "teamNames": [],
+            "teams": [],
             "num": 77,
             "name": "Valtteri Bottas",
             "points": 46
@@ -2283,7 +2165,7 @@
         {
             "wins": 0,
             "fastestLaps": 0,
-            "teamNames": [],
+            "teams": [],
             "num": 22,
             "name": "Yuki Tsunoda",
             "points": 13

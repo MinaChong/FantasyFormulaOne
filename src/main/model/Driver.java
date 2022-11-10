@@ -15,7 +15,7 @@ public class Driver implements Writable {
     private int points;                 // the driver's total number of points
     private int wins;                   // the driver's total number of wins
     private int fastestLaps;            // the driver's total number of fastest laps
-    private List<String> teamNames;     // the names of teams that the driver is on
+    private List<Team> teams;           // the teams that the driver is on
 
     // REQUIRES: name of driver has non-zero length
     // EFFECTS: driver is created with given name, given driver number, 0 points, 0 wins, 0 fastest laps, and 0 teams
@@ -25,7 +25,7 @@ public class Driver implements Writable {
         this.points = 0;
         this.wins = 0;
         this.fastestLaps = 0;
-        this.teamNames = new ArrayList<>();
+        this.teams = new ArrayList<>();
     }
 
     // REQUIRES: points >= 0
@@ -55,15 +55,21 @@ public class Driver implements Writable {
     }
 
     // MODIFIES: this
-    // EFFECTS: given team is added to driver's list of teams
-    public void addTeamName(String teamName) {
-        teamNames.add(teamName);
+    // EFFECTS: given team is added to list of teams that the driver is on
+    public void addTeam(Team team) {
+        if (!teams.contains(team)) {
+            teams.add(team);
+            team.addDriver(this);
+        }
     }
 
     // MODIFIES: this
-    // EFFECTS: given team is removed from driver's list of teams
-    public void removeTeamName(String teamName) {
-        teamNames.remove(teamName);
+    // EFFECTS: given team is removed from list of teams that the driver is on
+    public void removeTeam(Team team) {
+        if (teams.contains(team)) {
+            teams.remove(team);
+            team.removeDriver(this);
+        }
     }
 
     // SETTERS:
@@ -89,12 +95,6 @@ public class Driver implements Writable {
         this.fastestLaps = fastestLaps;
     }
 
-    // MODIFIES: this
-    // EFFECTS: sets team names for given driver
-    public void setTeamNames(List<String> teamNames) {
-        this.teamNames = teamNames;
-    }
-
     // GETTERS:
 
     public String getName() {
@@ -117,8 +117,8 @@ public class Driver implements Writable {
         return fastestLaps;
     }
 
-    public List<String> getTeamNames() {
-        return teamNames;
+    public List<Team> getTeams() {
+        return teams;
     }
 
     @Override
@@ -130,25 +130,17 @@ public class Driver implements Writable {
         json.put("points", points);
         json.put("wins", wins);
         json.put("fastestLaps", fastestLaps);
-        json.put("teamNames", teamNamesToJson());
+        json.put("teams", teamsToJson());
         return json;
     }
 
-    // EFFECTS: returns teams in this league as a JSON array
-    private JSONArray teamNamesToJson() {
+    private JSONArray teamsToJson() {
         JSONArray jsonArray = new JSONArray();
 
-        for (String teamName : teamNames) {
-            jsonArray.put(stringToJson(teamName));
+        for (Team team : teams) {
+            jsonArray.put(team.toJson());
         }
 
         return jsonArray;
-    }
-
-    // EFFECTS: returns team name as a JSON object
-    private JSONObject stringToJson(String teamName) {
-        JSONObject json = new JSONObject();
-        json.put("name", teamName);
-        return json;
     }
 }

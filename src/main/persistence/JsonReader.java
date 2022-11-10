@@ -69,31 +69,31 @@ public class JsonReader {
         int points = jsonObject.getInt("points");
         int wins = jsonObject.getInt("wins");
         int fastestlaps = jsonObject.getInt("fastestLaps");
-        List<String> teams = addDriverTeams(league, jsonObject);
         Driver driver = new Driver(name, num);
         driver.addPoints(points);
         driver.setWins(wins);
         driver.setFastestLaps(fastestlaps);
-        driver.setTeamNames(teams);
+        addDriverTeams(driver, jsonObject);
         league.addDriver(driver);
     }
 
-    // EFFECTS: parses list of driver's team names from JSON object and returns it
-    private List<String> addDriverTeams(League league, JSONObject jsonObject) {
-        List<String> teams = new ArrayList<>();
-        JSONArray jsonArray = jsonObject.getJSONArray("teamNames");
+    // MODIFIES: driver
+    // EFFECTS: parses teams from JSON object and adds it to driver
+    private void addDriverTeams(Driver driver, JSONObject jsonObject) {
+        JSONArray jsonArray = jsonObject.getJSONArray("teams");
+
         for (Object json : jsonArray) {
             JSONObject nextTeam = (JSONObject) json;
-            teams.add(addDriverTeam(league, nextTeam));
+            driver.addTeam(addDriverTeam(nextTeam));
         }
-        return teams;
     }
 
-    // EFFECTS: parses driver's team names from JSON object and returns it
-    private String addDriverTeam(League league, JSONObject jsonObject) {
+    // EFFECTS: parses driver's team from JSON object and returns it
+    private Team addDriverTeam(JSONObject jsonObject) {
         String name = jsonObject.getString("name");
-        return name;
+        return new Team(name);
     }
+
 
     // MODIFIES: league
     // EFFECTS: parses races from JSON object and adds them to league
@@ -126,6 +126,7 @@ public class JsonReader {
     private List<Driver> addPlaces(JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("places");
         List<Driver> places = new ArrayList<>();
+
         for (Object json : jsonArray) {
             JSONObject nextPlace = (JSONObject) json;
             places.add(addPlace(nextPlace));
@@ -166,6 +167,7 @@ public class JsonReader {
     // EFFECTS: parses teams from JSON object and adds them to league
     private void addTeams(League league, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("teams");
+
         for (Object json : jsonArray) {
             JSONObject nextTeam = (JSONObject) json;
             addTeam(league, nextTeam);
@@ -173,21 +175,16 @@ public class JsonReader {
     }
 
     // MODIFIES: league
-    // EFFECTS: parses team from JSON object and adds it to league
+    // EFFECTS: parses team from JSON object and adds them to league
     private void addTeam(League league, JSONObject jsonObject) {
-        String name = jsonObject.getString("name");
-        Team team = new Team(name);
-        addTeamDrivers(league, team, jsonObject);
-        league.addTeam(team);
-    }
+        List<Driver> drivers = league.getDrivers();
+        Team team = new Team(jsonObject.getString("name"));
 
-    // MODIFIES: team
-    // EFFECTS: parses drivers on given team and adds them to the team
-    private void addTeamDrivers(League league, Team team, JSONObject jsonObject) {
-        for (Driver driver : league.getDrivers()) {
-            if (driver.getTeamNames().contains(team.getName())) {
+        for (Driver driver : drivers) {
+            if (driver.getTeams().contains(team)) {
                 team.addDriver(driver);
             }
         }
+        league.addTeam(team);
     }
 }

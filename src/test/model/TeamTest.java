@@ -3,16 +3,20 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TeamTest {
     private Team testTeam;
+    private Team anotherTestTeam;
+    private Team yetAnotherTestTeam;
     private Driver testDriver;
     private Driver anotherTestDriver;
 
     @BeforeEach
     public void setup() {
         testTeam = new Team("Red Team");
+        anotherTestTeam = new Team("Red Team");
+        yetAnotherTestTeam = new Team("Blue Team");
         testDriver = new Driver("Fernando", 2);
         anotherTestDriver = new Driver("Alonso", 4);
     }
@@ -122,5 +126,25 @@ public class TeamTest {
         testTeam.addDriver(anotherTestDriver);
         anotherTestDriver.addFastestLap();
         assertEquals(2, testTeam.getFastestLaps());
+    }
+
+    @Test
+    public void equalsTeamTest() {
+        assertTrue(testTeam.equals(anotherTestTeam));
+    }
+
+    @Test
+    public void notEqualTeamsTest() {
+        assertFalse(testTeam.equals(yetAnotherTestTeam));
+    }
+
+    @Test
+    public void notEqualTeamObjectTest() {
+        assertFalse(testTeam.equals(testDriver));
+    }
+
+    @Test
+    public void hashCodeTest() {
+        assertEquals(-779811605, testTeam.hashCode());
     }
 }
