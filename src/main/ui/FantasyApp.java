@@ -863,7 +863,7 @@ public class FantasyApp {
             n = n - 1;
             team.addDriver(availableDrivers.get(n));
             System.out.println(availableDrivers.get(n).getName() + " has been added to " + team.getName() + ".");
-        } else if (league.getDrivers().size() >= 3) {
+        } else if (team.getDrivers().size() >= 3) {
             System.out.println("You already have the maximum number of drivers (3) and cannot add more to your team.");
         }
     }
