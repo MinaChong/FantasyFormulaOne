@@ -1,8 +1,7 @@
 {
     "teams": [
         {"name": "Kimi's Team"},
-        {"name": "Michael's Team"},
-        {"name": "ed"}
+        {"name": "Michael's Team"}
     ],
     "races": [
         {
@@ -11,7 +10,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -27,7 +26,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -105,7 +107,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -113,7 +115,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -153,7 +155,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -177,7 +179,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -199,7 +204,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -223,7 +228,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -231,7 +239,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -293,7 +301,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -301,7 +309,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -325,7 +333,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -364,7 +372,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -380,7 +388,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -404,7 +412,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -436,7 +444,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 18,
                     "name": "Lance Stroll",
                     "points": 13
@@ -458,7 +466,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -466,7 +474,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -498,7 +506,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -530,7 +541,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 18,
                     "name": "Lance Stroll",
                     "points": 13
@@ -552,7 +563,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -584,7 +595,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -608,7 +622,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -662,7 +676,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -670,7 +684,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -686,7 +700,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -702,7 +716,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -740,7 +757,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -764,7 +781,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -804,7 +824,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -834,7 +854,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -850,7 +870,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -866,7 +889,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -906,7 +929,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 18,
                     "name": "Lance Stroll",
                     "points": 13
@@ -944,7 +967,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -952,7 +978,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -968,7 +994,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -976,7 +1002,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1022,7 +1048,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1030,7 +1056,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -1078,7 +1104,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -1093,7 +1122,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -1101,7 +1130,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1109,7 +1138,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -1141,7 +1173,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -1187,7 +1219,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1195,7 +1227,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -1235,7 +1270,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -1259,7 +1294,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 18,
                     "name": "Lance Stroll",
                     "points": 13
@@ -1281,7 +1316,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1289,7 +1324,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -1321,7 +1359,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -1329,7 +1367,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -1375,7 +1413,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1415,7 +1453,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -1469,7 +1507,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1485,7 +1523,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -1493,7 +1531,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -1517,7 +1558,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -1541,7 +1582,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 18,
                     "name": "Lance Stroll",
                     "points": 13
@@ -1563,7 +1604,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1571,7 +1612,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -1595,7 +1636,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -1611,7 +1655,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -1665,7 +1709,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -1681,7 +1725,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -1697,7 +1741,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 0,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 18,
                     "name": "Lance Stroll",
                     "points": 13
@@ -1705,7 +1749,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1721,7 +1765,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -1751,7 +1798,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1767,7 +1814,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -1783,7 +1830,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -1823,7 +1873,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -1845,7 +1895,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1853,7 +1903,10 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [],
+                    "teams": [
+                        {"name": "Kimi's Team"},
+                        {"name": "Michael's Team"}
+                    ],
                     "num": 44,
                     "name": "Lewis Hamilton",
                     "points": 198
@@ -1861,7 +1914,7 @@
                 {
                     "wins": 3,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 16,
                     "name": "Charles Leclerc",
                     "points": 268
@@ -1885,7 +1938,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 1,
-                    "teams": [],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 4,
                     "name": "Lando Norris",
                     "points": 109
@@ -1932,75 +1985,6 @@
                 "name": "George Russell",
                 "points": 218
             }
-        },
-        {
-            "date": "today",
-            "places": [
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teams": [],
-                    "num": 31,
-                    "name": "Esteban Ocon",
-                    "points": 79
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teams": [],
-                    "num": 14,
-                    "name": "Fernando Alonso",
-                    "points": 65
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 2,
-                    "teams": [],
-                    "num": 63,
-                    "name": "George Russell",
-                    "points": 218
-                }
-            ],
-            "sprint?": true,
-            "name": "Race"
-        },
-        {
-            "date": "2022-12-25",
-            "places": [
-                {
-                    "wins": 0,
-                    "fastestLaps": 2,
-                    "teams": [],
-                    "num": 63,
-                    "name": "George Russell",
-                    "points": 218
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teams": [],
-                    "num": 31,
-                    "name": "Esteban Ocon",
-                    "points": 79
-                },
-                {
-                    "wins": 1,
-                    "fastestLaps": 2,
-                    "teams": [],
-                    "num": 55,
-                    "name": "Carlos Sainz",
-                    "points": 202
-                }
-            ],
-            "sprint?": false,
-            "name": "vancouver",
-            "fastestLap": {
-                "wins": 0,
-                "fastestLaps": 2,
-                "num": 63,
-                "name": "George Russell",
-                "points": 218
-            }
         }
     ],
     "name": "My Fantasy F1 League",
@@ -2032,7 +2016,7 @@
         {
             "wins": 0,
             "fastestLaps": 0,
-            "teams": [{"name": "ed"}],
+            "teams": [],
             "num": 3,
             "name": "Daniel Ricciardo",
             "points": 29
@@ -2115,10 +2099,7 @@
         {
             "wins": 13,
             "fastestLaps": 4,
-            "teams": [
-                {"name": "Kimi's Team"},
-                {"name": "ed"}
-            ],
+            "teams": [{"name": "Kimi's Team"}],
             "num": 1,
             "name": "Max Verstappen",
             "points": 390
@@ -2142,7 +2123,7 @@
         {
             "wins": 2,
             "fastestLaps": 3,
-            "teams": [{"name": "ed"}],
+            "teams": [],
             "num": 11,
             "name": "Sergio Perez",
             "points": 265

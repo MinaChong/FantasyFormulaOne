@@ -13,25 +13,22 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class FantasyGUI {
-    private static final int WIDTH = 1200;
-    private static final int HEIGHT = 800;
-    private static final int OUTER_HGAP = 40;
-    private static final int INNER_HGAP = 20;
-    private static final int OUTER_VGAP = 150;
-    private static final int INNER_VGAP = 75;
+    private static final int WIDTH = 1000;
+    private static final int HEIGHT = 700;
+    private static final Color PANEL_COLOUR = new Color(181, 234, 255);
     private final JFrame fantasyFrame;
     private JPanel homePanel;
     private CardLayout cardLayout;
     private JPanel leaguePanel;
 
-    private JButton scoreboardButton = new JButton("Scoreboard");
-    private JButton winnerButton = new JButton("Declare Winner");
-    private JButton racesButton = new JButton("Races");
-    private JButton teamsButton = new JButton("Teams");
-    private JButton driversButton = new JButton("Drivers");
-    private JButton saveButton = new JButton("Save League");
-    private JButton loadButton = new JButton("Load League");
-    private JButton quitButton = new JButton("Quit");
+    private JButton scoreboardButton;
+    private JButton winnerButton;
+    private JButton racesButton;
+    private JButton teamsButton;
+    private JButton driversButton;
+    private JButton saveButton;
+    private JButton loadButton;
+    private JButton quitButton;
 
     private static final String JSON_STORE = "./data/league.json";
     private JsonWriter jsonWriter;
@@ -95,7 +92,28 @@ public class FantasyGUI {
 
     public void setScoreboardPanel() {
         JPanel scoreboardPanel = new JPanel();
-        scoreboardPanel.setLayout(new GridLayout(0, 1));
+        scoreboardPanel.setBackground(PANEL_COLOUR);
+
+        JScrollPane scrollPane = setScoreBoard();
+
+        JButton quitButton = new JButton("Return to Main Menu");
+        quitButton.addActionListener(e -> cardLayout.show(homePanel, "League"));
+
+        JPanel spacer = new JPanel();
+        spacer.setPreferredSize(new Dimension(WIDTH, 50));
+        spacer.setOpaque(false);
+        JPanel tablePanel = new JPanel();
+        tablePanel.setPreferredSize(new Dimension(WIDTH, 600));
+        tablePanel.setBackground(new Color(0, 0, 0, 0));
+        tablePanel.add(scrollPane);
+
+        scoreboardPanel.add(spacer);
+        scoreboardPanel.add(tablePanel);
+
+        homePanel.add(scoreboardPanel, "Scoreboard");
+    }
+
+    public JScrollPane setScoreBoard() {
         String[] header = {"TEAM", "POINTS", "WINS"};
         List<String[]> rows = new ArrayList<>();
 
@@ -113,13 +131,7 @@ public class FantasyGUI {
         scoreBoard.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 14));
 
         JScrollPane scrollPane = new JScrollPane(scoreBoard);
-        scoreboardPanel.add(scrollPane);
-
-        JButton quitButton = new JButton("Return to Main Menu");
-        quitButton.addActionListener(e -> cardLayout.show(homePanel, "League"));
-        scoreboardPanel.add(quitButton);
-
-        homePanel.add(scoreboardPanel, "Scoreboard");
+        return scrollPane;
     }
 
     public void setWinnerPanel() { // todo fun picture of car crossing finish line?
@@ -548,23 +560,182 @@ public class FantasyGUI {
 
     public void setLeaguePanel() {
         leaguePanel = new JPanel();
-        leaguePanel.setBackground(new Color(146, 214, 239));
+        leaguePanel.setBackground(PANEL_COLOUR);
         setButtons();
 
-        setScoreboardSubPanel();
-        setCarSubPanel();
-        setWinnerSubPanel();
-//        setRacesSubPanel();
-//        setTeamsSubPanel();
-//        setDriversSubPanel();
-//        setSaveSubPanel();
-//        setLoadSubPanel();
-//        setQuitButton();
+        setLeagueTopPanel();
+        setLeagueCentrePanel();
 
         homePanel.add(leaguePanel, "League");
     }
 
+    public void setLeagueTopPanel() {
+        JPanel topPanel = new JPanel();
+        topPanel.setPreferredSize(new Dimension(WIDTH, 40));
+        topPanel.setOpaque(false);
+        leaguePanel.add(topPanel);
+    }
+
+    public void setLeagueCentrePanel() {
+        JPanel centrePanel = new JPanel();
+        centrePanel.setPreferredSize(new Dimension(1000,750));
+        centrePanel.setBackground(new Color(0, 0, 0, 0));
+        setLeagueCentreTopPanel(centrePanel);
+        setLeagueCentreBottomPanel(centrePanel);
+        leaguePanel.add(centrePanel, BorderLayout.CENTER);
+    }
+
+    public void setLeagueCentreTopPanel(JPanel centrePanel) {
+        JPanel centreTopPanel = new JPanel();
+        centreTopPanel.setPreferredSize(new Dimension(1000,270));
+        centreTopPanel.setLayout(new FlowLayout());
+        centreTopPanel.setBackground(new Color(0, 0, 0, 0));
+
+        setCentreTopLeftPanel(centreTopPanel);
+        setCentreTopCentrePanel(centreTopPanel);
+        setCentreTopRightPanel(centreTopPanel);
+        centrePanel.add(centreTopPanel);
+    }
+
+    public void setCentreTopLeftPanel(JPanel centreTopPanel) {
+        JPanel centreTopLeftPanel = new JPanel();
+        centreTopLeftPanel.setPreferredSize(new Dimension(200,300));
+        centreTopLeftPanel.setBackground(new Color(0, 0, 0, 0));
+        JPanel spacerPanel = new JPanel();
+        spacerPanel.setPreferredSize(new Dimension(150,10));
+        spacerPanel.setOpaque(false);
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setOpaque(false);
+        buttonPanel.setPreferredSize(new Dimension(150,200));
+        buttonPanel.add(new JLabel(new ImageIcon("images/scoreboard.png")));
+        buttonPanel.add(scoreboardButton);
+        centreTopLeftPanel.add(spacerPanel);
+        centreTopLeftPanel.add(buttonPanel);
+
+        centreTopPanel.add(centreTopLeftPanel);
+    }
+
+    public void setCentreTopCentrePanel(JPanel centreTopPanel) {
+        JPanel centreTopCentrePanel = new JPanel();
+        centreTopCentrePanel.setPreferredSize(new Dimension(550,300));
+        centreTopCentrePanel.setBackground(new Color(0, 0, 0, 0));
+
+        JLabel title = new JLabel("MY FANTASY F1 LEAGUE");
+        title.setFont(new Font("SansSerif", Font.BOLD, 25));
+        centreTopCentrePanel.add(title);
+        JLabel spacer = new JLabel();
+        spacer.setPreferredSize(new Dimension(500,20));
+        centreTopCentrePanel.add(spacer);
+        centreTopCentrePanel.add(new JLabel(new ImageIcon("images/logo.png")));
+
+        centreTopPanel.add(centreTopCentrePanel);
+    }
+
+    public void setCentreTopRightPanel(JPanel centreTopPanel) {
+        JPanel centreTopRightPanel = new JPanel();
+        centreTopRightPanel.setPreferredSize(new Dimension(200,300));
+        centreTopRightPanel.setBackground(new Color(0, 0, 0, 0));
+        JPanel spacerPanel = new JPanel();
+        spacerPanel.setPreferredSize(new Dimension(150,10));
+        spacerPanel.setOpaque(false);
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setOpaque(false);
+        buttonPanel.setPreferredSize(new Dimension(150,200));
+        buttonPanel.add(new JLabel(new ImageIcon("images/winner.png")));
+        buttonPanel.add(winnerButton);
+        centreTopRightPanel.add(spacerPanel);
+        centreTopRightPanel.add(buttonPanel);
+
+        centreTopPanel.add(centreTopRightPanel);
+    }
+
+    public void setLeagueCentreBottomPanel(JPanel centrePanel) {
+        JPanel centreBottomPanel = new JPanel();
+        centreBottomPanel.setPreferredSize(new Dimension(1000,400));
+        centreBottomPanel.setBackground(new Color(0, 0, 0, 0));
+        Dimension bottomTopDimension = new Dimension(290,220);
+        Dimension bottomBottomDimension = new Dimension(150,50);
+        Dimension spacerDimension = new Dimension(10,220);
+
+        JPanel spacer1 = new JPanel();
+        spacer1.setPreferredSize(spacerDimension);
+        spacer1.setOpaque(false);
+        JPanel spacer2 = new JPanel();
+        spacer2.setPreferredSize(spacerDimension);
+        spacer2.setOpaque(false);
+
+        setCentreBottomTopLeft(centreBottomPanel, bottomTopDimension);
+        centreBottomPanel.add(spacer1);
+        setCentreBottomTopCentre(centreBottomPanel, bottomTopDimension);
+        centreBottomPanel.add(spacer2);
+        setCentreBottomTopRight(centreBottomPanel, bottomTopDimension);
+        setCentreBottomBottomLeft(centreBottomPanel, bottomBottomDimension);
+        setCentreBottomBottomCentre(centreBottomPanel, bottomBottomDimension);
+        setCentreBottomBottomRight(centreBottomPanel, bottomBottomDimension);
+
+        centrePanel.add(centreBottomPanel);
+    }
+
+    public void setCentreBottomTopLeft(JPanel centreBottomPanel, Dimension bottomTopDimension) {
+        JPanel centreBottomTopLeft = new JPanel();
+        centreBottomTopLeft.setPreferredSize(bottomTopDimension);
+        centreBottomTopLeft.setBackground(new Color(0, 0, 0, 0));
+        centreBottomTopLeft.add(new JLabel(new ImageIcon("images/races.png")));
+        centreBottomTopLeft.add(racesButton);
+
+        centreBottomPanel.add(centreBottomTopLeft);
+    }
+
+    public void setCentreBottomTopCentre(JPanel centreBottomPanel, Dimension bottomTopDimension) {
+        JPanel centreBottomTopLeft = new JPanel();
+        centreBottomTopLeft.setPreferredSize(bottomTopDimension);
+        centreBottomTopLeft.setBackground(new Color(0, 0, 0, 0));
+        centreBottomTopLeft.add(new JLabel(new ImageIcon("images/teams.png")));
+        centreBottomTopLeft.add(teamsButton);
+
+        centreBottomPanel.add(centreBottomTopLeft);
+    }
+
+    public void setCentreBottomTopRight(JPanel centreBottomPanel, Dimension bottomTopDimension) {
+        JPanel centreBottomTopLeft = new JPanel();
+        centreBottomTopLeft.setPreferredSize(bottomTopDimension);
+        centreBottomTopLeft.setBackground(new Color(0, 0, 0, 0));
+        centreBottomTopLeft.add(new JLabel(new ImageIcon("images/drivers.png")));
+        centreBottomTopLeft.add(driversButton);
+
+        centreBottomPanel.add(centreBottomTopLeft);
+    }
+
+    public void setCentreBottomBottomLeft(JPanel centreBottomPanel, Dimension bottomButtomDimension) {
+        JPanel centreBottomTopLeft = new JPanel();
+        centreBottomTopLeft.setPreferredSize(bottomButtomDimension);
+        centreBottomTopLeft.setBackground(new Color(0, 0, 0, 0));
+        centreBottomTopLeft.add(saveButton);
+
+        centreBottomPanel.add(centreBottomTopLeft);
+    }
+
+    public void setCentreBottomBottomCentre(JPanel centreBottomPanel, Dimension bottomButtomDimension) {
+        JPanel centreBottomTopLeft = new JPanel();
+        centreBottomTopLeft.setPreferredSize(bottomButtomDimension);
+        centreBottomTopLeft.setBackground(new Color(0, 0, 0, 0));
+        centreBottomTopLeft.add(loadButton);
+
+        centreBottomPanel.add(centreBottomTopLeft);
+    }
+
+    public void setCentreBottomBottomRight(JPanel centreBottomPanel, Dimension bottomButtomDimension) {
+        JPanel centreBottomTopLeft = new JPanel();
+        centreBottomTopLeft.setPreferredSize(bottomButtomDimension);
+        centreBottomTopLeft.setBackground(new Color(0, 0, 0, 0));
+        centreBottomTopLeft.add(quitButton);
+
+        centreBottomPanel.add(centreBottomTopLeft);
+    }
+
     public void setButtons() {
+        createButtons();
+
         scoreboardButton.addActionListener(e -> cardLayout.show(homePanel, "Scoreboard"));
         winnerButton.addActionListener(e -> cardLayout.show(homePanel, "Winner"));
         racesButton.addActionListener(e -> cardLayout.show(homePanel, "Races"));
@@ -573,124 +744,28 @@ public class FantasyGUI {
         saveButton.addActionListener(e -> saveLeague());
         loadButton.addActionListener(e -> loadLeague());
         quitButton.addActionListener(e -> fantasyFrame.dispose());
+
+        Dimension buttonDimension = new Dimension(140,30);
+        Dimension otherButtonDimension = new Dimension(280,30);
+        scoreboardButton.setPreferredSize(buttonDimension);
+        winnerButton.setPreferredSize(buttonDimension);
+        racesButton.setPreferredSize(otherButtonDimension);
+        teamsButton.setPreferredSize(otherButtonDimension);
+        driversButton.setPreferredSize(otherButtonDimension);
+        saveButton.setPreferredSize(buttonDimension);
+        loadButton.setPreferredSize(buttonDimension);
+        quitButton.setPreferredSize(buttonDimension);
     }
 
-    public void setScoreboardSubPanel() {
-        JPanel scoreboardSubPanel = new JPanel();
-        scoreboardSubPanel.setPreferredSize(new Dimension(WIDTH/5,HEIGHT/2));
-        scoreboardSubPanel.setOpaque(false);
-        scoreboardSubPanel.setLayout(new BorderLayout());
-        scoreboardSubPanel.add(Box.createVerticalStrut(OUTER_VGAP), BorderLayout.PAGE_START);
-        scoreboardSubPanel.add(Box.createHorizontalStrut(OUTER_HGAP), BorderLayout.LINE_START);
-        scoreboardSubPanel.add(scoreboardButton, BorderLayout.CENTER);
-        scoreboardSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_END);
-        scoreboardSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_END);
-        leaguePanel.add(scoreboardSubPanel, BorderLayout.LINE_START);
-    }
-
-    public void setCarSubPanel() {
-        JPanel carSubPanel = new JPanel();
-        carSubPanel.setPreferredSize(new Dimension(WIDTH/2,HEIGHT/2));
-        carSubPanel.setOpaque(false);
-        carSubPanel.setLayout(new GridLayout(0,1));
-        carSubPanel.add(Box.createVerticalStrut(OUTER_VGAP));
-        JLabel nameLabel = new JLabel(league.getName().toUpperCase(), SwingConstants.CENTER);
-        nameLabel.setFont(new Font("SansSerif", Font.BOLD, 25));
-        carSubPanel.add(nameLabel);
-        carSubPanel.add(new JLabel(new ImageIcon("images/logo.png")));
-        carSubPanel.add(Box.createVerticalStrut(INNER_VGAP));
-        leaguePanel.add(carSubPanel, BorderLayout.CENTER);
-    }
-
-    public void setWinnerSubPanel() {
-        JPanel winnerSubPanel = new JPanel();
-        winnerSubPanel.setPreferredSize(new Dimension(WIDTH/5,HEIGHT/2));
-        winnerSubPanel.setOpaque(false);
-        winnerSubPanel.setLayout(new BorderLayout());
-        winnerSubPanel.add(Box.createVerticalStrut(OUTER_VGAP), BorderLayout.PAGE_START);
-        winnerSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_START);
-        winnerSubPanel.add(winnerButton, BorderLayout.CENTER);
-        winnerSubPanel.add(Box.createHorizontalStrut(OUTER_HGAP), BorderLayout.LINE_END);
-        winnerSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_END);
-        leaguePanel.add(winnerSubPanel, BorderLayout.LINE_END);
-    }
-
-    public void setRacesSubPanel() {
-        JPanel racesSubPanel = new JPanel();
-        racesSubPanel.setPreferredSize(new Dimension(WIDTH/3,HEIGHT/4));
-        racesSubPanel.setOpaque(false);
-        racesSubPanel.setLayout(new BorderLayout());
-        racesSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_START);
-        racesSubPanel.add(Box.createHorizontalStrut(OUTER_HGAP), BorderLayout.LINE_START);
-        racesSubPanel.add(racesButton, BorderLayout.CENTER);
-        racesSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_END);
-        racesSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_END);
-        leaguePanel.add(racesSubPanel, BorderLayout.PAGE_END);
-    }
-
-    public void setTeamsSubPanel() {
-        JPanel teamsSubPanel = new JPanel();
-        teamsSubPanel.setPreferredSize(new Dimension(WIDTH/3,HEIGHT/4));
-        teamsSubPanel.setOpaque(false);
-        teamsSubPanel.setLayout(new BorderLayout());
-        teamsSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_START);
-        teamsSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_START);
-        teamsSubPanel.add(teamsButton, BorderLayout.CENTER);
-        teamsSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_END);
-        teamsSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_END);
-        leaguePanel.add(teamsSubPanel);
-    }
-
-    public void setDriversSubPanel() {
-        JPanel driversSubPanel = new JPanel();
-        driversSubPanel.setPreferredSize(new Dimension(WIDTH/3,HEIGHT/4));
-        driversSubPanel.setOpaque(false);
-        driversSubPanel.setLayout(new BorderLayout());
-        driversSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_START);
-        driversSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_START);
-        driversSubPanel.add(driversButton, BorderLayout.CENTER);
-        driversSubPanel.add(Box.createHorizontalStrut(OUTER_HGAP), BorderLayout.LINE_END);
-        driversSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_END);
-        leaguePanel.add(driversSubPanel);
-    }
-
-    public void setSaveSubPanel() {
-        JPanel saveSubPanel = new JPanel();
-        saveSubPanel.setPreferredSize(new Dimension(WIDTH/3,HEIGHT/4));
-        saveSubPanel.setOpaque(false);
-        saveSubPanel.setLayout(new BorderLayout());
-        saveSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_START);
-        saveSubPanel.add(Box.createHorizontalStrut(OUTER_HGAP), BorderLayout.LINE_START);
-        saveSubPanel.add(saveButton, BorderLayout.CENTER);
-        saveSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_END);
-        saveSubPanel.add(Box.createVerticalStrut(OUTER_VGAP), BorderLayout.PAGE_END);
-        leaguePanel.add(saveSubPanel);
-    }
-
-    public void setLoadSubPanel() {
-        JPanel loadSubPanel = new JPanel();
-        loadSubPanel.setPreferredSize(new Dimension(WIDTH/3,HEIGHT/4));
-        loadSubPanel.setOpaque(false);
-        loadSubPanel.setLayout(new BorderLayout());
-        loadSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_START);
-        loadSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_START);
-        loadSubPanel.add(loadButton, BorderLayout.CENTER);
-        loadSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_END);
-        loadSubPanel.add(Box.createVerticalStrut(OUTER_VGAP), BorderLayout.PAGE_END);
-        leaguePanel.add(loadSubPanel);
-    }
-
-    public void setQuitButton() {
-        JPanel quitSubPanel = new JPanel();
-        quitSubPanel.setPreferredSize(new Dimension(WIDTH/3,HEIGHT/4));
-        quitSubPanel.setOpaque(false);
-        quitSubPanel.setLayout(new BorderLayout());
-        quitSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_START);
-        quitSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_START);
-        quitSubPanel.add(quitButton, BorderLayout.CENTER);
-        quitSubPanel.add(Box.createHorizontalStrut(OUTER_HGAP), BorderLayout.LINE_END);
-        quitSubPanel.add(Box.createVerticalStrut(OUTER_VGAP), BorderLayout.PAGE_END);
-        leaguePanel.add(quitSubPanel);
+    public void createButtons() {
+        scoreboardButton = new JButton("Scoreboard");
+        winnerButton = new JButton("Declare Winner");
+        racesButton = new JButton("Races");
+        teamsButton = new JButton("Teams");
+        driversButton = new JButton("Drivers");
+        saveButton = new JButton("Save League");
+        loadButton = new JButton("Load League");
+        quitButton = new JButton("Quit");
     }
 
     private void initializeDrivers() {
