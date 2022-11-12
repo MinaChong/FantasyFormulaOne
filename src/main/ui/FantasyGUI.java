@@ -5,7 +5,6 @@ import persistence.JsonReader;
 import persistence.JsonWriter;
 
 import javax.swing.*;
-import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -19,6 +18,16 @@ public class FantasyGUI {
     private final JFrame fantasyFrame;
     private JPanel homePanel;
     private CardLayout cardLayout;
+
+    private JButton scoreboardButton = new JButton("Scoreboard");
+    private JButton carButton = new JButton(new ImageIcon("images/car.jpg"));
+    private JButton winnerButton = new JButton("Declare Winner");
+    private JButton racesButton = new JButton("Races");
+    private JButton teamsButton = new JButton("Teams");
+    private JButton driversButton = new JButton("Drivers");
+    private JButton saveButton = new JButton("Save League");
+    private JButton loadButton = new JButton("Load League");
+    private JButton quitButton = new JButton("Quit");
 
     private static final String JSON_STORE = "./data/league.json";
     private JsonWriter jsonWriter;
@@ -58,11 +67,9 @@ public class FantasyGUI {
         initializeRaces();
         initializeTeams();
         fantasyFrame = new JFrame("Fantasy F1 UI");
-        fantasyFrame.setBackground(new Color(1,1,1));
 
         cardLayout = new CardLayout();
         homePanel = new JPanel(cardLayout);
-        homePanel.setBackground(new Color(1,1,1));
 
         setPanels();
 
@@ -85,7 +92,7 @@ public class FantasyGUI {
     public void setScoreboardPanel() {
         JPanel scoreboardPanel = new JPanel();
         scoreboardPanel.setLayout(new GridLayout(0, 1));
-        String[] header = { "TEAM", "POINT(S)", "WIN(S)" };
+        String[] header = {"TEAM", "POINTS", "WINS"};
         List<String[]> rows = new ArrayList<>();
 
         for (Team team : league.getTeams()) {
@@ -114,7 +121,7 @@ public class FantasyGUI {
     public void setWinnerPanel() { // todo fun picture of car crossing finish line?
         JPanel winnerPanel = new JPanel();
         JButton winnerButton = new JButton("Declare " + league.getName() + " winner!");
-        winnerButton.addActionListener(e -> decideWinner(league.getTeams(), winnerPanel));
+        winnerButton.addActionListener(e -> decideWinner());
         winnerPanel.add(winnerButton);
 
         JButton quitButton = new JButton("Return to Main Menu");
@@ -124,13 +131,13 @@ public class FantasyGUI {
         homePanel.add(winnerPanel, "Winner");
     }
 
-    // EFFECTS: returns winner based on team with most points, then most wins, then greatest number of fastest laps
-    private void decideWinner(List<Team> teams, JPanel winnerPanel) { // todo fun picture for the champion!
+    // EFFECTS: returns winner based on team with most points, then most wins
+    private void decideWinner() {
         Team winner = new Team("dummy");
         int p = 0;
         int w = 0;
         int l = 0;
-        for (Team team : teams) {
+        for (Team team : league.getTeams()) {
             if (team.getPoints() > p) {
                 p = team.getPoints();
                 winner = team;
@@ -138,15 +145,10 @@ public class FantasyGUI {
                 if (team.getWins() > w) {
                     w = team.getWins();
                     winner = team;
-                } else if (team.getFastestLaps() == l) {
-                    if (team.getFastestLaps() > l) {
-                        l = team.getFastestLaps();
-                        winner = team;
-                    }
                 }
             }
         }
-        JOptionPane.showMessageDialog(null, "The champion is " + winner.getName() + "!",  league.getName() + " Winner",
+        JOptionPane.showMessageDialog(null, "The champion is " + winner.getName() + "!", league.getName() + " Winner",
                 JOptionPane.INFORMATION_MESSAGE, new ImageIcon("images/trophy.jpg"));
 
         cardLayout.show(homePanel, "League");
@@ -155,24 +157,13 @@ public class FantasyGUI {
 
     public void setRacesPanel() {
         JPanel racesPanel = new JPanel();
-        racesPanel.setLayout(new GridLayout(0,4, 10, 10));
+        racesPanel.setLayout(new GridLayout(0, 4));
         racesPanel.setSize(new Dimension(0, 0));
 
         for (Race race : league.getRaces()) {
             JButton raceButton = new JButton(race.getName());
             racesPanel.add(raceButton);
-            JPanel racePanel = new JPanel();
-            racePanel.setLayout(new GridLayout(0,1));
-
-            for (Driver driver : race.getPlaces()) {
-                racePanel.add(new JButton(driver.getName()));
-            }
-
-            JButton quitButton = new JButton("Return to Main Menu");
-            quitButton.addActionListener(e -> cardLayout.show(homePanel, "League"));
-            racePanel.add(quitButton);
-
-            homePanel.add(racePanel, race.getName());
+            setRacePanel(race);
             raceButton.addActionListener(e -> cardLayout.show(homePanel, race.getName()));
         }
 
@@ -187,26 +178,34 @@ public class FantasyGUI {
         homePanel.add(racesPanel, "Races");
     }
 
+    public void setRacePanel(Race race) {
+        JPanel racePanel = new JPanel();
+        racePanel.setLayout(new GridLayout(0, 1));
+
+        racePanel.add(new JLabel(race.getName().toUpperCase()));
+        int i = 1;
+        for (Driver driver : race.getPlaces()) {
+            racePanel.add(new JLabel(i + ". " + driver.getName()));
+            i++;
+        }
+
+        JButton quitButton = new JButton("Return to Races Menu");
+        quitButton.addActionListener(e -> cardLayout.show(homePanel, "Races"));
+        racePanel.add(quitButton);
+
+        homePanel.add(racePanel, race.getName());
+    }
+
     public void addRace() {
         JPanel raceMenu = new JPanel();
-        raceMenu.setLayout(new GridLayout(0,1));
+        raceMenu.setLayout(new GridLayout(0, 1));
         AtomicBoolean isSprint = new AtomicBoolean(false);
 
         ButtonGroup raceButtons = new ButtonGroup();
         JRadioButton sprintButton = new JRadioButton("Add Sprint Race");
         JRadioButton grandPrixButton = new JRadioButton("Add Grand Prix");
-        sprintButton.setActionCommand("sprint");
-        grandPrixButton.setActionCommand("grandPrix");
-        sprintButton.addActionListener(e -> {
-            if (e.getActionCommand().equals("sprint")) {
-                isSprint.set(true);
-            }
-        });
-        grandPrixButton.addActionListener(e -> {
-            if (e.getActionCommand().equals("grandPrix")) {
-                isSprint.set(false);
-            }
-        });
+        sprintButton.addActionListener(e -> isSprint.set(true));
+        grandPrixButton.addActionListener(e -> isSprint.set(false));
         raceButtons.add(sprintButton);
         raceButtons.add(grandPrixButton);
 
@@ -214,29 +213,20 @@ public class FantasyGUI {
         raceMenu.add(grandPrixButton);
 
         JButton enter = new JButton("Enter");
-        enter.setActionCommand("enter");
         enter.addActionListener(e -> {
-            if (e.getActionCommand().equals("enter")) {
-                if (isSprint.get()) {
-                    addSprintRace();
-                } else {
-                    addGrandPrix();
-                }
+            if (isSprint.get()) {
+                addSprintRace();
+            } else {
+                addGrandPrix();
             }
         });
         raceMenu.add(enter);
 
         homePanel.add(raceMenu, "AddRace");
-
-        cardLayout.show(homePanel,"AddRace");
+        cardLayout.show(homePanel, "AddRace");
     }
 
     public void addSprintRace() {
-        List<Driver> places = new ArrayList<>();
-        Driver firstPlace = null;
-        Driver secondPlace = null;
-        Driver thirdPlace = null;
-
         String raceName = JOptionPane.showInputDialog(null,
                 "Race name?",
                 "Enter Race Name",
@@ -252,55 +242,40 @@ public class FantasyGUI {
         }
 
         String[] drivers = allDrivers.toArray(new String[0]);
-
-        Object firstPlaceName = JOptionPane.showInputDialog(null,
-                "Which driver came in first?",
-                "First Place",
-                JOptionPane.QUESTION_MESSAGE,
-                null, drivers, null);
-
-        Object secondPlaceName = JOptionPane.showInputDialog(null,
-                "Which driver came in second?",
-                "Second Place",
-                JOptionPane.QUESTION_MESSAGE,
-                null, drivers, null);
-
-        Object thirdPlaceName = JOptionPane.showInputDialog(null,
-                "Which driver came in third?",
-                "Third Place",
-                JOptionPane.QUESTION_MESSAGE,
-                null, drivers, null);
-
-
-        for (Driver driver : league.getDrivers()) {
-            if (driver.getName().equals(firstPlaceName)) {
-                firstPlace = driver;
-            }
-            if (driver.getName().equals(secondPlaceName)) {
-                secondPlace = driver;
-            }
-            if (driver.getName().equals(thirdPlaceName)) {
-                thirdPlace = driver;
-            }
-        }
-        places.add(firstPlace);
-        places.add(secondPlace);
-        places.add(thirdPlace);
+        List<Driver> places = setPlaces(drivers, 8);
 
         Race newRace = new Sprint(raceName, raceDate, places);
         league.addRace(newRace);
 
-        cardLayout.show(homePanel, "League");
         setPanels();
+        cardLayout.show(homePanel, newRace.getName());
+    }
+
+    public List<Driver> setPlaces(String[] drivers, int n) {
+        List<Driver> places = new ArrayList<>();
+
+        for (int i = 0; i <= n; i++) {
+            Driver place = null;
+
+            Object name = JOptionPane.showInputDialog(null,
+                    "Which driver came in " + i + " place?",
+                    "Select Place",
+                    JOptionPane.QUESTION_MESSAGE,
+                    null, drivers, null);
+
+            for (Driver driver : league.getDrivers()) {
+                if (driver.getName().equals(name)) {
+                    place = driver;
+                }
+            }
+
+            places.add(place);
+        }
+
+        return places;
     }
 
     public void addGrandPrix() {
-        List<Driver> places = new ArrayList<>();
-        Driver fastestLap = null;
-        Driver firstPlace = null;
-        Driver secondPlace = null;
-        Driver thirdPlace = null;
-
         String raceName = JOptionPane.showInputDialog(null,
                 "Race name?",
                 "Enter Race Name",
@@ -316,82 +291,42 @@ public class FantasyGUI {
         }
 
         String[] drivers = allDrivers.toArray(new String[0]);
+        List<Driver> places = setPlaces(drivers, 10);
+        Driver fastestLap = setFastestLap(drivers);
 
-        Object firstPlaceName = JOptionPane.showInputDialog(null,
-                "Which driver came in first?",
-                "First Place",
-                JOptionPane.QUESTION_MESSAGE,
-                null, drivers, null);
+        Race newRace = new GrandPrix(raceName, raceDate, places, fastestLap);
+        league.addRace(newRace);
 
-        Object secondPlaceName = JOptionPane.showInputDialog(null,
-                "Which driver came in second?",
-                "Second Place",
-                JOptionPane.QUESTION_MESSAGE,
-                null, drivers, null);
+        setPanels();
+        cardLayout.show(homePanel, newRace.getName());
+    }
 
-        Object thirdPlaceName = JOptionPane.showInputDialog(null,
-                "Which driver came in third?",
-                "Third Place",
-                JOptionPane.QUESTION_MESSAGE,
-                null, drivers, null);
-
+    public Driver setFastestLap(String[] drivers) {
+        Driver fastestLap = null;
         Object fastestLapName = JOptionPane.showInputDialog(null,
                 "Which driver had the fastest lap?",
                 "Fastest Lap",
                 JOptionPane.QUESTION_MESSAGE,
                 null, drivers, null);
 
-
         for (Driver driver : league.getDrivers()) {
             if (driver.getName().equals(fastestLapName)) {
                 fastestLap = driver;
             }
-            if (driver.getName().equals(firstPlaceName)) {
-                firstPlace = driver;
-            }
-            if (driver.getName().equals(secondPlaceName)) {
-                secondPlace = driver;
-            }
-            if (driver.getName().equals(thirdPlaceName)) {
-                thirdPlace = driver;
-            }
         }
-        places.add(firstPlace);
-        places.add(secondPlace);
-        places.add(thirdPlace);
 
-        Race newRace = new GrandPrix(raceName, raceDate, places, fastestLap);
-        league.addRace(newRace);
-
-        cardLayout.show(homePanel, "League");
-        setPanels();
+        return  fastestLap;
     }
 
     public void setTeamsPanel() {
         JPanel teamsPanel = new JPanel();
-        teamsPanel.setLayout(new GridLayout(0,1));
+        teamsPanel.setLayout(new GridLayout(0, 1));
         teamsPanel.setSize(new Dimension(0, 0));
 
         for (Team team : league.getTeams()) {
             JButton teamButton = new JButton(team.getName());
             teamsPanel.add(teamButton);
-            JPanel teamPanel = new JPanel();
-            teamPanel.setLayout(new GridLayout(0,1));
-
-            for (Driver driver : team.getDrivers()) {
-                JButton driverButton = new JButton(driver.getName());
-                teamPanel.add(driverButton);
-            }
-
-            JButton addDriverButton = new JButton("Add Driver");
-            addDriverButton.addActionListener(e -> addDriver(team));
-            teamPanel.add(addDriverButton);
-
-            JButton quitButton = new JButton("Return to Main Menu");
-            quitButton.addActionListener(e -> cardLayout.show(homePanel, "League"));
-            teamPanel.add(quitButton);
-
-            homePanel.add(teamPanel, team.getName());
+            setTeamPanel(team);
             teamButton.addActionListener(e -> cardLayout.show(homePanel, team.getName()));
         }
 
@@ -404,6 +339,31 @@ public class FantasyGUI {
         teamsPanel.add(quitButton);
 
         homePanel.add(teamsPanel, "Teams");
+    }
+
+    public void setTeamPanel(Team team) {
+        JPanel teamPanel = new JPanel();
+        teamPanel.setLayout(new GridLayout(0, 1));
+
+        teamPanel.add(new JLabel(team.getName().toUpperCase()));
+
+        for (Driver driver : team.getDrivers()) {
+            teamPanel.add(new JLabel(driver.getName()));
+        }
+
+        JButton addDriverButton = new JButton("Add Driver");
+        addDriverButton.addActionListener(e -> addDriver(team));
+        teamPanel.add(addDriverButton);
+
+        JButton removeDriverButton = new JButton("Remove Driver");
+        removeDriverButton.addActionListener(e -> removeDriver(team));
+        teamPanel.add(removeDriverButton);
+
+        JButton quitButton = new JButton("Return to Team Menu");
+        quitButton.addActionListener(e -> cardLayout.show(homePanel, "Teams"));
+        teamPanel.add(quitButton);
+
+        homePanel.add(teamPanel, team.getName());
     }
 
     public void addDriver(Team team) {
@@ -421,8 +381,7 @@ public class FantasyGUI {
             String[] availableDrivers = available.toArray(new String[0]);
 
             Object nameOfDriverToAdd = JOptionPane.showInputDialog(null,
-                    "Which driver would you like to add?",
-                    "Add Driver",
+                    "Which driver would you like to add?", "Add Driver",
                     JOptionPane.QUESTION_MESSAGE,
                     null, availableDrivers, null);
             for (Driver driver : league.getDrivers()) {
@@ -432,8 +391,36 @@ public class FantasyGUI {
             }
         }
 
-        cardLayout.show(homePanel, "League");
         setPanels();
+        cardLayout.show(homePanel, team.getName());
+    }
+
+    public void removeDriver(Team team) {
+        if (team.getDrivers().size() == 0) {
+            JOptionPane.showMessageDialog(null, "There are no drivers on your team to remove.", "System Error",
+                    JOptionPane.ERROR_MESSAGE);
+        } else {
+            List<String> available = new ArrayList<>();
+            for (Driver driver : team.getDrivers()) {
+                available.add(driver.getName());
+            }
+
+            String[] availableDrivers = available.toArray(new String[0]);
+
+            Object driverName = JOptionPane.showInputDialog(null,
+                    "Which driver would you like to remove?",
+                    "Remove Driver",
+                    JOptionPane.QUESTION_MESSAGE,
+                    null, availableDrivers, null);
+            for (Driver driver : league.getDrivers()) {
+                if (driver.getName().equals(driverName)) {
+                    team.removeDriver(driver);
+                }
+            }
+        }
+
+        setPanels();
+        cardLayout.show(homePanel, team.getName());
     }
 
     public void addTeam() {
@@ -444,13 +431,13 @@ public class FantasyGUI {
         Team newTeam = new Team(teamName);
         league.addTeam(newTeam);
 
-        cardLayout.show(homePanel, "League");
         setPanels();
+        cardLayout.show(homePanel, newTeam.getName());
     }
 
     public void setDriversPanel() {
         JPanel driversPanel = new JPanel();
-        driversPanel.setLayout(new GridLayout(0,1));
+        driversPanel.setLayout(new GridLayout(0, 1));
         driversPanel.setSize(new Dimension(0, 0));
 
         for (Driver driver : league.getDrivers()) {
@@ -470,18 +457,18 @@ public class FantasyGUI {
 
     public void setDriverPanel(Driver driver) {
         JPanel driverPanel = new JPanel();
-        driverPanel.setLayout(new GridLayout(0,1));
+        driverPanel.setLayout(new GridLayout(0, 1));
         driverPanel.add(new JButton(driver.getName() + " has " + driver.getPoints() + " points."));
 
-        JButton addPointsButton = new JButton("Return to Drivers Menu");
+        JButton addPointsButton = new JButton("Add Points");
         addPointsButton.addActionListener(e -> addPoints(driver));
         driverPanel.add(addPointsButton);
 
-        JButton removePointsButton = new JButton("Return to Drivers Menu");
+        JButton removePointsButton = new JButton("Remove Points");
         removePointsButton.addActionListener(e -> removePoints(driver));
         driverPanel.add(removePointsButton);
 
-        JButton changeDriverNumber = new JButton("Return to Drivers Menu");
+        JButton changeDriverNumber = new JButton("Change Driver Number");
         changeDriverNumber.addActionListener(e -> changeDriverNumber(driver));
         driverPanel.add(changeDriverNumber);
 
@@ -518,7 +505,7 @@ public class FantasyGUI {
 
     public void changeDriverNumber(Driver driver) {
         int num = Integer.parseInt(JOptionPane.showInputDialog(null,
-                "Enter number of points to add.",
+                "Enter new driver number.",
                 "Add Points",
                 JOptionPane.QUESTION_MESSAGE));
 
@@ -560,15 +547,14 @@ public class FantasyGUI {
         GridLayout customGridLayout = new GridLayout(0, 3);
         leaguePanel.setLayout(customGridLayout);
 
-        JButton scoreboardButton = new JButton("Scoreboard");
-        JButton carButton = new JButton(new ImageIcon("images/car.jpg"));
-        JButton winnerButton = new JButton("Declare Winner");
-        JButton racesButton = new JButton("Races");
-        JButton teamsButton = new JButton("Teams");
-        JButton driversButton = new JButton("Drivers");
-        JButton saveButton = new JButton("Save League");
-        JButton loadButton = new JButton("Load League");
-        JButton quitButton = new JButton("Quit");
+        scoreboardButton.addActionListener(e -> cardLayout.show(homePanel, "Scoreboard"));
+        winnerButton.addActionListener(e -> cardLayout.show(homePanel, "Winner"));
+        racesButton.addActionListener(e -> cardLayout.show(homePanel, "Races"));
+        teamsButton.addActionListener(e -> cardLayout.show(homePanel, "Teams"));
+        driversButton.addActionListener(e -> cardLayout.show(homePanel, "Drivers"));
+        saveButton.addActionListener(e -> saveLeague());
+        loadButton.addActionListener(e -> loadLeague());
+        quitButton.addActionListener(e -> fantasyFrame.dispose());
 
         leaguePanel.add(scoreboardButton);
         leaguePanel.add(carButton);
@@ -579,15 +565,6 @@ public class FantasyGUI {
         leaguePanel.add(saveButton);
         leaguePanel.add(loadButton);
         leaguePanel.add(quitButton);
-
-        scoreboardButton.addActionListener(e -> cardLayout.show(homePanel, "Scoreboard"));
-        winnerButton.addActionListener(e -> cardLayout.show(homePanel, "Winner"));
-        racesButton.addActionListener(e -> cardLayout.show(homePanel, "Races"));
-        teamsButton.addActionListener(e -> cardLayout.show(homePanel, "Teams"));
-        driversButton.addActionListener(e -> cardLayout.show(homePanel, "Drivers"));
-        saveButton.addActionListener(e -> saveLeague());
-        loadButton.addActionListener(e -> loadLeague());
-        quitButton.addActionListener(e -> fantasyFrame.dispose());
 
         homePanel.add(leaguePanel, "League");
     }
