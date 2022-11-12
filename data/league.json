@@ -1985,6 +1985,37 @@
                 "name": "George Russell",
                 "points": 218
             }
+        },
+        {
+            "date": "today",
+            "places": [
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teams": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 79
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teams": [],
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 65
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teams": [],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 218
+                }
+            ],
+            "sprint?": true,
+            "name": "Race"
         }
     ],
     "name": "My Fantasy F1 League",
