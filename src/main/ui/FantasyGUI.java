@@ -13,14 +13,18 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class FantasyGUI {
-    private static final int WIDTH = 800;
+    private static final int WIDTH = 1200;
     private static final int HEIGHT = 800;
+    private static final int OUTER_HGAP = 40;
+    private static final int INNER_HGAP = 20;
+    private static final int OUTER_VGAP = 150;
+    private static final int INNER_VGAP = 75;
     private final JFrame fantasyFrame;
     private JPanel homePanel;
     private CardLayout cardLayout;
+    private JPanel leaguePanel;
 
     private JButton scoreboardButton = new JButton("Scoreboard");
-    private JButton carButton = new JButton(new ImageIcon("images/car.jpg"));
     private JButton winnerButton = new JButton("Declare Winner");
     private JButton racesButton = new JButton("Races");
     private JButton teamsButton = new JButton("Teams");
@@ -151,8 +155,8 @@ public class FantasyGUI {
         JOptionPane.showMessageDialog(null, "The champion is " + winner.getName() + "!", league.getName() + " Winner",
                 JOptionPane.INFORMATION_MESSAGE, new ImageIcon("images/trophy.jpg"));
 
-        cardLayout.show(homePanel, "League");
         setPanels();
+        cardLayout.show(homePanel, "League");
     }
 
     public void setRacesPanel() {
@@ -341,7 +345,7 @@ public class FantasyGUI {
         homePanel.add(teamsPanel, "Teams");
     }
 
-    public void setTeamPanel(Team team) {
+    public void setTeamPanel(Team team) { // TODO make a line graph of performance, pie chart of points?
         JPanel teamPanel = new JPanel();
         teamPanel.setLayout(new GridLayout(0, 1));
 
@@ -543,10 +547,24 @@ public class FantasyGUI {
     }
 
     public void setLeaguePanel() {
-        JPanel leaguePanel = new JPanel();
-        GridLayout customGridLayout = new GridLayout(0, 3);
-        leaguePanel.setLayout(customGridLayout);
+        leaguePanel = new JPanel();
+        leaguePanel.setBackground(new Color(146, 214, 239));
+        setButtons();
 
+        setScoreboardSubPanel();
+        setCarSubPanel();
+        setWinnerSubPanel();
+//        setRacesSubPanel();
+//        setTeamsSubPanel();
+//        setDriversSubPanel();
+//        setSaveSubPanel();
+//        setLoadSubPanel();
+//        setQuitButton();
+
+        homePanel.add(leaguePanel, "League");
+    }
+
+    public void setButtons() {
         scoreboardButton.addActionListener(e -> cardLayout.show(homePanel, "Scoreboard"));
         winnerButton.addActionListener(e -> cardLayout.show(homePanel, "Winner"));
         racesButton.addActionListener(e -> cardLayout.show(homePanel, "Races"));
@@ -555,18 +573,124 @@ public class FantasyGUI {
         saveButton.addActionListener(e -> saveLeague());
         loadButton.addActionListener(e -> loadLeague());
         quitButton.addActionListener(e -> fantasyFrame.dispose());
+    }
 
-        leaguePanel.add(scoreboardButton);
-        leaguePanel.add(carButton);
-        leaguePanel.add(winnerButton);
-        leaguePanel.add(racesButton);
-        leaguePanel.add(teamsButton);
-        leaguePanel.add(driversButton);
-        leaguePanel.add(saveButton);
-        leaguePanel.add(loadButton);
-        leaguePanel.add(quitButton);
+    public void setScoreboardSubPanel() {
+        JPanel scoreboardSubPanel = new JPanel();
+        scoreboardSubPanel.setPreferredSize(new Dimension(WIDTH/5,HEIGHT/2));
+        scoreboardSubPanel.setOpaque(false);
+        scoreboardSubPanel.setLayout(new BorderLayout());
+        scoreboardSubPanel.add(Box.createVerticalStrut(OUTER_VGAP), BorderLayout.PAGE_START);
+        scoreboardSubPanel.add(Box.createHorizontalStrut(OUTER_HGAP), BorderLayout.LINE_START);
+        scoreboardSubPanel.add(scoreboardButton, BorderLayout.CENTER);
+        scoreboardSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_END);
+        scoreboardSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_END);
+        leaguePanel.add(scoreboardSubPanel, BorderLayout.LINE_START);
+    }
 
-        homePanel.add(leaguePanel, "League");
+    public void setCarSubPanel() {
+        JPanel carSubPanel = new JPanel();
+        carSubPanel.setPreferredSize(new Dimension(WIDTH/2,HEIGHT/2));
+        carSubPanel.setOpaque(false);
+        carSubPanel.setLayout(new GridLayout(0,1));
+        carSubPanel.add(Box.createVerticalStrut(OUTER_VGAP));
+        JLabel nameLabel = new JLabel(league.getName().toUpperCase(), SwingConstants.CENTER);
+        nameLabel.setFont(new Font("SansSerif", Font.BOLD, 25));
+        carSubPanel.add(nameLabel);
+        carSubPanel.add(new JLabel(new ImageIcon("images/logo.png")));
+        carSubPanel.add(Box.createVerticalStrut(INNER_VGAP));
+        leaguePanel.add(carSubPanel, BorderLayout.CENTER);
+    }
+
+    public void setWinnerSubPanel() {
+        JPanel winnerSubPanel = new JPanel();
+        winnerSubPanel.setPreferredSize(new Dimension(WIDTH/5,HEIGHT/2));
+        winnerSubPanel.setOpaque(false);
+        winnerSubPanel.setLayout(new BorderLayout());
+        winnerSubPanel.add(Box.createVerticalStrut(OUTER_VGAP), BorderLayout.PAGE_START);
+        winnerSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_START);
+        winnerSubPanel.add(winnerButton, BorderLayout.CENTER);
+        winnerSubPanel.add(Box.createHorizontalStrut(OUTER_HGAP), BorderLayout.LINE_END);
+        winnerSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_END);
+        leaguePanel.add(winnerSubPanel, BorderLayout.LINE_END);
+    }
+
+    public void setRacesSubPanel() {
+        JPanel racesSubPanel = new JPanel();
+        racesSubPanel.setPreferredSize(new Dimension(WIDTH/3,HEIGHT/4));
+        racesSubPanel.setOpaque(false);
+        racesSubPanel.setLayout(new BorderLayout());
+        racesSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_START);
+        racesSubPanel.add(Box.createHorizontalStrut(OUTER_HGAP), BorderLayout.LINE_START);
+        racesSubPanel.add(racesButton, BorderLayout.CENTER);
+        racesSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_END);
+        racesSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_END);
+        leaguePanel.add(racesSubPanel, BorderLayout.PAGE_END);
+    }
+
+    public void setTeamsSubPanel() {
+        JPanel teamsSubPanel = new JPanel();
+        teamsSubPanel.setPreferredSize(new Dimension(WIDTH/3,HEIGHT/4));
+        teamsSubPanel.setOpaque(false);
+        teamsSubPanel.setLayout(new BorderLayout());
+        teamsSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_START);
+        teamsSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_START);
+        teamsSubPanel.add(teamsButton, BorderLayout.CENTER);
+        teamsSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_END);
+        teamsSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_END);
+        leaguePanel.add(teamsSubPanel);
+    }
+
+    public void setDriversSubPanel() {
+        JPanel driversSubPanel = new JPanel();
+        driversSubPanel.setPreferredSize(new Dimension(WIDTH/3,HEIGHT/4));
+        driversSubPanel.setOpaque(false);
+        driversSubPanel.setLayout(new BorderLayout());
+        driversSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_START);
+        driversSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_START);
+        driversSubPanel.add(driversButton, BorderLayout.CENTER);
+        driversSubPanel.add(Box.createHorizontalStrut(OUTER_HGAP), BorderLayout.LINE_END);
+        driversSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_END);
+        leaguePanel.add(driversSubPanel);
+    }
+
+    public void setSaveSubPanel() {
+        JPanel saveSubPanel = new JPanel();
+        saveSubPanel.setPreferredSize(new Dimension(WIDTH/3,HEIGHT/4));
+        saveSubPanel.setOpaque(false);
+        saveSubPanel.setLayout(new BorderLayout());
+        saveSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_START);
+        saveSubPanel.add(Box.createHorizontalStrut(OUTER_HGAP), BorderLayout.LINE_START);
+        saveSubPanel.add(saveButton, BorderLayout.CENTER);
+        saveSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_END);
+        saveSubPanel.add(Box.createVerticalStrut(OUTER_VGAP), BorderLayout.PAGE_END);
+        leaguePanel.add(saveSubPanel);
+    }
+
+    public void setLoadSubPanel() {
+        JPanel loadSubPanel = new JPanel();
+        loadSubPanel.setPreferredSize(new Dimension(WIDTH/3,HEIGHT/4));
+        loadSubPanel.setOpaque(false);
+        loadSubPanel.setLayout(new BorderLayout());
+        loadSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_START);
+        loadSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_START);
+        loadSubPanel.add(loadButton, BorderLayout.CENTER);
+        loadSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_END);
+        loadSubPanel.add(Box.createVerticalStrut(OUTER_VGAP), BorderLayout.PAGE_END);
+        leaguePanel.add(loadSubPanel);
+    }
+
+    public void setQuitButton() {
+        JPanel quitSubPanel = new JPanel();
+        quitSubPanel.setPreferredSize(new Dimension(WIDTH/3,HEIGHT/4));
+        quitSubPanel.setOpaque(false);
+        quitSubPanel.setLayout(new BorderLayout());
+        quitSubPanel.add(Box.createVerticalStrut(INNER_VGAP), BorderLayout.PAGE_START);
+        quitSubPanel.add(Box.createHorizontalStrut(INNER_HGAP), BorderLayout.LINE_START);
+        quitSubPanel.add(quitButton, BorderLayout.CENTER);
+        quitSubPanel.add(Box.createHorizontalStrut(OUTER_HGAP), BorderLayout.LINE_END);
+        quitSubPanel.add(Box.createVerticalStrut(OUTER_VGAP), BorderLayout.PAGE_END);
+        leaguePanel.add(quitSubPanel);
     }
 
     private void initializeDrivers() {
