@@ -84,7 +84,6 @@ public class FantasyGUI {
 
     public void setPanels() {
         setScoreboardPanel();
-        setWinnerPanel();
         setRacesPanel();
         setTeamsPanel();
         setDriversPanel();
@@ -96,7 +95,7 @@ public class FantasyGUI {
         scoreboardPanel.setBackground(PANEL_COLOUR);
 
         JScrollPane scrollPane = new JScrollPane(setScoreBoard());
-        scrollPane.setOpaque(false);
+        scrollPane.setForeground(PANEL_COLOUR);
 
         JButton quitButton = new JButton("Return to Main Menu");
         quitButton.addActionListener(e -> cardLayout.show(homePanel, "League"));
@@ -141,26 +140,13 @@ public class FantasyGUI {
 
         String[][] table = rows.toArray(new String[0][]);
         JTable scoreBoard = new JTable(table, header);
-        scoreBoard.setFont(new Font("SansSerif", Font.PLAIN, 20));
-        scoreBoard.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 14));
+        scoreBoard.setFont(new Font("SansSerif", Font.PLAIN, 15));
+        scoreBoard.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 15));
         scoreBoard.setBackground(new Color(255, 255, 255, 255));
         scoreBoard.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         scoreBoard.setRowHeight(22);
 
         return scoreBoard;
-    }
-
-    public void setWinnerPanel() { // todo fun picture of car crossing finish line?
-        JPanel winnerPanel = new JPanel();
-        JButton winnerButton = new JButton("Declare " + league.getName() + " winner!");
-        winnerButton.addActionListener(e -> decideWinner());
-        winnerPanel.add(winnerButton);
-
-        JButton quitButton = new JButton("Return to Main Menu");
-        quitButton.addActionListener(e -> cardLayout.show(homePanel, "League"));
-        winnerPanel.add(quitButton);
-
-        homePanel.add(winnerPanel, "Winner");
     }
 
     // EFFECTS: returns winner based on team with most points, then most wins
@@ -189,23 +175,49 @@ public class FantasyGUI {
 
     public void setRacesPanel() {
         JPanel racesPanel = new JPanel();
-        racesPanel.setLayout(new GridLayout(0, 4));
+        racesPanel.setBackground(PANEL_COLOUR);
         racesPanel.setSize(new Dimension(0, 0));
+
+        JPanel raceButtonsPanel = new JPanel();
+        raceButtonsPanel.setLayout(new GridLayout(0,4));
+        raceButtonsPanel.setPreferredSize(new Dimension(800,500));
+        raceButtonsPanel.setBackground(PANEL_COLOUR);
 
         for (Race race : league.getRaces()) {
             JButton raceButton = new JButton(race.getName());
-            racesPanel.add(raceButton);
+            raceButtonsPanel.add(raceButton);
             setRacePanel(race);
             raceButton.addActionListener(e -> cardLayout.show(homePanel, race.getName()));
         }
 
+        JLabel title = new JLabel("RACES");
+        title.setFont(new Font("SansSerif", Font.BOLD, 25));
+
         JButton addRaceButton = new JButton("Add Race");
         addRaceButton.addActionListener(e -> addRace());
-        racesPanel.add(addRaceButton);
 
         JButton quitButton = new JButton("Return to Main Menu");
         quitButton.addActionListener(e -> cardLayout.show(homePanel, "League"));
-        racesPanel.add(quitButton);
+
+        JPanel titlePanel = new JPanel();
+        titlePanel.setPreferredSize(new Dimension(800,40));
+        titlePanel.setBackground(PANEL_COLOUR);
+        titlePanel.add(title);
+
+        JPanel racePanel = new JPanel();
+        racePanel.setPreferredSize(new Dimension(800,40));
+        racePanel.setBackground(PANEL_COLOUR);
+        racePanel.add(addRaceButton);
+
+        JPanel quitPanel = new JPanel();
+        quitPanel.setPreferredSize(new Dimension(800,40));
+        quitPanel.setBackground(PANEL_COLOUR);
+        quitPanel.add(quitButton);
+
+        racesPanel.add(titlePanel);
+        racesPanel.add(raceButtonsPanel);
+        racesPanel.add(racePanel);
+        racesPanel.add(quitPanel);
 
         homePanel.add(racesPanel, "Races");
     }
@@ -352,23 +364,49 @@ public class FantasyGUI {
 
     public void setTeamsPanel() {
         JPanel teamsPanel = new JPanel();
-        teamsPanel.setLayout(new GridLayout(0, 1));
+        teamsPanel.setBackground(PANEL_COLOUR);
         teamsPanel.setSize(new Dimension(0, 0));
+
+        JPanel teamButtonsPanel = new JPanel();
+        teamButtonsPanel.setLayout(new GridLayout(0,2));
+        teamButtonsPanel.setPreferredSize(new Dimension(800,500));
+        teamButtonsPanel.setBackground(PANEL_COLOUR);
 
         for (Team team : league.getTeams()) {
             JButton teamButton = new JButton(team.getName());
-            teamsPanel.add(teamButton);
+            teamButtonsPanel.add(teamButton);
             setTeamPanel(team);
             teamButton.addActionListener(e -> cardLayout.show(homePanel, team.getName()));
         }
 
+        JLabel title = new JLabel("TEAMS");
+        title.setFont(new Font("SansSerif", Font.BOLD, 25));
+
         JButton addTeamButton = new JButton("Add Team");
         addTeamButton.addActionListener(e -> addTeam());
-        teamsPanel.add(addTeamButton);
 
         JButton quitButton = new JButton("Return to Main Menu");
         quitButton.addActionListener(e -> cardLayout.show(homePanel, "League"));
-        teamsPanel.add(quitButton);
+
+        JPanel titlePanel = new JPanel();
+        titlePanel.setPreferredSize(new Dimension(800,40));
+        titlePanel.setBackground(PANEL_COLOUR);
+        titlePanel.add(title);
+
+        JPanel racePanel = new JPanel();
+        racePanel.setPreferredSize(new Dimension(800,40));
+        racePanel.setBackground(PANEL_COLOUR);
+        racePanel.add(addTeamButton);
+
+        JPanel quitPanel = new JPanel();
+        quitPanel.setPreferredSize(new Dimension(800,40));
+        quitPanel.setBackground(PANEL_COLOUR);
+        quitPanel.add(quitButton);
+
+        teamsPanel.add(titlePanel);
+        teamsPanel.add(teamButtonsPanel);
+        teamsPanel.add(racePanel);
+        teamsPanel.add(quitPanel);
 
         homePanel.add(teamsPanel, "Teams");
     }
@@ -468,21 +506,60 @@ public class FantasyGUI {
     }
 
     public void setDriversPanel() {
+//        JPanel driversPanel = new JPanel();
+//        driversPanel.setLayout(new GridLayout(0, 1));
+//        driversPanel.setSize(new Dimension(0, 0));
+//
+//        for (Driver driver : league.getDrivers()) {
+//            JButton driverButton = new JButton(driver.getName());
+//            driversPanel.add(driverButton);
+//            driverButton.addActionListener(e -> cardLayout.show(homePanel, driver.getName()));
+//
+//            setDriverPanel(driver);
+//        }
+//
+//        JButton quitButton = new JButton("Return to Main Menu");
+//        quitButton.addActionListener(e -> cardLayout.show(homePanel, "League"));
+//        driversPanel.add(quitButton);
+//
+//        homePanel.add(driversPanel, "Drivers");
+
         JPanel driversPanel = new JPanel();
-        driversPanel.setLayout(new GridLayout(0, 1));
+        driversPanel.setBackground(PANEL_COLOUR);
         driversPanel.setSize(new Dimension(0, 0));
+
+        JPanel driverButtonsPanel = new JPanel();
+        driverButtonsPanel.setLayout(new GridLayout(0,4));
+        driverButtonsPanel.setPreferredSize(new Dimension(800,500));
+        driverButtonsPanel.setBackground(PANEL_COLOUR);
 
         for (Driver driver : league.getDrivers()) {
             JButton driverButton = new JButton(driver.getName());
-            driversPanel.add(driverButton);
+            driverButtonsPanel.add(driverButton);
             driverButton.addActionListener(e -> cardLayout.show(homePanel, driver.getName()));
 
             setDriverPanel(driver);
         }
 
+        JLabel title = new JLabel("DRIVERS");
+        title.setFont(new Font("SansSerif", Font.BOLD, 25));
+
         JButton quitButton = new JButton("Return to Main Menu");
         quitButton.addActionListener(e -> cardLayout.show(homePanel, "League"));
-        driversPanel.add(quitButton);
+
+        JPanel titlePanel = new JPanel();
+        titlePanel.setPreferredSize(new Dimension(800,40));
+        titlePanel.setBackground(PANEL_COLOUR);
+        titlePanel.add(title);
+
+        JPanel quitPanel = new JPanel();
+        quitPanel.setPreferredSize(new Dimension(800,40));
+        quitPanel.setBackground(PANEL_COLOUR);
+        quitPanel.add(quitButton);
+
+        driversPanel.add(titlePanel);
+        driversPanel.add(driverButtonsPanel);
+        driversPanel.add(quitPanel);
 
         homePanel.add(driversPanel, "Drivers");
     }
@@ -753,7 +830,7 @@ public class FantasyGUI {
         createButtons();
 
         scoreboardButton.addActionListener(e -> cardLayout.show(homePanel, "Scoreboard"));
-        winnerButton.addActionListener(e -> cardLayout.show(homePanel, "Winner"));
+        winnerButton.addActionListener(e -> decideWinner());
         racesButton.addActionListener(e -> cardLayout.show(homePanel, "Races"));
         teamsButton.addActionListener(e -> cardLayout.show(homePanel, "Teams"));
         driversButton.addActionListener(e -> cardLayout.show(homePanel, "Drivers"));
