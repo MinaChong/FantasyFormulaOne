@@ -504,6 +504,9 @@ public class FantasyGUI {
         homePanel.add(teamPanel, team.getName());
     }
 
+    public void pointsBreakdown(Team team) {
+    }
+
     public void addDriver(Team team) {
         if (team.getDrivers().size() >= 3) {
             JOptionPane.showMessageDialog(null, "Maximum number of drivers already added to team.", "System Error",
@@ -1030,7 +1033,7 @@ public class FantasyGUI {
 
     // MODIFIES: this
     // EFFECTS: initializes list of F1 races that have been held so far in 2022
-    private void initializeRaces() { // todo flags for each race?
+    private void initializeRaces() {
         addBahrain();
         addSaudiArabia();
         addAustralia();
@@ -1449,7 +1452,7 @@ public class FantasyGUI {
         league.addRace(unitedStates);
     }
 
-    private void initializeTeams() { // todo random f1 car pictures for each team?
+    private void initializeTeams() {
         Team teamKimi = new Team("Kimi's Team");
         teamKimi.addDriver(mverstappen);
         teamKimi.addDriver(lhamilton);
