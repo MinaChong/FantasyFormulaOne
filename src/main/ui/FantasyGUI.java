@@ -10,7 +10,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class FantasyGUI {
     private static final int WIDTH = 1000;
@@ -203,7 +202,7 @@ public class FantasyGUI {
 
         JPanel titlePanel = setTitlePanel(race.getName().toUpperCase());
 
-        JPanel datePanel = setRaceInfoPanel(race.getDate());
+        JPanel datePanel = setInfoPanel(race.getDate());
 
         JPanel placesPanel = new JPanel();
         placesPanel.setPreferredSize(new Dimension(800, 500));
@@ -224,18 +223,6 @@ public class FantasyGUI {
         racePanel.add(quitPanel);
 
         homePanel.add(racePanel, race.getName());
-    }
-
-    // EFFECTS: returns race info panel for GUI
-    public JPanel setRaceInfoPanel(String infoString) {
-        JLabel info = new JLabel(infoString);
-        info.setFont(new Font("SansSerif", Font.PLAIN, 15));
-        JPanel infoPanel = new JPanel();
-        infoPanel.setPreferredSize(new Dimension(800, 30));
-        infoPanel.setBackground(PANEL_COLOUR);
-        infoPanel.add(info);
-
-        return infoPanel;
     }
 
     // MODIFIES: this
@@ -293,6 +280,8 @@ public class FantasyGUI {
             }
 
             places.add(place);
+            allDrivers.remove(name);
+            drivers = allDrivers.toArray(new String[0]);
         }
 
         return places;
@@ -376,8 +365,41 @@ public class FantasyGUI {
 
         JPanel titlePanel = setTitlePanel(team.getName().toUpperCase());
 
+        JPanel pointsPanel = setInfoPanel("Points: " + team.getPoints());
+        JPanel winsPanel = setInfoPanel("Wins: " + team.getWins());
+
         JPanel teamDriversPanel = setTeamDriversPanel(team);
 
+        JPanel quitPanel = setQuitPanel();
+
+        teamPanel.add(titlePanel);
+        teamPanel.add(pointsPanel);
+        teamPanel.add(winsPanel);
+        teamPanel.add(teamDriversPanel);
+        setTeamPanelButtons(team, teamPanel);
+        teamPanel.add(quitPanel);
+
+        homePanel.add(teamPanel, team.getName());
+    }
+
+    // EFFECTS: sets panel of drivers on given team for GUI
+    public JPanel setTeamDriversPanel(Team team) {
+        JPanel teamDriversPanel = new JPanel();
+        teamDriversPanel.setPreferredSize(new Dimension(800, 300));
+        teamDriversPanel.setBackground(PANEL_COLOUR);
+        teamDriversPanel.setLayout(new GridLayout(0, 1));
+
+        for (Driver driver : team.getDrivers()) {
+            JLabel placeLabel = new JLabel(driver.getName(), JLabel.CENTER);
+            teamDriversPanel.add(placeLabel);
+        }
+
+        return teamDriversPanel;
+    }
+
+    // MODIFIES: this
+    // EFFECTS: sets team buttons panel for given team for GUI
+    public void setTeamPanelButtons(Team team, JPanel teamPanel) {
         JButton showGraphButton = new JButton("Show Team Performance Graph");
         showGraphButton.addActionListener(e -> pointsBreakdown(team));
         JPanel showGraphButtonPanel = setButtonPanel(showGraphButton);
@@ -390,35 +412,42 @@ public class FantasyGUI {
         removeDriverButton.addActionListener(e -> removeDriver(team));
         JPanel removeDriverPanel = setButtonPanel(removeDriverButton);
 
-        JPanel quitPanel = setQuitPanel();
-
-        teamPanel.add(titlePanel);
-        teamPanel.add(teamDriversPanel);
         teamPanel.add(showGraphButtonPanel);
         teamPanel.add(addDriverPanel);
         teamPanel.add(removeDriverPanel);
-        teamPanel.add(quitPanel);
-
-        homePanel.add(teamPanel, team.getName());
     }
 
-    // EFFECTS: sets panel of drivers on given team for GUI
-    public JPanel setTeamDriversPanel(Team team) {
-        JPanel teamDriversPanel = new JPanel();
-        teamDriversPanel.setPreferredSize(new Dimension(800, 400));
-        teamDriversPanel.setBackground(PANEL_COLOUR);
-        teamDriversPanel.setLayout(new GridLayout(0, 1));
+    // EFFECTS: shows chart of driver points breakdown for given team for GUI
+    public void pointsBreakdown(Team team) {
+        JPanel chartPanel = new JPanel();
+        chartPanel.setBackground(PANEL_COLOUR);
+
+        JPanel titlePanel = setTitlePanel(team.getName().toUpperCase() + " POINTS BREAKDOWN");
+
+        JPanel graphPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        graphPanel.setBackground(Color.white);
+        graphPanel.setPreferredSize(new Dimension(900,400));
+        int barHeight = 50;
+        graphPanel.add(setSpacerPanel(new Dimension(900, barHeight)));
 
         for (Driver driver : team.getDrivers()) {
-            JLabel placeLabel = new JLabel(driver.getName(), JLabel.CENTER);
-            teamDriversPanel.add(placeLabel);
+            JButton driverBar = new JButton(driver.getName());
+            driverBar.setPreferredSize(new Dimension(driver.getPoints() * 2, barHeight));
+            driverBar.setBackground(Color.red);
+            driverBar.addActionListener(e -> driverBar.setText(driver.getName() + ": " + driver.getPoints()
+                    + "/" + team.getPoints() + " points"));
+            graphPanel.add(driverBar);
+            graphPanel.add(setSpacerPanel(new Dimension(900, barHeight)));
         }
 
-        return teamDriversPanel;
-    }
+        JPanel quitPanel = setQuitPanel();
 
-    // EFFECTS: returns pie chart of driver points breakdown for given team for GUI
-    public void pointsBreakdown(Team team) { // TODO pie chart
+        chartPanel.add(titlePanel);
+        chartPanel.add(graphPanel);
+        chartPanel.add(quitPanel);
+
+        homePanel.add(chartPanel, "Graph");
+        cardLayout.show(homePanel, "Graph");
     }
 
     // EFFECTS: allows user to add a driver to given team
@@ -601,7 +630,12 @@ public class FantasyGUI {
         int points = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Enter number of points to add.", "Add Points", JOptionPane.QUESTION_MESSAGE));
 
-        driver.addPoints(points);
+        if (points < 0 || points > 1000) {
+            JOptionPane.showMessageDialog(null,
+                    "Invalid number of points entered.", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+        } else {
+            driver.addPoints(points);
+        }
 
         setPanels();
         cardLayout.show(homePanel, driver.getName());
@@ -612,7 +646,12 @@ public class FantasyGUI {
         int points = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Enter number of points to remove.", "Add Points", JOptionPane.QUESTION_MESSAGE));
 
-        driver.removePoints(points);
+        if (points < 0 || points > driver.getPoints()) {
+            JOptionPane.showMessageDialog(null,
+                    "Invalid number of points entered.", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+        } else {
+            driver.removePoints(points);
+        }
 
         setPanels();
         cardLayout.show(homePanel, driver.getName());
@@ -623,7 +662,12 @@ public class FantasyGUI {
         int num = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Enter new driver number.", "Add Points", JOptionPane.QUESTION_MESSAGE));
 
-        driver.setNum(num);
+        if (num < 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Invalid number entered.", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+        } else {
+            driver.setNum(num);
+        }
 
         setPanels();
         cardLayout.show(homePanel, driver.getName());
@@ -639,8 +683,8 @@ public class FantasyGUI {
         } catch (FileNotFoundException e) {
             System.out.println("Unable to write to file: " + JSON_STORE);
         }
-        cardLayout.show(homePanel, "League");
         setPanels();
+        cardLayout.show(homePanel, "League");
     }
 
     // MODIFIES: this
@@ -652,8 +696,8 @@ public class FantasyGUI {
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE);
         }
-        cardLayout.show(homePanel, "League");
         setPanels();
+        cardLayout.show(homePanel, "League");
     }
 
     // EFFECTS: returns spacer panel with given dimension
@@ -859,6 +903,18 @@ public class FantasyGUI {
         titlePanel.add(title);
 
         return titlePanel;
+    }
+
+    // EFFECTS: returns panel for given info for GUI
+    public JPanel setInfoPanel(String infoString) {
+        JLabel info = new JLabel(infoString);
+        info.setFont(new Font("SansSerif", Font.PLAIN, 15));
+        JPanel infoPanel = new JPanel();
+        infoPanel.setPreferredSize(new Dimension(800, 30));
+        infoPanel.setBackground(PANEL_COLOUR);
+        infoPanel.add(info);
+
+        return infoPanel;
     }
 
     // EFFECTS: returns panel with given button for GUI
@@ -1362,12 +1418,12 @@ public class FantasyGUI {
         Team teamKimi = new Team("Kimi's Team");
         teamKimi.addDriver(mverstappen);
         teamKimi.addDriver(lhamilton);
-        teamKimi.addDriver(lstroll);
+        teamKimi.addDriver(lnorris);
 
         Team teamMichael = new Team("Michael's Team");
         teamMichael.addDriver(cleclerc);
         teamMichael.addDriver(grussell);
-        teamMichael.addDriver(lnorris);
+        teamMichael.addDriver(sperez);
 
         league.addTeam(teamKimi);
         league.addTeam(teamMichael);
