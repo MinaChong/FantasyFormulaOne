@@ -14,5 +14,7 @@ public abstract class Race implements Writable {
 
     public abstract String getName();
 
+    public abstract String getDate();
+
     public abstract List<Driver> getPlaces();
 }

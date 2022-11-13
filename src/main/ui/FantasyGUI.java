@@ -5,7 +5,6 @@ import persistence.JsonReader;
 import persistence.JsonWriter;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -224,18 +223,48 @@ public class FantasyGUI {
 
     public void setRacePanel(Race race) {
         JPanel racePanel = new JPanel();
-        racePanel.setLayout(new GridLayout(0, 1));
+        racePanel.setBackground(PANEL_COLOUR);
 
-        racePanel.add(new JLabel(race.getName().toUpperCase()));
+        JPanel placesPanel = new JPanel();
+        placesPanel.setPreferredSize(new Dimension(800,500));
+        placesPanel.setBackground(PANEL_COLOUR);
+        placesPanel.setLayout(new GridLayout(0,1));
+
         int i = 1;
         for (Driver driver : race.getPlaces()) {
-            racePanel.add(new JLabel(i + ". " + driver.getName()));
+            JLabel placeLabel = new JLabel(i + ". " + driver.getName(), JLabel.CENTER);
+            placesPanel.add(placeLabel);
             i++;
         }
 
+        JLabel title = new JLabel(race.getName().toUpperCase());
+        title.setFont(new Font("SansSerif", Font.BOLD, 25));
+
+        JLabel date = new JLabel(race.getDate().toUpperCase());
+        date.setFont(new Font("SansSerif", Font.PLAIN, 15));
+
         JButton quitButton = new JButton("Return to Races Menu");
         quitButton.addActionListener(e -> cardLayout.show(homePanel, "Races"));
-        racePanel.add(quitButton);
+
+        JPanel titlePanel = new JPanel();
+        titlePanel.setPreferredSize(new Dimension(800,50));
+        titlePanel.setBackground(PANEL_COLOUR);
+        titlePanel.add(title);
+
+        JPanel datePanel = new JPanel();
+        datePanel.setPreferredSize(new Dimension(800,30));
+        datePanel.setBackground(PANEL_COLOUR);
+        datePanel.add(date);
+
+        JPanel quitPanel = new JPanel();
+        quitPanel.setPreferredSize(new Dimension(800,50));
+        quitPanel.setBackground(PANEL_COLOUR);
+        quitPanel.add(quitButton);
+
+        racePanel.add(titlePanel);
+        racePanel.add(datePanel);
+        racePanel.add(placesPanel);
+        racePanel.add(quitPanel);
 
         homePanel.add(racePanel, race.getName());
     }
@@ -369,7 +398,7 @@ public class FantasyGUI {
 
         JPanel teamButtonsPanel = new JPanel();
         teamButtonsPanel.setLayout(new GridLayout(0,2));
-        teamButtonsPanel.setPreferredSize(new Dimension(800,500));
+        teamButtonsPanel.setPreferredSize(new Dimension(800,400));
         teamButtonsPanel.setBackground(PANEL_COLOUR);
 
         for (Team team : league.getTeams()) {
@@ -385,6 +414,9 @@ public class FantasyGUI {
         JButton addTeamButton = new JButton("Add Team");
         addTeamButton.addActionListener(e -> addTeam());
 
+        JButton removeTeamButton = new JButton("Remove Team");
+        removeTeamButton.addActionListener(e -> removeTeam());
+
         JButton quitButton = new JButton("Return to Main Menu");
         quitButton.addActionListener(e -> cardLayout.show(homePanel, "League"));
 
@@ -393,10 +425,15 @@ public class FantasyGUI {
         titlePanel.setBackground(PANEL_COLOUR);
         titlePanel.add(title);
 
-        JPanel racePanel = new JPanel();
-        racePanel.setPreferredSize(new Dimension(800,40));
-        racePanel.setBackground(PANEL_COLOUR);
-        racePanel.add(addTeamButton);
+        JPanel addTeamPanel = new JPanel();
+        addTeamPanel.setPreferredSize(new Dimension(800,40));
+        addTeamPanel.setBackground(PANEL_COLOUR);
+        addTeamPanel.add(addTeamButton);
+
+        JPanel removeTeamPanel = new JPanel();
+        removeTeamPanel.setPreferredSize(new Dimension(800,40));
+        removeTeamPanel.setBackground(PANEL_COLOUR);
+        removeTeamPanel.add(removeTeamButton);
 
         JPanel quitPanel = new JPanel();
         quitPanel.setPreferredSize(new Dimension(800,40));
@@ -405,7 +442,8 @@ public class FantasyGUI {
 
         teamsPanel.add(titlePanel);
         teamsPanel.add(teamButtonsPanel);
-        teamsPanel.add(racePanel);
+        teamsPanel.add(addTeamPanel);
+        teamsPanel.add(removeTeamPanel);
         teamsPanel.add(quitPanel);
 
         homePanel.add(teamsPanel, "Teams");
@@ -413,25 +451,55 @@ public class FantasyGUI {
 
     public void setTeamPanel(Team team) { // TODO make a line graph of performance, pie chart of points?
         JPanel teamPanel = new JPanel();
-        teamPanel.setLayout(new GridLayout(0, 1));
+        teamPanel.setBackground(PANEL_COLOUR);
 
-        teamPanel.add(new JLabel(team.getName().toUpperCase()));
+        JPanel driversPanel = new JPanel();
+        driversPanel.setPreferredSize(new Dimension(800,400));
+        driversPanel.setBackground(PANEL_COLOUR);
+        driversPanel.setLayout(new GridLayout(0,1));
 
         for (Driver driver : team.getDrivers()) {
-            teamPanel.add(new JLabel(driver.getName()));
+            JLabel placeLabel = new JLabel(driver.getName(), JLabel.CENTER);
+            driversPanel.add(placeLabel);
         }
+
+        JLabel title = new JLabel(team.getName().toUpperCase());
+        title.setFont(new Font("SansSerif", Font.BOLD, 25));
 
         JButton addDriverButton = new JButton("Add Driver");
         addDriverButton.addActionListener(e -> addDriver(team));
-        teamPanel.add(addDriverButton);
 
         JButton removeDriverButton = new JButton("Remove Driver");
         removeDriverButton.addActionListener(e -> removeDriver(team));
-        teamPanel.add(removeDriverButton);
 
-        JButton quitButton = new JButton("Return to Team Menu");
+        JButton quitButton = new JButton("Return to Teams Menu");
         quitButton.addActionListener(e -> cardLayout.show(homePanel, "Teams"));
-        teamPanel.add(quitButton);
+
+        JPanel titlePanel = new JPanel();
+        titlePanel.setPreferredSize(new Dimension(800,50));
+        titlePanel.setBackground(PANEL_COLOUR);
+        titlePanel.add(title);
+
+        JPanel addDriverPanel = new JPanel();
+        addDriverPanel.setPreferredSize(new Dimension(800,50));
+        addDriverPanel.setBackground(PANEL_COLOUR);
+        addDriverPanel.add(addDriverButton);
+
+        JPanel removeDriverPanel = new JPanel();
+        removeDriverPanel.setPreferredSize(new Dimension(800,50));
+        removeDriverPanel.setBackground(PANEL_COLOUR);
+        removeDriverPanel.add(removeDriverButton);
+
+        JPanel quitPanel = new JPanel();
+        quitPanel.setPreferredSize(new Dimension(800,50));
+        quitPanel.setBackground(PANEL_COLOUR);
+        quitPanel.add(quitButton);
+
+        teamPanel.add(titlePanel);
+        teamPanel.add(driversPanel);
+        teamPanel.add(addDriverPanel);
+        teamPanel.add(removeDriverPanel);
+        teamPanel.add(quitPanel);
 
         homePanel.add(teamPanel, team.getName());
     }
@@ -505,25 +573,34 @@ public class FantasyGUI {
         cardLayout.show(homePanel, newTeam.getName());
     }
 
-    public void setDriversPanel() {
-//        JPanel driversPanel = new JPanel();
-//        driversPanel.setLayout(new GridLayout(0, 1));
-//        driversPanel.setSize(new Dimension(0, 0));
-//
-//        for (Driver driver : league.getDrivers()) {
-//            JButton driverButton = new JButton(driver.getName());
-//            driversPanel.add(driverButton);
-//            driverButton.addActionListener(e -> cardLayout.show(homePanel, driver.getName()));
-//
-//            setDriverPanel(driver);
-//        }
-//
-//        JButton quitButton = new JButton("Return to Main Menu");
-//        quitButton.addActionListener(e -> cardLayout.show(homePanel, "League"));
-//        driversPanel.add(quitButton);
-//
-//        homePanel.add(driversPanel, "Drivers");
+    public void removeTeam() {
+        List<String> available = new ArrayList<>();
+        for (Team team : league.getTeams()) {
+            available.add(team.getName());
+        }
 
+        String[] availableTeams = available.toArray(new String[0]);
+
+        String teamName = String.valueOf(JOptionPane.showInputDialog(null,
+                "Which team would you like to remove?",
+                "Remove Team",
+                JOptionPane.QUESTION_MESSAGE, null, availableTeams, null));
+
+        Team teamToRemove = null;
+
+        for (Team team : league.getTeams()) {
+            if (team.getName().equals(teamName)) {
+                teamToRemove = team;
+            }
+        }
+
+        league.removeTeam(teamToRemove);
+
+        setPanels();
+        cardLayout.show(homePanel, "Teams");
+    }
+
+    public void setDriversPanel() {
         JPanel driversPanel = new JPanel();
         driversPanel.setBackground(PANEL_COLOUR);
         driversPanel.setSize(new Dimension(0, 0));
@@ -566,24 +643,64 @@ public class FantasyGUI {
 
     public void setDriverPanel(Driver driver) {
         JPanel driverPanel = new JPanel();
-        driverPanel.setLayout(new GridLayout(0, 1));
-        driverPanel.add(new JButton(driver.getName() + " has " + driver.getPoints() + " points."));
+        driverPanel.setBackground(PANEL_COLOUR);
+
+        JPanel statsPanel = new JPanel();
+        statsPanel.setPreferredSize(new Dimension(800,300));
+        statsPanel.setBackground(PANEL_COLOUR);
+        statsPanel.setLayout(new GridLayout(0,1));
+
+        statsPanel.add(new JLabel("Driver Number: " + driver.getNum()));
+        statsPanel.add(new JLabel("Points: " + driver.getPoints()));
+        statsPanel.add(new JLabel("Wins: " + driver.getWins()));
+        statsPanel.add(new JLabel("Fastest Laps: " + driver.getFastestLaps()));
+
+        JLabel title = new JLabel(driver.getName().toUpperCase());
+        title.setFont(new Font("SansSerif", Font.BOLD, 25));
 
         JButton addPointsButton = new JButton("Add Points");
         addPointsButton.addActionListener(e -> addPoints(driver));
-        driverPanel.add(addPointsButton);
 
         JButton removePointsButton = new JButton("Remove Points");
         removePointsButton.addActionListener(e -> removePoints(driver));
-        driverPanel.add(removePointsButton);
 
         JButton changeDriverNumber = new JButton("Change Driver Number");
         changeDriverNumber.addActionListener(e -> changeDriverNumber(driver));
-        driverPanel.add(changeDriverNumber);
 
         JButton quitButton = new JButton("Return to Drivers Menu");
         quitButton.addActionListener(e -> cardLayout.show(homePanel, "Drivers"));
-        driverPanel.add(quitButton);
+
+        JPanel titlePanel = new JPanel();
+        titlePanel.setPreferredSize(new Dimension(800,50));
+        titlePanel.setBackground(PANEL_COLOUR);
+        titlePanel.add(title);
+
+        JPanel addPointsPanel = new JPanel();
+        addPointsPanel.setPreferredSize(new Dimension(800,50));
+        addPointsPanel.setBackground(PANEL_COLOUR);
+        addPointsPanel.add(addPointsButton);
+
+        JPanel removePointsPanel = new JPanel();
+        removePointsPanel.setPreferredSize(new Dimension(800,50));
+        removePointsPanel.setBackground(PANEL_COLOUR);
+        removePointsPanel.add(removePointsButton);
+
+        JPanel changeDriverNumPanel = new JPanel();
+        changeDriverNumPanel.setPreferredSize(new Dimension(800,50));
+        changeDriverNumPanel.setBackground(PANEL_COLOUR);
+        changeDriverNumPanel.add(changeDriverNumber);
+
+        JPanel quitPanel = new JPanel();
+        quitPanel.setPreferredSize(new Dimension(800,50));
+        quitPanel.setBackground(PANEL_COLOUR);
+        quitPanel.add(quitButton);
+
+        driverPanel.add(titlePanel);
+        driverPanel.add(statsPanel);
+        driverPanel.add(addPointsPanel);
+        driverPanel.add(removePointsPanel);
+        driverPanel.add(changeDriverNumPanel);
+        driverPanel.add(quitPanel);
 
         homePanel.add(driverPanel, driver.getName());
     }
