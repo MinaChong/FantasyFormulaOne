@@ -5,6 +5,7 @@ import persistence.JsonReader;
 import persistence.JsonWriter;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -94,26 +95,39 @@ public class FantasyGUI {
         JPanel scoreboardPanel = new JPanel();
         scoreboardPanel.setBackground(PANEL_COLOUR);
 
-        JScrollPane scrollPane = setScoreBoard();
+        JScrollPane scrollPane = new JScrollPane(setScoreBoard());
+        scrollPane.setOpaque(false);
 
         JButton quitButton = new JButton("Return to Main Menu");
         quitButton.addActionListener(e -> cardLayout.show(homePanel, "League"));
 
         JPanel spacer = new JPanel();
-        spacer.setPreferredSize(new Dimension(WIDTH, 50));
+        spacer.setPreferredSize(new Dimension(WIDTH, 30));
         spacer.setOpaque(false);
+
+        JLabel title = new JLabel("LEADERBOARD");
+        title.setFont(new Font("SansSerif", Font.BOLD, 25));
+
         JPanel tablePanel = new JPanel();
-        tablePanel.setPreferredSize(new Dimension(WIDTH, 600));
+        tablePanel.setLayout(new GridLayout(0,1));
+        tablePanel.setPreferredSize(new Dimension(800, 400));
         tablePanel.setBackground(new Color(0, 0, 0, 0));
         tablePanel.add(scrollPane);
 
+        JPanel quitPanel = new JPanel();
+        quitPanel.setPreferredSize(new Dimension(800,50));
+        quitPanel.setBackground(PANEL_COLOUR);
+        quitPanel.add(quitButton);
+
         scoreboardPanel.add(spacer);
+        scoreboardPanel.add(title);
         scoreboardPanel.add(tablePanel);
+        scoreboardPanel.add(quitPanel);
 
         homePanel.add(scoreboardPanel, "Scoreboard");
     }
 
-    public JScrollPane setScoreBoard() {
+    public JTable setScoreBoard() {
         String[] header = {"TEAM", "POINTS", "WINS"};
         List<String[]> rows = new ArrayList<>();
 
@@ -127,11 +141,13 @@ public class FantasyGUI {
 
         String[][] table = rows.toArray(new String[0][]);
         JTable scoreBoard = new JTable(table, header);
-        scoreBoard.setFont(new Font("SansSerif", Font.PLAIN, 14));
+        scoreBoard.setFont(new Font("SansSerif", Font.PLAIN, 20));
         scoreBoard.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 14));
+        scoreBoard.setBackground(new Color(255, 255, 255, 255));
+        scoreBoard.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        scoreBoard.setRowHeight(22);
 
-        JScrollPane scrollPane = new JScrollPane(scoreBoard);
-        return scrollPane;
+        return scoreBoard;
     }
 
     public void setWinnerPanel() { // todo fun picture of car crossing finish line?
