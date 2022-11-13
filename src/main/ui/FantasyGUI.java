@@ -20,7 +20,7 @@ public class FantasyGUI {
     private JPanel homePanel;
     private CardLayout cardLayout;
     private JPanel leaguePanel;
-    private JButton scoreboardButton;
+    private JButton leaderboardButton;
     private JButton winnerButton;
     private JButton racesButton;
     private JButton teamsButton;
@@ -663,7 +663,7 @@ public class FantasyGUI {
 
         JPanel mainPanel = new JPanel();
         mainPanel.setPreferredSize(new Dimension(1000, 750));
-        mainPanel.setBackground(new Color(0, 0, 0, 0));
+        mainPanel.setBackground(null);
 
         JPanel mainTopPanel = setMainTopPanel();
         JPanel mainBottomPanel = setMainBottomPanel();
@@ -678,123 +678,103 @@ public class FantasyGUI {
     public JPanel setMainTopPanel() {
         JPanel mainTopPanel = new JPanel();
         mainTopPanel.setPreferredSize(new Dimension(1000, 270));
-//        mainTopPanel.setLayout(new FlowLayout());
-        mainTopPanel.setBackground(new Color(0, 0, 0, 0));
+        mainTopPanel.setBackground(null);
 
-        setCentreTopLeftPanel(mainTopPanel);
-        setCentreTopCentrePanel(mainTopPanel);
-        setCentreTopRightPanel(mainTopPanel);
+        JPanel mainTopLeftPanel = setMainTopLeftPanel();
+        JPanel mainTopCentrePanel = setMainTopCentrePanel();
+        JPanel mainTopRightPanel = setMainTopRightPanel();
+
+        mainTopPanel.add(mainTopLeftPanel);
+        mainTopPanel.add(mainTopCentrePanel);
+        mainTopPanel.add(mainTopRightPanel);
 
         return mainTopPanel;
     }
 
-    public void setCentreTopLeftPanel(JPanel centreTopPanel) {
-        JPanel centreTopLeftPanel = new JPanel();
-        centreTopLeftPanel.setPreferredSize(new Dimension(200, 300));
-        centreTopLeftPanel.setBackground(new Color(0, 0, 0, 0));
-        JPanel spacerPanel = new JPanel();
-        spacerPanel.setPreferredSize(new Dimension(150, 10));
-        spacerPanel.setOpaque(false);
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setOpaque(false);
-        buttonPanel.setPreferredSize(new Dimension(150, 200));
-        buttonPanel.add(new JLabel(new ImageIcon("images/scoreboard.png")));
-        buttonPanel.add(scoreboardButton);
-        centreTopLeftPanel.add(spacerPanel);
-        centreTopLeftPanel.add(buttonPanel);
+    public JPanel setMainTopLeftPanel() {
+        JPanel mainTopLeftPanel = new JPanel();
+        mainTopLeftPanel.setPreferredSize(new Dimension(200, 300));
+        mainTopLeftPanel.setBackground(null);
 
-        centreTopPanel.add(centreTopLeftPanel);
+        JPanel spacerPanel = setSpacerPanel(new Dimension(150, 10));
+
+        JPanel leaderboardPanel = new JPanel();
+        leaderboardPanel.setOpaque(false);
+        leaderboardPanel.setPreferredSize(new Dimension(150, 200));
+        leaderboardPanel.add(new JLabel(new ImageIcon("images/scoreboard.png")));
+        leaderboardPanel.add(leaderboardButton);
+
+        mainTopLeftPanel.add(spacerPanel);
+        mainTopLeftPanel.add(leaderboardPanel);
+
+        return mainTopLeftPanel;
     }
 
-    public void setCentreTopCentrePanel(JPanel centreTopPanel) {
-        JPanel centreTopCentrePanel = new JPanel();
-        centreTopCentrePanel.setPreferredSize(new Dimension(550, 300));
-        centreTopCentrePanel.setBackground(new Color(0, 0, 0, 0));
+    public JPanel setMainTopCentrePanel() {
+        JPanel mainTopCentrePanel = new JPanel();
+        mainTopCentrePanel.setPreferredSize(new Dimension(550, 300));
+        mainTopCentrePanel.setBackground(null);
 
         JLabel title = new JLabel("MY FANTASY F1 LEAGUE");
         title.setFont(new Font("SansSerif", Font.BOLD, 25));
-        centreTopCentrePanel.add(title);
-        JLabel spacer = new JLabel();
-        spacer.setPreferredSize(new Dimension(500, 20));
-        centreTopCentrePanel.add(spacer);
-        centreTopCentrePanel.add(new JLabel(new ImageIcon("images/logo.png")));
+        mainTopCentrePanel.add(title);
 
-        centreTopPanel.add(centreTopCentrePanel);
+        JPanel spacer = setSpacerPanel(new Dimension(500, 20));
+        mainTopCentrePanel.add(spacer);
+
+        mainTopCentrePanel.add(new JLabel(new ImageIcon("images/logo.png")));
+
+        return mainTopCentrePanel;
     }
 
-    public void setCentreTopRightPanel(JPanel centreTopPanel) {
-        JPanel centreTopRightPanel = new JPanel();
-        centreTopRightPanel.setPreferredSize(new Dimension(200, 300));
-        centreTopRightPanel.setBackground(new Color(0, 0, 0, 0));
-        JPanel spacerPanel = new JPanel();
-        spacerPanel.setPreferredSize(new Dimension(150, 10));
-        spacerPanel.setOpaque(false);
+    public JPanel setMainTopRightPanel() {
+        JPanel mainTopRightPanel = new JPanel();
+        mainTopRightPanel.setPreferredSize(new Dimension(200, 300));
+        mainTopRightPanel.setBackground(null);
+
+        JPanel spacerPanel = setSpacerPanel(new Dimension(150, 10));
+        mainTopRightPanel.add(spacerPanel);
+
         JPanel buttonPanel = new JPanel();
         buttonPanel.setOpaque(false);
         buttonPanel.setPreferredSize(new Dimension(150, 200));
         buttonPanel.add(new JLabel(new ImageIcon("images/winner.png")));
         buttonPanel.add(winnerButton);
-        centreTopRightPanel.add(spacerPanel);
-        centreTopRightPanel.add(buttonPanel);
+        mainTopRightPanel.add(buttonPanel);
 
-        centreTopPanel.add(centreTopRightPanel);
+        return mainTopRightPanel;
     }
 
     public JPanel setMainBottomPanel() {
-        JPanel centreBottomPanel = new JPanel();
-        centreBottomPanel.setPreferredSize(new Dimension(1000, 400));
-        centreBottomPanel.setBackground(new Color(0, 0, 0, 0));
-        Dimension bottomTopDimension = new Dimension(290, 220);
+        JPanel mainBottomPanel = new JPanel();
+        mainBottomPanel.setPreferredSize(new Dimension(WIDTH, 400));
+        mainBottomPanel.setBackground(null);
+
         Dimension bottomBottomDimension = new Dimension(150, 50);
-        Dimension spacerDimension = new Dimension(10, 220);
 
-        JPanel spacer1 = new JPanel();
-        spacer1.setPreferredSize(spacerDimension);
-        spacer1.setOpaque(false);
-        JPanel spacer2 = new JPanel();
-        spacer2.setPreferredSize(spacerDimension);
-        spacer2.setOpaque(false);
+        JPanel mainBottomTopLeftPanel = setMainBottomTopPanel("images/races.png", racesButton);
+        JPanel mainBottomTopCentrePanel = setMainBottomTopPanel("images/teams.png", teamsButton);
+        JPanel mainBottomTopRightPanel = setMainBottomTopPanel("images/drivers.png", driversButton);
 
-        setCentreBottomTopLeft(centreBottomPanel, bottomTopDimension);
-        centreBottomPanel.add(spacer1);
-        setCentreBottomTopCentre(centreBottomPanel, bottomTopDimension);
-        centreBottomPanel.add(spacer2);
-        setCentreBottomTopRight(centreBottomPanel, bottomTopDimension);
-        setCentreBottomBottomLeft(centreBottomPanel, bottomBottomDimension);
-        setCentreBottomBottomCentre(centreBottomPanel, bottomBottomDimension);
-        setCentreBottomBottomRight(centreBottomPanel, bottomBottomDimension);
+        mainBottomPanel.add(mainBottomTopLeftPanel);
+        mainBottomPanel.add(mainBottomTopCentrePanel);
+        mainBottomPanel.add(mainBottomTopRightPanel);
 
-        return centreBottomPanel;
+        setCentreBottomBottomLeft(mainBottomPanel, bottomBottomDimension);
+        setCentreBottomBottomCentre(mainBottomPanel, bottomBottomDimension);
+        setCentreBottomBottomRight(mainBottomPanel, bottomBottomDimension);
+
+        return mainBottomPanel;
     }
 
-    public void setCentreBottomTopLeft(JPanel centreBottomPanel, Dimension bottomTopDimension) {
-        JPanel centreBottomTopLeft = new JPanel();
-        centreBottomTopLeft.setPreferredSize(bottomTopDimension);
-        centreBottomTopLeft.setBackground(new Color(0, 0, 0, 0));
-        centreBottomTopLeft.add(new JLabel(new ImageIcon("images/races.png")));
-        centreBottomTopLeft.add(racesButton);
+    public JPanel setMainBottomTopPanel(String address, JButton button) {
+        JPanel mainBottomTopPanel = new JPanel();
+        mainBottomTopPanel.setPreferredSize(new Dimension(305, 220));
+        mainBottomTopPanel.setBackground(null);
+        mainBottomTopPanel.add(new JLabel(new ImageIcon(address)));
+        mainBottomTopPanel.add(button);
 
-        centreBottomPanel.add(centreBottomTopLeft);
-    }
-
-    public void setCentreBottomTopCentre(JPanel centreBottomPanel, Dimension bottomTopDimension) {
-        JPanel centreBottomTopLeft = new JPanel();
-        centreBottomTopLeft.setPreferredSize(bottomTopDimension);
-        centreBottomTopLeft.setBackground(new Color(0, 0, 0, 0));
-        centreBottomTopLeft.add(new JLabel(new ImageIcon("images/teams.png")));
-        centreBottomTopLeft.add(teamsButton);
-
-        centreBottomPanel.add(centreBottomTopLeft);
-    }
-
-    public void setCentreBottomTopRight(JPanel centreBottomPanel, Dimension bottomTopDimension) {
-        JPanel centreBottomTopLeft = new JPanel();
-        centreBottomTopLeft.setPreferredSize(bottomTopDimension);
-        centreBottomTopLeft.setBackground(new Color(0, 0, 0, 0));
-        centreBottomTopLeft.add(new JLabel(new ImageIcon("images/drivers.png")));
-        centreBottomTopLeft.add(driversButton);
-
-        centreBottomPanel.add(centreBottomTopLeft);
+        return mainBottomTopPanel;
     }
 
     public void setCentreBottomBottomLeft(JPanel centreBottomPanel, Dimension bottomButtomDimension) {
@@ -827,7 +807,7 @@ public class FantasyGUI {
     public void setButtons() {
         createButtons();
 
-        scoreboardButton.addActionListener(e -> cardLayout.show(homePanel, "Scoreboard"));
+        leaderboardButton.addActionListener(e -> cardLayout.show(homePanel, "Scoreboard"));
         winnerButton.addActionListener(e -> decideWinner());
         racesButton.addActionListener(e -> cardLayout.show(homePanel, "Races"));
         teamsButton.addActionListener(e -> cardLayout.show(homePanel, "Teams"));
@@ -838,7 +818,7 @@ public class FantasyGUI {
 
         Dimension buttonDimension = new Dimension(140, 30);
         Dimension otherButtonDimension = new Dimension(280, 30);
-        scoreboardButton.setPreferredSize(buttonDimension);
+        leaderboardButton.setPreferredSize(buttonDimension);
         winnerButton.setPreferredSize(buttonDimension);
         racesButton.setPreferredSize(otherButtonDimension);
         teamsButton.setPreferredSize(otherButtonDimension);
@@ -880,7 +860,7 @@ public class FantasyGUI {
     }
 
     public void createButtons() {
-        scoreboardButton = new JButton("Scoreboard");
+        leaderboardButton = new JButton("Scoreboard");
         winnerButton = new JButton("Declare Winner");
         racesButton = new JButton("Races");
         teamsButton = new JButton("Teams");
