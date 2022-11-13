@@ -71,9 +71,9 @@
                     "wins": 0,
                     "fastestLaps": 0,
                     "teams": [],
-                    "num": 3,
+                    "num": 22,
                     "name": "Yuki Tsunoda",
-                    "points": 22
+                    "points": 13
                 },
                 {
                     "wins": 0,
@@ -422,9 +422,9 @@
                     "wins": 0,
                     "fastestLaps": 0,
                     "teams": [],
-                    "num": 3,
+                    "num": 22,
                     "name": "Yuki Tsunoda",
-                    "points": 22
+                    "points": 13
                 },
                 {
                     "wins": 0,
@@ -640,9 +640,9 @@
                     "wins": 0,
                     "fastestLaps": 0,
                     "teams": [],
-                    "num": 3,
+                    "num": 22,
                     "name": "Yuki Tsunoda",
-                    "points": 22
+                    "points": 13
                 }
             ],
             "sprint?": false,
@@ -1964,9 +1964,9 @@
                     "wins": 0,
                     "fastestLaps": 0,
                     "teams": [],
-                    "num": 3,
+                    "num": 22,
                     "name": "Yuki Tsunoda",
-                    "points": 22
+                    "points": 13
                 },
                 {
                     "wins": 0,
@@ -1986,85 +1986,6 @@
                 "name": "George Russell",
                 "points": 218
             }
-        },
-        {
-            "date": "today",
-            "places": [
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teams": [],
-                    "num": 20,
-                    "name": "Kevin Magnussen",
-                    "points": 26
-                },
-                {
-                    "wins": 1,
-                    "fastestLaps": 2,
-                    "teams": [],
-                    "num": 55,
-                    "name": "Carlos Sainz",
-                    "points": 202
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teams": [],
-                    "num": 23,
-                    "name": "Alex Albon",
-                    "points": 4
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teams": [],
-                    "num": 20,
-                    "name": "Kevin Magnussen",
-                    "points": 26
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teams": [],
-                    "num": 31,
-                    "name": "Esteban Ocon",
-                    "points": 79
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teams": [],
-                    "num": 3,
-                    "name": "Daniel Ricciardo",
-                    "points": 29
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teams": [],
-                    "num": 20,
-                    "name": "Kevin Magnussen",
-                    "points": 26
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 2,
-                    "teams": [],
-                    "num": 63,
-                    "name": "George Russell",
-                    "points": 218
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teams": [],
-                    "num": 3,
-                    "name": "Daniel Ricciardo",
-                    "points": 29
-                }
-            ],
-            "sprint?": true,
-            "name": "Sprint Race"
         }
     ],
     "name": "My Fantasy F1 League",
@@ -2228,9 +2149,9 @@
             "wins": 0,
             "fastestLaps": 0,
             "teams": [],
-            "num": 3,
+            "num": 22,
             "name": "Yuki Tsunoda",
-            "points": 22
+            "points": 13
         }
     ]
 }
