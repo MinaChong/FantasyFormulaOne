@@ -680,6 +680,9 @@ public class FantasyGUI {
             jsonWriter.write(league);
             jsonWriter.close();
             System.out.println("Saved " + league.getName() + " to " + JSON_STORE);
+            JOptionPane.showMessageDialog(null, "Saved " + league.getName() + "!",
+                    "Save League", JOptionPane.INFORMATION_MESSAGE,
+                    new ImageIcon("images/save.png"));
         } catch (FileNotFoundException e) {
             System.out.println("Unable to write to file: " + JSON_STORE);
         }
@@ -693,6 +696,9 @@ public class FantasyGUI {
         try {
             league = jsonReader.read();
             System.out.println("Loaded " + league.getName() + " from " + JSON_STORE);
+            JOptionPane.showMessageDialog(null, "Loaded " + league.getName() + "!",
+                    "Load League", JOptionPane.INFORMATION_MESSAGE,
+                    new ImageIcon("images/load.png"));
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE);
         }
