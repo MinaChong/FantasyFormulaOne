@@ -48,3 +48,19 @@ or the greater number of fastest laps if there is another tie
 - As a user, I want to be able to save the current state of the Fantasy F1 League, including all races, teams, 
 and drivers
 - As a user, when I start the Fantasy F1 application, I want to be able to reload my Fantasy F1 League from file
+
+# Instructions for Grader
+
+- You can generate the first required event related to adding Xs to a Y by clicking the "Teams" button on the main menu
+which redirects you to the Teams page, where you can then click the "Add Team" button and go through the displayed
+instructions to enter information related to your new team; once completed, this new team will be displayed in the
+Teams page
+- You can generate the second required event related to adding Xs to a Y by clicking the "Teams" button on the main menu
+which redirects you to the Teams page, where you can then click the "Remove Team" button and select an existing team
+that you would like to remove; after, that selected team will be removed from the Teams page where it was previously
+displayed
+- You can locate my visual component by clicking the "Teams" button on the main menu which redirects you to the Teams
+page, where you can then select any team to view their page and click the "Show Team Performance Graph" button which
+will display a graph showing the points scored by each driver for that team
+- You can save the state of my application by clicking the "Save League" button on the main menu
+- You can reload the state of my application by clicking the "Load League" button on the main menu

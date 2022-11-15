@@ -1931,6 +1931,100 @@
                 "name": "George Russell",
                 "points": 218
             }
+        },
+        {
+            "date": "today",
+            "places": [
+                {
+                    "wins": 1,
+                    "fastestLaps": 2,
+                    "teams": [],
+                    "num": 55,
+                    "name": "Carlos Sainz",
+                    "points": 202
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teams": [],
+                    "num": 3,
+                    "name": "Daniel Ricciardo",
+                    "points": 29
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teams": [],
+                    "num": 23,
+                    "name": "Alex Albon",
+                    "points": 4
+                },
+                {
+                    "wins": 3,
+                    "fastestLaps": 4,
+                    "teams": [{"name": "Michael's Team"}],
+                    "num": 16,
+                    "name": "Charles Leclerc",
+                    "points": 268
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teams": [],
+                    "num": 31,
+                    "name": "Esteban Ocon",
+                    "points": 79
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teams": [],
+                    "num": 14,
+                    "name": "Fernando Alonso",
+                    "points": 65
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teams": [{"name": "Michael's Team"}],
+                    "num": 63,
+                    "name": "George Russell",
+                    "points": 218
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 1,
+                    "teams": [],
+                    "num": 24,
+                    "name": "Guanyu Zhou",
+                    "points": 6
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 0,
+                    "teams": [],
+                    "num": 20,
+                    "name": "Kevin Magnussen",
+                    "points": 26
+                },
+                {
+                    "wins": 0,
+                    "fastestLaps": 2,
+                    "teams": [{"name": "Kimi's Team"}],
+                    "num": 44,
+                    "name": "Lewis Hamilton",
+                    "points": 198
+                }
+            ],
+            "sprint?": false,
+            "name": "Brazillian Grand Prix",
+            "fastestLap": {
+                "wins": 2,
+                "fastestLaps": 3,
+                "num": 11,
+                "name": "Sergio Perez",
+                "points": 265
+            }
         }
     ],
     "name": "My Fantasy F1 League",
