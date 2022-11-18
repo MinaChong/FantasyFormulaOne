@@ -64,3 +64,22 @@ page, where you can then select any team to view their page and click the "Show 
 will display a graph showing the points scored by each driver for that team
 - You can save the state of my application by clicking the "Save League" button on the main menu
 - You can reload the state of my application by clicking the "Load League" button on the main menu
+
+# Image Credits
+drivers.png: https://www.motorsportweek.com/wp-content/uploads/2020/07/jm2004jy181.jpg
+
+load.png: https://www.sportscasting.com/wp-content/uploads/2021/06/Race-winner-Lewis-Hamilton-Mercedes-GP.jpg
+
+logo.png: https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/2560px-F1.svg.png
+
+races.png: https://e00-marca.uecdn.es/assets/multimedia/imagenes/2022/09/08/16626643646718.jpg
+
+save.png: https://static.autox.com/uploads/2018/09/f1-2018-kimi-raikkonen-ferrari-leave.jpg
+
+scoreboard.png: https://www.formula1.com/content/dam/fom-website/manual/Misc/2021preseason/GettyImages-1264859189.jpg.transform/9col/image.jpg
+
+teams.png: https://www.formula1.com/content/dam/fom-website/manual/Misc/2022manual/2022SummerBreak/h2h/JPG-RGB-72-DPI-2022_Supershot_V_Formation_Final.jpg
+
+trophy.jpg: http://www.americanmetalartsstudios.com/images/awards/images/F1_drivers_trophy.jpg
+
+winner.png: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM0vF2UZfk-ykG9NPoUyO9z7NJ97DmQQyJXWqRezLAluBi01kUubvYqtjZQo9lrW7G3Eo&usqp=CAU
