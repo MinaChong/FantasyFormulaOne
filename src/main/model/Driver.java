@@ -60,6 +60,8 @@ public class Driver implements Writable {
         if (!teams.contains(team)) {
             teams.add(team);
             team.addDriver(this);
+            EventLog.getInstance().logEvent(new Event(team.getName() + " added to " + this.getName()
+                    + "'s list of teams."));
         }
     }
 
@@ -69,6 +71,8 @@ public class Driver implements Writable {
         if (teams.contains(team)) {
             teams.remove(team);
             team.removeDriver(this);
+            EventLog.getInstance().logEvent(new Event(team.getName() + " removed from " + this.getName()
+                    + "'s list of teams."));
         }
     }
 
@@ -134,6 +138,7 @@ public class Driver implements Writable {
         return json;
     }
 
+    // EFFECTS: returns given driver's teams as JSON array
     private JSONArray teamsToJson() {
         JSONArray jsonArray = new JSONArray();
 

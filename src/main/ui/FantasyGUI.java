@@ -1,6 +1,7 @@
 package ui;
 
 import model.*;
+import model.Event;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
@@ -11,6 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+// Fantasy F1 Graphic User Interface (GUI)
 public class FantasyGUI {
     private static final int WIDTH = 1000;
     private static final int HEIGHT = 700;
@@ -706,6 +708,20 @@ public class FantasyGUI {
         cardLayout.show(homePanel, "League");
     }
 
+    // EFFECTS: quits Fantasy F1 GUI and prints event log
+    private void quitLeague() {
+        printLog(EventLog.getInstance());
+
+        fantasyFrame.dispose();
+    }
+
+    // EFFECTS: prints event log
+    private void printLog(EventLog el) {
+        for (Event event : el) {
+            System.out.println(event.toString());
+        }
+    }
+
     // EFFECTS: returns spacer panel with given dimension
     public JPanel setSpacerPanel(Dimension dimension) {
         JPanel spacerPanel = new JPanel();
@@ -871,7 +887,7 @@ public class FantasyGUI {
         driversButton.addActionListener(e -> cardLayout.show(homePanel, "Drivers"));
         saveButton.addActionListener(e -> saveLeague());
         loadButton.addActionListener(e -> loadLeague());
-        quitButton.addActionListener(e -> fantasyFrame.dispose());
+        quitButton.addActionListener(e -> quitLeague());
 
         Dimension smallButtonDimension = new Dimension(140, 30);
         Dimension largeButtonDimension = new Dimension(280, 30);

@@ -66,6 +66,7 @@ will display a graph showing the points scored by each driver for that team
 - You can reload the state of my application by clicking the "Load League" button on the main menu
 
 # Image Credits
+
 drivers.png: https://www.motorsportweek.com/wp-content/uploads/2020/07/jm2004jy181.jpg
 
 load.png: https://www.sportscasting.com/wp-content/uploads/2021/06/Race-winner-Lewis-Hamilton-Mercedes-GP.jpg
@@ -83,3 +84,66 @@ teams.png: https://www.formula1.com/content/dam/fom-website/manual/Misc/2022manu
 trophy.jpg: http://www.americanmetalartsstudios.com/images/awards/images/F1_drivers_trophy.jpg
 
 winner.png: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM0vF2UZfk-ykG9NPoUyO9z7NJ97DmQQyJXWqRezLAluBi01kUubvYqtjZQo9lrW7G3Eo&usqp=CAU
+
+# Phase 4: Task 2
+
+Sun Nov 20 19:00:07 PST 2022
+
+Brazilian Sprint Race added to My Fantasy F1 League.
+
+Sun Nov 20 19:00:17 PST 2022
+
+Mina's Team added to My Fantasy F1 League.
+
+Sun Nov 20 19:00:22 PST 2022
+
+Mina's Team added to Fernando Alonso's list of teams.
+
+Sun Nov 20 19:00:22 PST 2022
+
+Fernando Alonso added to Mina's Team.
+
+Sun Nov 20 19:00:28 PST 2022
+
+Mina's Team added to Kevin Magnussen's list of teams.
+
+Sun Nov 20 19:00:28 PST 2022
+
+Kevin Magnussen added to Mina's Team.
+
+Sun Nov 20 19:01:04 PST 2022
+
+Brazilian Grand Prix added to My Fantasy F1 League.
+
+Sun Nov 20 19:01:13 PST 2022
+
+Michael's Team removed from My Fantasy F1 League.
+
+Sun Nov 20 19:01:20 PST 2022
+
+Mina's Team removed from Fernando Alonso's list of teams.
+
+Sun Nov 20 19:01:20 PST 2022
+
+Fernando Alonso removed from Mina's Team.
+
+Process finished with exit code 0
+
+# Phase 4: Task 3
+
+- Overall, I feel satisfied that the classes in the model package maximize cohesion and reduce coupling;
+although there is a bidirectional relationship between the Driver and Team classes, the utility of the 
+Fantasy F1 league requires that they 'know' about one another.
+
+- Since the structure of the persistence package is quite simple as well, it is clearly following the 
+single responsibility principle and has only moderate coupling which cannot be minimized further.
+
+- I could increase cohesion in the ui package by refactoring the FantasyGUI class into separate classes.
+More specifically, I see that there are two types of associations that the FantasyGUI class has, firstly
+to the model package and secondly to the persistence package; it could be split into separate classes
+so that these types of associations are separated. Looking further into the class as it is currently 
+constructed, I would also create separate classes for the different functionalities that the graphic user
+interface offers: one for the Drivers interface, one for the Teams interface, etc.
+
+- Likewise, there is a similar pattern of associations in the FantasyApp class that I would tackle by
+also refactoring it into separate classes. 

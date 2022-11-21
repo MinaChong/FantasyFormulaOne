@@ -25,6 +25,7 @@ public class Team implements Writable {
         if (!drivers.contains(driver)) {
             drivers.add(driver);
             driver.addTeam(this);
+            EventLog.getInstance().logEvent(new Event(driver.getName() + " added to " + this.getName() + "."));
         }
     }
 
@@ -34,6 +35,8 @@ public class Team implements Writable {
         if (drivers.contains(driver)) {
             drivers.remove(driver);
             driver.removeTeam(this);
+            EventLog.getInstance().logEvent(new Event(driver.getName() + " removed from " + this.getName()
+                    + "."));
         }
     }
 
