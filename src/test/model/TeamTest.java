@@ -3,6 +3,9 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TeamTest {
@@ -47,6 +50,20 @@ public class TeamTest {
     }
 
     @Test
+    public void addDriverEventLogTest() {
+        EventLog.getInstance().clear();
+
+        testTeam.addDriver(testDriver);
+
+        List<String> eventDescriptions = new ArrayList<>();
+        for (Event event : EventLog.getInstance()) {
+            eventDescriptions.add(event.getDescription());
+        }
+
+        assertTrue(eventDescriptions.contains("Fernando added to Red Team."));
+    }
+
+    @Test
     public void removeDriverTest() {
         testTeam.addDriver(testDriver);
         assertEquals(1, testTeam.getDrivers().size());
@@ -72,6 +89,21 @@ public class TeamTest {
 
         testTeam.removeDriver(anotherTestDriver);
         assertEquals(0, testTeam.getDrivers().size());
+    }
+
+    @Test
+    public void removeDriverEventLogTest() {
+        EventLog.getInstance().clear();
+
+        testTeam.addDriver(testDriver);
+        testTeam.removeDriver(testDriver);
+
+        List<String> eventDescriptions = new ArrayList<>();
+        for (Event event : EventLog.getInstance()) {
+            eventDescriptions.add(event.getDescription());
+        }
+
+        assertTrue(eventDescriptions.contains("Fernando removed from Red Team."));
     }
 
     @Test

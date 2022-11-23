@@ -20,7 +20,7 @@ public class Team implements Writable {
     }
 
     // MODIFIES: this
-    // EFFECTS: adds given driver to list of drivers on team
+    // EFFECTS: adds given driver to list of drivers on team and adds event to event log
     public void addDriver(Driver driver) {
         if (!drivers.contains(driver)) {
             drivers.add(driver);
@@ -30,7 +30,7 @@ public class Team implements Writable {
     }
 
     // MODIFIES: this
-    // EFFECTS: removes given driver from list of drivers on team
+    // EFFECTS: removes given driver from list of drivers on team and adds event to event log
     public void removeDriver(Driver driver) {
         if (drivers.contains(driver)) {
             drivers.remove(driver);

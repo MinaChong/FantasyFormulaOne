@@ -87,45 +87,29 @@ winner.png: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM0vF2UZfk-ykG
 
 # Phase 4: Task 2
 
-Sun Nov 20 19:00:07 PST 2022
+Tue Nov 22 16:07:36 PST 2022
 
 Brazilian Sprint Race added to My Fantasy F1 League.
 
-Sun Nov 20 19:00:17 PST 2022
+Tue Nov 22 16:07:36 PST 2022
+
+Lewis Hamilton added to Kimi's Team.
+
+Tue Nov 22 16:07:36 PST 2022
+
+Lando Norris added to Kimi's Team.
+
+Tue Nov 22 16:07:36 PST 2022
+
+Kimi's Team added to My Fantasy F1 League.
+
+Tue Nov 22 16:07:36 PST 2022
+
+George Russell added to Mina's Team.
+
+Tue Nov 22 16:07:36 PST 2022
 
 Mina's Team added to My Fantasy F1 League.
-
-Sun Nov 20 19:00:22 PST 2022
-
-Mina's Team added to Fernando Alonso's list of teams.
-
-Sun Nov 20 19:00:22 PST 2022
-
-Fernando Alonso added to Mina's Team.
-
-Sun Nov 20 19:00:28 PST 2022
-
-Mina's Team added to Kevin Magnussen's list of teams.
-
-Sun Nov 20 19:00:28 PST 2022
-
-Kevin Magnussen added to Mina's Team.
-
-Sun Nov 20 19:01:04 PST 2022
-
-Brazilian Grand Prix added to My Fantasy F1 League.
-
-Sun Nov 20 19:01:13 PST 2022
-
-Michael's Team removed from My Fantasy F1 League.
-
-Sun Nov 20 19:01:20 PST 2022
-
-Mina's Team removed from Fernando Alonso's list of teams.
-
-Sun Nov 20 19:01:20 PST 2022
-
-Fernando Alonso removed from Mina's Team.
 
 Process finished with exit code 0
 

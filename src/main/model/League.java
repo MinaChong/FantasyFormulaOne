@@ -36,28 +36,28 @@ public class League implements Writable {
     }
 
     // MODIFIES: this
-    // EFFECTS: adds given race to league's list of races
+    // EFFECTS: adds given race to league's list of races and adds event to event log
     public void addRace(Race race) {
         races.add(race);
         EventLog.getInstance().logEvent(new Event(race.getName() + " added to " + this.getName() + "."));
     }
 
     // MODIFIES: this
-    // EFFECTS: removes given race from league's list of races
+    // EFFECTS: removes given race from league's list of races and adds event to event log
     public void removeRace(Race race) {
         races.remove(race);
         EventLog.getInstance().logEvent(new Event(race.getName() + " removed from " + this.getName() + "."));
     }
 
     // MODIFIES: this
-    // EFFECTS: adds given team to league's list of teams
+    // EFFECTS: adds given team to league's list of teams and adds event to event log
     public void addTeam(Team team) {
         teams.add(team);
         EventLog.getInstance().logEvent(new Event(team.getName() + " added to " + this.getName() + "."));
     }
 
     // MODIFIES: this
-    // EFFECTS: removes given team from league's list of teams
+    // EFFECTS: removes given team from league's list of teams and adds event to event log
     public void removeTeam(Team team) {
         teams.remove(team);
         EventLog.getInstance().logEvent(new Event(team.getName() + " removed from " + this.getName() + "."));

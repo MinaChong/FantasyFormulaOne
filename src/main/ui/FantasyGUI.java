@@ -681,7 +681,6 @@ public class FantasyGUI {
             jsonWriter.open();
             jsonWriter.write(league);
             jsonWriter.close();
-            System.out.println("Saved " + league.getName() + " to " + JSON_STORE);
             JOptionPane.showMessageDialog(null, "Saved " + league.getName() + "!",
                     "Save League", JOptionPane.INFORMATION_MESSAGE,
                     new ImageIcon("images/save.png"));
@@ -697,7 +696,6 @@ public class FantasyGUI {
     private void loadLeague() {
         try {
             league = jsonReader.read();
-            System.out.println("Loaded " + league.getName() + " from " + JSON_STORE);
             JOptionPane.showMessageDialog(null, "Loaded " + league.getName() + "!",
                     "Load League", JOptionPane.INFORMATION_MESSAGE,
                     new ImageIcon("images/load.png"));

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LeagueTest {
     private League testLeague;
@@ -110,6 +111,21 @@ public class LeagueTest {
     }
 
     @Test
+    public void addRaceEventLogTest() {
+        EventLog.getInstance().clear();
+
+        testLeague.addRace(testRace);
+
+        List<String> eventDescriptions = new ArrayList<>();
+        for (Event event : EventLog.getInstance()) {
+            eventDescriptions.add(event.getDescription());
+        }
+
+        assertTrue(eventDescriptions.contains("Race 1 added to My League."));
+    }
+
+
+    @Test
     public void removeRaceTest() {
         testLeague.addRace(testRace);
         assertEquals(1, testLeague.getRaces().size());
@@ -134,6 +150,20 @@ public class LeagueTest {
     }
 
     @Test
+    public void removeRaceEventLogTest() {
+        EventLog.getInstance().clear();
+
+        testLeague.removeRace(testRace);
+
+        List<String> eventDescriptions = new ArrayList<>();
+        for (Event event : EventLog.getInstance()) {
+            eventDescriptions.add(event.getDescription());
+        }
+
+        assertTrue(eventDescriptions.contains("Race 1 removed from My League."));
+    }
+
+    @Test
     public void addTeamTest() {
         testLeague.addTeam(testTeam);
         assertEquals(1, testLeague.getTeams().size());
@@ -146,6 +176,20 @@ public class LeagueTest {
 
         testLeague.addTeam(anotherTestTeam);
         assertEquals(2, testLeague.getTeams().size());
+    }
+
+    @Test
+    public void addTeamEventLogTest() {
+        EventLog.getInstance().clear();
+
+        testLeague.addTeam(testTeam);
+
+        List<String> eventDescriptions = new ArrayList<>();
+        for (Event event : EventLog.getInstance()) {
+            eventDescriptions.add(event.getDescription());
+        }
+
+        assertTrue(eventDescriptions.contains("Team 1 added to My League."));
     }
 
     @Test
@@ -170,5 +214,19 @@ public class LeagueTest {
 
         testLeague.removeTeam(anotherTestTeam);
         assertEquals(0, testLeague.getTeams().size());
+    }
+
+    @Test
+    public void removeTeamEventLogTest() {
+        EventLog.getInstance().clear();
+
+        testLeague.removeTeam(testTeam);
+
+        List<String> eventDescriptions = new ArrayList<>();
+        for (Event event : EventLog.getInstance()) {
+            eventDescriptions.add(event.getDescription());
+        }
+
+        assertTrue(eventDescriptions.contains("Team 1 removed from My League."));
     }
 }
