@@ -1,6 +1,7 @@
 {
     "teams": [
         {"name": "Kimi's Team"},
+        {"name": "Michael's Team"},
         {"name": "Mina's Team"}
     ],
     "races": [
@@ -34,10 +35,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -107,7 +105,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -139,10 +137,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -220,10 +215,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -301,7 +293,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -372,7 +364,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -396,10 +388,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -469,7 +458,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -501,10 +490,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -566,7 +552,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -582,10 +568,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -679,7 +662,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -695,10 +678,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -760,7 +740,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -776,10 +756,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -857,7 +834,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -881,10 +858,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -1002,7 +976,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1048,7 +1022,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1072,10 +1046,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -1130,7 +1101,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1146,10 +1117,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -1219,7 +1187,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1235,10 +1203,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -1316,7 +1281,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1332,10 +1297,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -1413,7 +1375,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1437,10 +1399,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -1510,7 +1469,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1518,10 +1477,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -1607,7 +1563,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1623,10 +1579,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -1752,7 +1705,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1798,7 +1751,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1854,10 +1807,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -1895,7 +1845,7 @@
                 {
                     "wins": 13,
                     "fastestLaps": 4,
-                    "teams": [],
+                    "teams": [{"name": "Kimi's Team"}],
                     "num": 1,
                     "name": "Max Verstappen",
                     "points": 390
@@ -1927,10 +1877,7 @@
                 {
                     "wins": 0,
                     "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
+                    "teams": [{"name": "Michael's Team"}],
                     "num": 63,
                     "name": "George Russell",
                     "points": 218
@@ -1985,80 +1932,6 @@
                 "name": "George Russell",
                 "points": 218
             }
-        },
-        {
-            "date": "today",
-            "places": [
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teams": [],
-                    "num": 23,
-                    "name": "Alex Albon",
-                    "points": 4
-                },
-                {
-                    "wins": 3,
-                    "fastestLaps": 4,
-                    "teams": [{"name": "Michael's Team"}],
-                    "num": 16,
-                    "name": "Charles Leclerc",
-                    "points": 268
-                },
-                {
-                    "wins": 1,
-                    "fastestLaps": 2,
-                    "teams": [],
-                    "num": 55,
-                    "name": "Carlos Sainz",
-                    "points": 202
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teams": [],
-                    "num": 3,
-                    "name": "Daniel Ricciardo",
-                    "points": 29
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teams": [],
-                    "num": 31,
-                    "name": "Esteban Ocon",
-                    "points": 79
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 0,
-                    "teams": [],
-                    "num": 14,
-                    "name": "Fernando Alonso",
-                    "points": 65
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 2,
-                    "teams": [
-                        {"name": "Michael's Team"},
-                        {"name": "Mina's Team"}
-                    ],
-                    "num": 63,
-                    "name": "George Russell",
-                    "points": 218
-                },
-                {
-                    "wins": 0,
-                    "fastestLaps": 1,
-                    "teams": [],
-                    "num": 24,
-                    "name": "Guanyu Zhou",
-                    "points": 6
-                }
-            ],
-            "sprint?": true,
-            "name": "Brazilian Sprint Race"
         }
     ],
     "name": "My Fantasy F1 League",
@@ -2114,10 +1987,7 @@
         {
             "wins": 0,
             "fastestLaps": 2,
-            "teams": [
-                {"name": "Michael's Team"},
-                {"name": "Mina's Team"}
-            ],
+            "teams": [{"name": "Michael's Team"}],
             "num": 63,
             "name": "George Russell",
             "points": 218
@@ -2173,7 +2043,7 @@
         {
             "wins": 13,
             "fastestLaps": 4,
-            "teams": [],
+            "teams": [{"name": "Kimi's Team"}],
             "num": 1,
             "name": "Max Verstappen",
             "points": 390
