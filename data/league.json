@@ -1,8 +1,7 @@
 {
     "teams": [
         {"name": "Kimi's Team"},
-        {"name": "Michael's Team"},
-        {"name": "Mina's Team"}
+        {"name": "Michael's Team"}
     ],
     "races": [
         {
